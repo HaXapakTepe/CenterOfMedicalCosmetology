@@ -1,0 +1,14 @@
+.phone {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2A275F;
+  white-space: nowrap;
+
+  &--white {
+    color: #fff;
+  }
+
+  &--yellow {
+    color: #D9BA5B;
+  }
+}

@@ -1,0 +1,103 @@
+.founder {
+  @include fluid(margin-top, 30px, 75px);
+  @include fluid(margin-bottom, 30px, 75px);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #FFF4D5;
+    border-radius: 10px;
+    overflow: hidden
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include fluid(padding, 15px, 20px);
+    @include fluid(padding-left, 16px, 54px);
+
+    &-title {
+      @include fluid(margin-bottom, 1px, 12px);
+      font-weight: 700;
+      @include fluid(font-size, 24px, 40px);
+      color: #D9BA5B;
+    }
+
+    &-name {
+      font-weight: 700;
+      @include fluid(font-size, 24px, 40px);
+      @include fluid(margin-bottom, 20px, 50px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: outside;
+    @include fluid(padding-left, 15px, 20px);
+
+    &-item {
+      position: relative;
+      max-width: 600px;
+      padding-bottom: 15px;
+      @include fluid(font-size, 14px, 20px);
+
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 150%;
+          height: 1px;
+          background-color: #D9BA5B;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: -3px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #D9BA5B;
+        }
+      }
+    }
+
+    &-text {
+      max-width: 430px;
+      @include fluid(font-size, 14px, 20px);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+@media(max-width:768px) {
+  .founder {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__img {
+      height: 520px;
+    }
+  }
+}
+
+@media(max-width:576px) {
+  .founder {
+    &__img {
+      height: 300px;
+    }
+  }
+}

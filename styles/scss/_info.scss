@@ -1,0 +1,128 @@
+.info {
+  @include fluid(margin-top, 30px, 75px);
+  @include fluid(margin-bottom, 30px, 75px);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr .95fr;
+    border-radius: 10px;
+    background-color: #D9BA5B;
+    overflow: hidden;
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    &-fon {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+    }
+
+    &-img {
+      position: relative;
+      z-index: 1;
+      @include fluid(height, 370px, 565px);
+      -o-object-fit: contain;
+      object-fit: contain;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .61);
+      border-radius: 10px;
+    }
+
+    &-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      height: 100%;
+    }
+
+    &-blockquote {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 20px, 30px);
+      @include fluid(padding-top, 75px, 86px);
+      @include fluid(padding-bottom, 60px, 72px);
+      @include fluid(padding-left, 16px, 62px);
+      @include fluid(padding-right, 16px, 62px);
+      z-index: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        @include fluid(top, 25px, 52px);
+        @include fluid(left, 16px, 25px);
+        @include fluid(width, 100px, 154px);
+        @include fluid(height, 90px, 123px);
+        background-image: url('../../assets/images/icons/quotes.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        @include fluid(bottom, 35px, 44px);
+        @include fluid(right, 17px, 15px);
+        @include fluid(width, 100px, 154px);
+        @include fluid(height, 90px, 123px);
+        background-image: url('../../assets/images/icons/quotes-alt.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &-text {
+      @include fluid(font-size, 14px, 20px);
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .info {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__box {
+      &-img {
+        height: 242px;
+      }
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .info {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+}

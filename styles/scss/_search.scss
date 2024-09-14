@@ -1,0 +1,105 @@
+.search {
+  width: 100%;
+  max-width: 132px;
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-within {
+
+      .search {
+        &__input {
+          border-color: #2A275F;
+          color: #2A275F;
+
+          &::-webkit-input-placeholder {
+            color: #2A275F;
+          }
+
+          &::-moz-placeholder {
+            color: #2A275F;
+          }
+
+          &:-ms-input-placeholder {
+            color: #2A275F;
+          }
+
+          &::-ms-input-placeholder {
+            color: #2A275F;
+          }
+
+          &::placeholder {
+            color: #2A275F;
+          }
+        }
+
+        &__icon {
+          svg {
+
+            circle,
+            path {
+              stroke: #2A275F;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-bottom: 3px;
+    padding-right: 20px;
+    border-bottom: 1px solid rgba(152, 152, 152, .62);
+    font-size: 13px;
+    background-color: transparent;
+    transition: border-color 0.23s ease-in-out, color .23s ease-in-out;
+
+    &::-webkit-input-placeholder {
+      color: rgba(152, 152, 152, .62);
+      -webkit-transition: color .23s ease-in-out;
+      transition: color .23s ease-in-out;
+    }
+
+    &::-moz-placeholder {
+      color: rgba(152, 152, 152, .62);
+      -moz-transition: color .23s ease-in-out;
+      transition: color .23s ease-in-out;
+    }
+
+    &:-ms-input-placeholder {
+      color: rgba(152, 152, 152, .62);
+      -ms-transition: color .23s ease-in-out;
+      transition: color .23s ease-in-out;
+    }
+
+    &::-ms-input-placeholder {
+      color: rgba(152, 152, 152, .62);
+      -ms-transition: color .23s ease-in-out;
+      transition: color .23s ease-in-out;
+    }
+
+    &::placeholder {
+      color: rgba(152, 152, 152, .62);
+      transition: color .23s ease-in-out;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    cursor: pointer;
+
+    svg {
+
+      circle,
+      path {
+        transition: stroke 0.23s ease-in-out;
+      }
+    }
+  }
+}

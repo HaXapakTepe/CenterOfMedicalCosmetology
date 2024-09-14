@@ -1,0 +1,72 @@
+.numbers {
+  @include fluid(margin-top, 30px, 75px);
+  @include fluid(margin-bottom, 30px, 75px);
+  margin-left: 15px;
+  margin-right: 15px;
+
+  .container {
+    width: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1360px;
+    @include fluid(padding-top, 41px, 63px);
+    @include fluid(padding-left, 23px, 55px);
+    @include fluid(padding-right, 23px, 45px);
+    @include fluid(padding-bottom, 27px, 68px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #FFF4D5;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    @include fluid(top, 20px, 18px);
+    @include fluid(width, 147px, 271px);
+    @include fluid(height, 147px, 271px);
+    left: 12px;
+    pointer-events: none;
+
+    +.numbers__img {
+      @include fluid(width, 147px, 220px);
+      @include fluid(height, 147px, 220px);
+      left: unset;
+      @include fluid(right, 34px, 24px);
+    }
+  }
+
+  &__title {
+    @include fluid(margin-bottom, 55px, 44px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include fluid(padding-left, 15px, 33px);
+    padding-top: 30px;
+    padding-right: 17px;
+    padding-bottom: 30px;
+
+    &-num {
+      font-weight: 700;
+      @include fluid(font-size, 32px, 36px);
+      line-height: 1;
+
+      @include fluid(min-height, 55px, 66px);
+    }
+
+    &-text {
+      line-height: 22px;
+      font-size: 20px;
+    }
+  }
+}

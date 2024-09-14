@@ -1,0 +1,29 @@
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  &__link {
+    &-icon {
+      svg {
+
+        path,
+        circle {
+          transition: fill .23s ease-in-out;
+        }
+      }
+
+      &:hover {
+        svg {
+          circle {
+            fill: #C89909;
+          }
+
+          path {
+            fill: #241E8E;
+          }
+        }
+      }
+    }
+  }
+}

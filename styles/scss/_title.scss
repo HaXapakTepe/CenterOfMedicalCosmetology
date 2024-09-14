@@ -1,0 +1,9 @@
+.title {
+  @include fluid(font-size, 24px, 40px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+h1.title {
+  @include fluid(font-size, 32px, 64px);
+}
