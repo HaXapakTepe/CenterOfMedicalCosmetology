@@ -22,15 +22,46 @@ document.addEventListener('DOMContentLoaded', () => {
 	burger.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
-	// if (burger) {
-	//   menuItem.forEach((item) => {
-	//     item.addEventListener('click', () => {
-	//       burger.classList.toggle('active')
-	//       menu.classList.remove('active')
-	//       body.classList.remove('no-scroll')
-	//     })
-	//   })
-	// }
+	if (innerWidth > 993) {
+		window.addEventListener('scroll', function () {
+			const header = document.querySelector('.header')
+			const headerInner = header.querySelector('.header__inner')
+			const bodyRect = document.body.getBoundingClientRect()
+
+			if (window.innerWidth > 1366) {
+				if (headerInner.getBoundingClientRect().top < 0) {
+					header.classList.add('header--fixed')
+				} else if (bodyRect.top >= -84) {
+					header.classList.remove('header--fixed')
+				}
+			} else {
+				if (headerInner.getBoundingClientRect().top < 0) {
+					header.classList.add('header--fixed')
+				} else if (bodyRect.top >= -44) {
+					header.classList.remove('header--fixed')
+				}
+			}
+		})
+
+		const numbersItems = document.querySelectorAll('.numbers__item')
+
+		const observerCallback = entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animate')
+				}
+			})
+		}
+
+		const observer = new IntersectionObserver(observerCallback, {
+			rootMargin: '0px',
+			threshold: 0.5,
+		})
+
+		numbersItems.forEach(item => {
+			observer.observe(item)
+		})
+	}
 
 	function handleTabClick(
 		tabs,
@@ -214,29 +245,30 @@ document.addEventListener('DOMContentLoaded', () => {
 			breakpoints: {
 				993: {
 					slidesPerView: 2,
-          spaceBetween: 30,
+					spaceBetween: 30,
 				},
 				577: {
-          slidesPerView: 2.1,
-          spaceBetween: 5,
+					slidesPerView: 2.1,
+					spaceBetween: 5,
 				},
 				361: {
 					slidesPerView: 1.1,
 				},
 				320: {
 					slidesPerView: 1.1,
-          spaceBetween: 5,
+					spaceBetween: 5,
 				},
 			},
 			navigation: {
 				nextEl: `.slider__arrow-next`,
 				prevEl: `.slider__arrow-prev`,
 			},
-      pagination: {
-        el: ".slider__dots",
-      },
+			pagination: {
+				el: '.slider__dots',
+			},
 		})
 	}
+
 	if (document.querySelector('.popular__swiper')) {
 		var popularSwiper = new Swiper('.popular__swiper', {
 			slidesPerView: 3,
@@ -246,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					slidesPerView: 3,
 				},
 				577: {
-          slidesPerView: 2,
+					slidesPerView: 2,
 				},
 				361: {
 					slidesPerView: 1,
@@ -258,6 +290,40 @@ document.addEventListener('DOMContentLoaded', () => {
 			navigation: {
 				nextEl: `.popular__arrow-next`,
 				prevEl: `.popular__arrow-prev`,
+			},
+		})
+	}
+
+	if (document.querySelector('.problems__swiper')) {
+		var sliderSwiper = new Swiper('.problems__swiper', {
+			slidesPerView: 2,
+			spaceBetween: 15,
+			breakpoints: {
+				993: {
+					slidesPerView: 2,
+				},
+				577: {
+					slidesPerView: 2,
+				},
+				361: {
+					slidesPerView: 1,
+					grid: {
+						rows: 2,
+					},
+				},
+				320: {
+					slidesPerView: 1,
+					grid: {
+						rows: 2,
+					},
+				},
+			},
+			navigation: {
+				nextEl: `.problems__arrow-next`,
+				prevEl: `.problems__arrow-prev`,
+			},
+			pagination: {
+				el: '.problems__dots',
 			},
 		})
 	}
@@ -297,6 +363,78 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 		},
 	// 	})
 	// }
+
+	if (document.querySelector('#mapYandex')) {
+		const map = document.querySelector('.map')
+		const points = [
+			{
+				text: '+7 (812) 223-51-27',
+				address: '191014, Санкт-Петербург, улица Рылеева, дом 1',
+				schedule:
+					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
+				coords: [59.92617, 30.286161],
+			},
+			{
+				text: '+7 (812) 223-51-27',
+				address: '191014, Санкт-Петербург, улица Рылеева, дом 1',
+				schedule:
+					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
+				coords: [59.942412, 30.351055],
+			},
+			{
+				text: '+7 (812) 223-51-27',
+				address: '191014, Санкт-Петербург, улица Рылеева, дом 1',
+				schedule:
+					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
+				coords: [59.947243, 30.378472],
+			},
+		]
+
+		ymaps.ready(init)
+
+		function init() {
+			const myMap = new ymaps.Map('mapYandex', {
+				center: [59.942412, 30.351055],
+				zoom: 12,
+			})
+
+			const myCollection = new ymaps.GeoObjectCollection()
+
+			points.forEach(point => {
+				const content = `
+          <div class="map__ballon">
+            <div class="map__ballon-box">
+              <p class="map__ballon-title">Телефон</p>
+              <p class="map__ballon-text"><a href="tel:${point.text}">${point.text}</a></p>
+            </div>
+            <div class="map__ballon-box">
+              <p class="map__ballon-title">Адрес</p>
+              <p class="map__ballon-text">${point.address}</p>
+            </div>
+            <div class="map__ballon-box">
+              <p class="map__ballon-title">График работы</p>
+              <p class="map__ballon-text">${point.schedule}</p>
+            </div>
+          </div>
+        `
+
+				const myPlacemark = new ymaps.Placemark(
+					point.coords,
+					{
+						balloonContent: content,
+					},
+					{
+						iconLayout: 'default#image',
+						iconImageHref: '../assets/images/icons/loca-gold.svg',
+						iconImageSize: [48, 48],
+					}
+				)
+				myCollection.add(myPlacemark)
+			})
+
+			myMap.geoObjects.add(myCollection)
+		}
+	}
 })
 // $(document).ready(function () {})
 // $('.catalog__sorting').select2({

@@ -1,5 +1,5 @@
-.accordion,
-.accordionAlt {
+.accordion {
+  &-content,
   &__content {
     overflow: hidden;
     max-height: 0;

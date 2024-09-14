@@ -12,7 +12,10 @@
   }
 
   &__link {
-    padding: 2px 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    @include fluid(padding-left, 10px, 15px);
+    @include fluid(padding-right, 10px, 15px);
     font-size: 14px;
     color: #fff;
     transition: color .23s ease-in-out;

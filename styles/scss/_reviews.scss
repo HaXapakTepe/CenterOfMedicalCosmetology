@@ -1,4 +1,4 @@
-.numbers {
+.reviews {
   @include fluid(margin-top, 30px, 75px);
   @include fluid(margin-bottom, 30px, 75px);
   margin-left: 15px;
@@ -22,67 +22,35 @@
     overflow: hidden;
   }
 
-  &__img {
-    position: absolute;
-    @include fluid(top, 20px, 18px);
-    @include fluid(width, 147px, 271px);
-    @include fluid(height, 147px, 271px);
-    left: 12px;
-    pointer-events: none;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @include fluid(margin-bottom, 30px, 44px);
 
-    +.numbers__img {
-      @include fluid(width, 147px, 220px);
-      @include fluid(height, 147px, 220px);
-      left: unset;
-      @include fluid(right, 34px, 24px);
+    &-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
     }
-  }
 
-  &__title {
-    @include fluid(margin-bottom, 55px, 44px);
+    .btn {
+      font-size: 16px;
+    }
   }
 
   &__inner {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   &__item {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    @include fluid(padding-left, 15px, 33px);
-    padding-top: 30px;
-    padding-right: 17px;
-    padding-bottom: 30px;
-    opacity: 0;
-    transform: translateY(50px);
-
-    &:nth-child(1) {
-      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-    }
-
-    &:nth-child(2) {
-      transition: opacity 0.6s ease-in-out .2s, transform 0.6s ease-in-out .2s;
-    }
-
-    &:nth-child(3) {
-      transition: opacity 0.6s ease-in-out .4s, transform 0.6s ease-in-out .4s;
-    }
-
-    &:nth-child(4) {
-      transition: opacity 0.6s ease-in-out .6s, transform 0.6s ease-in-out .6s;
-    }
-
-    &:nth-child(5) {
-      transition: opacity 0.6s ease-in-out .8s, transform 0.6s ease-in-out .8s;
-    }
-
-    &.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    gap: 12px;
+    padding: 20px 20px 20px 30px;
 
     &:not(:last-child) {
       &::after {
@@ -95,7 +63,7 @@
         background-color: #D9BA5B;
       }
 
-      .numbers__item-num {
+      .reviews__item-name {
 
         &::before,
         &::after {
@@ -118,27 +86,29 @@
       }
     }
 
-    &-num {
+    &-name {
       font-weight: 700;
-      @include fluid(font-size, 32px, 36px);
-      line-height: 1;
-      @include fluid(min-height, 55px, 66px);
+      @include fluid(font-size, 20px, 24px);
     }
 
     &-text {
       line-height: 22px;
       font-size: 20px;
     }
+
+    &-date {
+      display: block;
+      color: #A4A4A4;
+      font-size: 16px;
+    }
   }
 }
 
 @media(max-width: 992px) {
-  .numbers {
-
-    &__img {
-      &:first-child {
-        display: none;
-      }
+  .reviews {
+    &__top {
+      align-items: start;
+      flex-direction: column;
     }
 
     &__title {
@@ -152,8 +122,8 @@
     }
 
     &__item {
-      opacity: 1;
-      transform: unset;
+      padding-top: 30px;
+      padding-bottom: 30px;
 
       &::after {
         content: '';
@@ -173,7 +143,7 @@
           height: 1px;
         }
 
-        .numbers__item-num {
+        .reviews__item-name {
           &::after {
             top: -2px;
             right: 0;
@@ -181,7 +151,7 @@
         }
       }
 
-      .numbers__item-num {
+      .reviews__item-name {
 
         &::before,
         &::after {
@@ -206,8 +176,29 @@
         }
       }
 
-      &-num {
+      &-name {
         min-height: unset;
+      }
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .reviews {
+    position: relative;
+
+    &__wrapper {
+      padding-bottom: 113px;
+    }
+
+    &__top {
+      .btn:last-child {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 86%;
+        padding: 15px 30px;
       }
     }
   }

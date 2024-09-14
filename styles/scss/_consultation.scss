@@ -14,6 +14,7 @@
     @include fluid(padding-top, 30px, 70px);
     @include fluid(padding-left, 0px, 35px);
     @include fluid(padding-right, 0px, 35px);
+    @include fluid(padding-bottom, 30px, 60px);
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
@@ -28,6 +29,9 @@
   }
 
   &__item {
+    position: relative;
+    z-index: 1;
+
     &-title {
       @include fluid(max-width, 270px, 500px);
       @include fluid(font-size, 24px, 40px);
@@ -52,53 +56,46 @@
       a {
         color: #A1A1A1;
         text-decoration: underline;
+        transition: color .23s ease-in-out;
+
+        &:hover {
+          color: #2A275F;
+        }
       }
     }
   }
 
   &__box {
-    position: relative;
     display: flex;
     justify-content: center;
 
     &-fon {
       position: absolute;
-      @include fluid(width, 309px, 566px);
-      @include fluid(height, 309px, 566px);
+      bottom: -40px;
       @include fluid(right, -15px, -30px);
-      @include fluid(top, 0px, -80px);
+      @include fluid(width, 450px, 566px);
+      @include fluid(height, 450px, 566px);
     }
 
     &-img {
-      position: relative;
+      position: absolute;
+      bottom: 0;
+      @include fluid(right, 0px, 40px);
       z-index: 1;
-      @include fluid(height, 260px, 440px);
+      @include fluid(height, 360px, 440px);
       margin-left: auto;
       margin-top: auto;
     }
   }
 }
 
-@media(max-width: 992px) {
-  .consultation {
-    &__box {
-      padding-bottom: 70px;
-
-      &-img {
-        bottom: -70px;
-      }
-
-
-      &-fon {
-        top: unset;
-        bottom: -10px;
-      }
-    }
-  }
-}
 
 @media(max-width: 768px) {
   .consultation {
+    &__wrapper {
+      padding-bottom: 0;
+    }
+
     &__inner {
       grid-template-columns: 1fr;
     }
@@ -106,17 +103,24 @@
     &__box {
       padding-bottom: 0;
 
+      &:has(:not(.consultation__box)) {
+        padding-bottom: 240px;
+
+        .consultation__box-fon {
+          height: 290px;
+          bottom: -90;
+        }
+      }
+
       &-fon {
         right: unset;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -25px;
       }
 
-
       &-img {
+        position: relative;
         margin-right: auto;
-        bottom: 0;
       }
     }
   }

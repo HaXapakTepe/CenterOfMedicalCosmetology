@@ -22,32 +22,61 @@
           <div class="header__top">
             <div class="header__top-box">
               <div class="header__links">
-                <a class="header__links-link" href="#">
-                  О центре
-                </a>
+                <div class="header__links-box" href="#">
+                  <p class="header__links-link accordion">
+                    О центре
+                  </p>
+                  <div class="accordion-content accordion-content--pos">
+                    <div class="header__links-dropdown">
+                      <a class="header__links-dropdown__link" href="#">
+                        О центре
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Оборудование
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Подарочные сертификаты
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Специалисты
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Частые вопросы и ответы
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Наш клуб
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Пресса о нас
+                      </a>
+                    </div>
+                  </div>
+                </div>
                 <a class="header__links-link" href="#">
                   Публикации Центра
                 </a>
                 <div class="header__links-box" href="#">
-                  <a class="header__links-link" href="#">
-                    Публикации Центра
-                  </a>
-                  <div class="header__links-dropdown">
-                    <a class="header__links-dropdown__link" href="#">
-                      Имидж-студия O.V.
-                    </a>
-                    <a class="header__links-dropdown__link" href="#">
-                      Школа медицинской косметологии Оксаны Волковой
-                    </a>
-                    <a class="header__links-dropdown__link" href="#">
-                      Авторская косметика FORMULA O.V.
-                    </a>
-                    <a class="header__links-dropdown__link" href="#">
-                      Благотворительная деятельность
-                    </a>
-                    <a class="header__links-dropdown__link" href="#">
-                      Журнал Formula O.V.
-                    </a>
+                  <p class="header__links-link accordion">
+                    Другие проекты
+                  </p>
+                  <div class="accordion-content accordion-content--pos">
+                    <div class="header__links-dropdown">
+                      <a class="header__links-dropdown__link" href="#">
+                        Имидж-студия O.V.
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Школа медицинской косметологии Оксаны Волковой
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Авторская косметика FORMULA O.V.
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Благотворительная деятельность
+                      </a>
+                      <a class="header__links-dropdown__link" href="#">
+                        Журнал Formula O.V.
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <a class="header__links-link" href="#">
@@ -72,31 +101,47 @@
                   <p class="header__address-city__text">Санкт-Петербург</p>
                 </div>
                 <p class="header__address-text">
-                  Рылеева, 1
+                  <a href="#">Рылеева, 1</a>
                   <br>
-                  Таврическая, 37
+                  <a href="#">Таврическая, 37</a>
                   <br>
-                  Писарева, 18
+                  <a href="#">Писарева, 18</a>
                 </p>
                 <div class="header__address-work">
                   <p class="header__address-work__title">
                     Режим работы
                   </p>
                   <p class="header__address-work__text">
-                    <strong>ПН-ВС:</strong>
-                    9:00 — 18:00 МСК
+                    <strong>ПН — ПТ:</strong>
+                    с 10:00 до 20:00
+                  </p>
+                  <p class="header__address-work__text">
+                    <strong>СБ — ВС:</strong>
+                    с 11:00 до 19:00
                   </p>
                 </div>
               </div>
             </div>
-            <a class="phone" href="tel:+78123171944">
-              +7 (812) 317-19-44
-            </a>
+            <div class="socials">
+              <a class="socials__link" href="#">
+                <i class="socials__link-icon">
+                  <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="18.6178" cy="18.7606" r="18.0236" fill="#D9BA5B" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M9.78271 14.1664C9.92618 20.7887 13.3697 24.7685 19.4069 24.7685H19.7491V20.9797C21.9675 21.192 23.645 22.7521 24.3183 24.7685H27.4529C26.592 21.7545 24.3293 20.0883 22.9166 19.4515C24.3293 18.6662 26.316 16.7559 26.7905 14.1664H23.9429C23.3249 16.2677 21.4929 18.178 19.7491 18.3584V14.1664H16.9015V21.5104C15.1356 21.0859 12.9062 19.027 12.8068 14.1664H9.78271Z"
+                      fill="#2A275F" />
+                  </svg>
+                </i>
+              </a>
+              <a class="phone" href="tel:+78123171944">
+                +7 (812) 317-19-44
+              </a>
+            </div>
           </div>
           <div class="header__inner">
             <a class="logo" href="#">
               <picture class="logo__img">
-                <source srcset="./assets/images/logo-mobile.svg" media="(max-width: 992px)">
+                <source srcset="./assets/images/logo-mobile.svg" media="(max-width: 1366px)">
                 <img src="./assets/images/logo.svg" alt="">
               </picture>
             </a>
@@ -159,9 +204,9 @@
               <div class="promo__item-content">
                 <h1 class="promo__item-title title">
                   Центр
-
+                  <br>
                   Медицинской
-
+                  <br>
                   Косметологии
                 </h1>
                 <p class="promo__item-text">
@@ -695,6 +740,279 @@
         </div>
       </section>
 
+      <section class="problems">
+        <div class="problems__wrapper">
+          <div class="container">
+            <div class="problems__inner">
+              <div class="problems__inner-box">
+                <div class="problems__block">
+                  <p class="problems__block-title title">
+                    Какие проблемы мы решаем
+                  </p>
+                  <p class="problems__block-text">
+                    Современная косметология решает многие эстетические проблемы кожи, сохраняя здоровье, красоту и
+                    молодость человека.
+                  </p>
+                  <p class="problems__block-text">
+                    Главное сегодня — это разумный подход к проблеме, выбор наиболее эффективных и безопасных решений из
+                    огромного списка существующих на рынке красоты методик. И с этой задачей блестяще справляются наши
+                    врачи-косметологи, благодаря своему опыту и результатам работы заслужившие доверие наших пациентов.
+                  </p>
+                  <p class="problems__block-text">
+                    <strong>Ваши проблемы — наши решения.</strong>
+                  </p>
+                  <a class="btn btn--bigAlt btn--blue" href="#">
+                    Записаться на прием
+                  </a>
+                </div>
+              </div>
+              <div class="problems__inner-box">
+                <div class="problems__swiper swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="problems__slide">
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/1.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Старение кожи
+                          </a>
+                        </div>
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/2.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Лишний вес
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="problems__slide">
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/3.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Акне
+                          </a>
+                        </div>
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/4.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Эпиляция
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="problems__slide">
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/1.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Старение кожи
+                          </a>
+                        </div>
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/2.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Лишний вес
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="problems__slide">
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/3.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Акне
+                          </a>
+                        </div>
+                        <div class="problems__slide-box">
+                          <img class="problems__slide-img" src="./assets/images/problems/4.png" alt="">
+                          <a class="btn btn--big btn--width" href="#">
+                            Эпиляция
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="problems__arrow arrow arrow--pos">
+                  <div class="problems__arrow-prev arrow__prev swiper-button-prev"></div>
+                  <div class="problems__arrow-next arrow__next swiper-button-next"></div>
+                </div>
+                <div class="dots">
+                  <div class="problems__dots dots__pagination swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="consultation">
+        <div class="consultation__wrapper">
+          <div class="container">
+            <div class="consultation__inner">
+              <div class="consultation__item">
+                <p class="consultation__item-title">
+                  Не знаете, какая процедура вам подойдет?
+                </p>
+                <p class="consultation__item-subtitle">
+                  Запишитесь на консультацию специалиста и составьте индивидуальный план
+                </p>
+                <a class="btn btn--bigAlt btn--blue" href="#">
+                  Записаться на консультацию
+                </a>
+                <p class="consultation__item-text">
+                  Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                </p>
+              </div>
+              <div class="consultation__box">
+                <img class="consultation__box-fon" src="./assets/images/consultation/logo.svg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="reviews__wrapper">
+          <div class="container">
+            <div class="reviews__top">
+              <h2 class="reviews__title title">
+                Отзывы
+                <br>
+                посетителей
+              </h2>
+              <div class="reviews__top-box">
+                <a class="btn" href="#">
+                  Смотреть видеоотзывы
+                </a>
+                <a class="btn btn--blueAlt btn--width" href="#">
+                  Больше отзывов
+                </a>
+              </div>
+            </div>
+            <div class="reviews__inner">
+              <div class="reviews__item">
+                <p class="reviews__item-name">
+                  Ирина
+                </p>
+                <p class="reviews__item-text">
+                  Была в студии впервые,делала чистку лица.Всё очень понравилось!!!Очень вежливый персонал и свою работу
+                  выполняют качественно и профессионально!!!Рекомендую!!!
+                </p>
+                <time class="reviews__item-date" datetime="2024-08-27">27.08.2024</time>
+              </div>
+              <div class="reviews__item">
+                <p class="reviews__item-name">
+                  Марина Хрипунова
+                </p>
+                <p class="reviews__item-text">
+                  Совершенно потрясающий центр.
+                  Консультация прошла идеально , все рекомендации по делу.
+                  Прохожу на курс массажа и в восторге от каждого прикосновения мастера;)
+                  и конечно невозможно не отметить приятную атмосферу и заботу!
+                </p>
+                <time class="reviews__item-date" datetime="2024-08-27">27.08.2024</time>
+              </div>
+              <div class="reviews__item">
+                <p class="reviews__item-name">
+                  Анастасия Хорошайлова
+                </p>
+                <p class="reviews__item-text">
+                  Прекрасное место, очень приятная девушка администратор. Ходила на консультацию и процедуру по удалению
+                  купероза. Все объяснили, подобрали уход, ничего не навязывали и ответили на все вопросы)
+                </p>
+                <time class="reviews__item-date" datetime="2024-08-27">27.08.2024</time>
+              </div>
+              <div class="reviews__item">
+                <p class="reviews__item-name">
+                  Анастасия Хорошайлова
+                </p>
+                <p class="reviews__item-text">
+                  Прекрасное место, очень приятная девушка администратор. Ходила на консультацию и процедуру по удалению
+                  купероза. Все объяснили, подобрали уход, ничего не навязывали и ответили на все вопросы)
+                </p>
+                <time class="reviews__item-date" datetime="2024-08-27">27.08.2024</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="publications">
+        <div class="publications__wrapper">
+          <div class="container">
+            <h2 class="publications__title title">
+              Публикации Центра
+            </h2>
+            <div class="publications__inner">
+              <div class="publications__item">
+                <img class="publications__item-img" src="./assets/images/publications/1.png" alt="">
+                <p class="publications__item-title">
+                  Какой аппарат выбрать: Skintonic, LPG или ICOONE?
+                </p>
+                <p class="publications__item-text">
+                  Этот вопрос, наверное, можно назвать эксклюзивным вопросом наших клиентов. Потому что далеко не во
+                  всех косметологических центрах и клиниках у пациентов в принципе есть такой широкий выбор.
+                  <br>
+                  Как правило, все проблемы по коррекции фигуры, лечению целлюлита, повышению качества кожи,
+                  избавлению от отеков обычно предлагают решать с помощью одной технологии.
+                  <br>
+                  <br>
+                  Но мы-то знаем, что это не самый лучший вариант!
+                  <br>
+                  <br>
+                  Поэтому, разумеется, в наших Центрах представлены все три аппарата, и врачи у нас назначают
+                  процедуры не исходя из технических возможностей, а ориентируясь только на индивидуальные показания и
+                  пожелания каждого пациента.
+                </p>
+                <button class="btn">
+                  Читать
+                </button>
+              </div>
+              <div class="publications__item">
+                <img class="publications__item-img" src="./assets/images/publications/2.png" alt="">
+                <p class="publications__item-title">
+                  Эффективный уход по типу кожи
+                </p>
+                <p class="publications__item-text">
+                  Для профессионалов важно учитывать все факторы, включая тип старения. От этого зависит подбор
+                  средств для терапии или коррекции возрастных изменений.
+                  <br>
+                  <br>
+                  Прежде всего, косметологи оценивают кожу по:
+                  <br>
+                  активности сальных желез (нормальная, жирная, комбинированная),
+                  <br>
+                  по степени увлажненности (увлажненная, слабо увлажненная, обезвоженная),
+                  <br>
+                  по реактивности (переактивная, слабо реактивная, реактивная),
+                  <br>
+                  по тонусу (хороший тонус, средний, атония).
+                  <br>
+                  Кроме того, различают семь фототипов кожи (степень пигментации).
+                </p>
+                <button class="btn">
+                  Читать
+                </button>
+              </div>
+            </div>
+            <a class="btn btn--big btn--blue btn--width" href="#">
+              Все статьи
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="map">
+        <div class="container">
+          <div class="map__inner">
+            <div class="map__item" id="mapYandex"></div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <footer class="footer">
@@ -785,13 +1103,10 @@
                   Рылеева, 1
                 </p>
                 <p class="footer__address-text">
-                  ПН — ПТ: с 10:00 до 20:00,
+                  ПН — ПТ: с 10:00 до 20:00
                 </p>
                 <p class="footer__address-text">
-                  СБ: с 11:00 до 19:00,
-                </p>
-                <p class="footer__address-text">
-                  ВС: c 11:00 до 19:00
+                  СБ — ВС: с 11:00 до 19:00
                 </p>
               </div>
               <div class="footer__address-item">
@@ -799,13 +1114,10 @@
                   Таврическая 37
                 </p>
                 <p class="footer__address-text">
-                  ПН — ПТ: с 10:00 до 20:00,
+                  ПН — ПТ: с 10:00 до 20:00
                 </p>
                 <p class="footer__address-text">
-                  СБ: с 11:00 до 19:00,
-                </p>
-                <p class="footer__address-text">
-                  ВС: c 11:00 до 19:00
+                  СБ — ВС: с 11:00 до 19:00
                 </p>
               </div>
               <div class="footer__address-item">
@@ -813,21 +1125,30 @@
                   Писарева, 18
                 </p>
                 <p class="footer__address-text">
-                  ПН — ПТ: с 10:00 до 20:00,
+                  ПН — ПТ: с 10:00 до 20:00
                 </p>
                 <p class="footer__address-text">
-                  СБ: с 11:00 до 19:00,
-                </p>
-                <p class="footer__address-text">
-                  ВС: c 11:00 до 19:00
+                  СБ — ВС: с 11:00 до 19:00
                 </p>
               </div>
             </div>
             <div class="footer__item">
               <button class="btn">ЗАКАЗАТЬ ЗВОНОК</button>
-              <a class="phone phone--yellow" href="tel:+78123171944">
-                +7 (812) 317-19-44
-              </a>
+              <div class="socials">
+                <a class="socials__link" href="#">
+                  <i class="socials__link-icon">
+                    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="18.6178" cy="18.7606" r="18.0236" fill="#D9BA5B" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.78271 14.1664C9.92618 20.7887 13.3697 24.7685 19.4069 24.7685H19.7491V20.9797C21.9675 21.192 23.645 22.7521 24.3183 24.7685H27.4529C26.592 21.7545 24.3293 20.0883 22.9166 19.4515C24.3293 18.6662 26.316 16.7559 26.7905 14.1664H23.9429C23.3249 16.2677 21.4929 18.178 19.7491 18.3584V14.1664H16.9015V21.5104C15.1356 21.0859 12.9062 19.027 12.8068 14.1664H9.78271Z"
+                        fill="#2A275F" />
+                    </svg>
+                  </i>
+                </a>
+                <a class="phone phone--yellow" href="tel:+78123171944">
+                  +7 (812) 317-19-44
+                </a>
+              </div>
               <a class="phone phone--yellow" href="mailto:ADMIN@VOLKOVABEAUTY.RU">
                 ADMIN@VOLKOVABEAUTY.RU
               </a>
@@ -849,6 +1170,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script src="./scripts/scripts.js"></script>
 </body>
 

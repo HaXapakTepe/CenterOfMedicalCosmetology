@@ -1,0 +1,132 @@
+.problems {
+  @include fluid(margin-top, 30px, 75px);
+  @include fluid(margin-bottom, 30px, 75px);
+  margin-left: 15px;
+  margin-right: 15px;
+
+  .container {
+    width: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1360px;
+    @include fluid(padding-top, 55px, 75px);
+    @include fluid(padding-left, 16px, 54px);
+    @include fluid(padding-right, 16px, 54px);
+    @include fluid(padding-bottom, 23px, 92px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #FFF4D5;
+    overflow: hidden;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 30% 66%;
+    justify-content: space-between;
+    gap: 30px;
+
+    &-box {
+      position: relative;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &-title {
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      margin-bottom: 30px;
+
+      &:has(+.problems__block-text) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .btn {
+      margin-top: auto;
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      @include fluid(height, 173px, 262px);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    &-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    .btn {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+    }
+  }
+
+  &__arrow {
+    &-prev {
+      @include fluid(left, -20px, -50px);
+    }
+
+    &-next {
+      @include fluid(right, -20px, -50px);
+    }
+  }
+
+  &__dots {
+    display: none;
+  }
+}
+
+@media(max-width: 992px) {
+  .problems {
+    &__inner {
+      grid-template-columns: 100%;
+    }
+
+    &__arrow {
+      display: none;
+    }
+
+    &__dots {
+      display: block;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .problems {
+    &__swiper {
+      height: 735px;
+    }
+  }
+}
