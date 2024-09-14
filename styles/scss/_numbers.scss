@@ -144,21 +144,35 @@
         }
 
         .numbers__item-num {
-
-          &::before,
           &::after {
-            bottom: -3px;
-          }
-
-          &::after {
-            top: unset;
-            right: unset;
-            left: 0;
-          }
-
-          &::before {
+            top: -2px;
             right: 0;
           }
+        }
+      }
+
+      .numbers__item-num {
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: -2px;
+          bottom: unset;
+          width: 5px;
+          height: 5px;
+          background-color: #D9BA5B;
+          border-radius: 50%;
+        }
+
+        &::before {
+          left: 0;
+
+        }
+
+        &::after {
+          left: unset;
+          right: 0;
         }
       }
 
