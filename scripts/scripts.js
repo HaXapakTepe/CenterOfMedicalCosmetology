@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body')
 	const burger = document.querySelector('.burger')
 	const menu = document.querySelector('.menu')
-	const menuItem = document.querySelectorAll('.menu__item')
-	const close = document.querySelector('.menu__close')
 
 	const toggleMenu = () => {
 		menu.classList.toggle('menu--active')
@@ -63,42 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	function handleTabClick(
-		tabs,
-		pages,
-		activeTabClass,
-		activePageClass,
-		opacityPageClass
-	) {
-		tabs.forEach((tab, idx) => {
-			tab.addEventListener('click', () => {
-				tabs.forEach(tab => tab.classList.remove(activeTabClass))
-				pages.forEach(page => {
-					page.classList.remove(activePageClass)
-					page.classList.remove(opacityPageClass)
-				})
-
-				tab.classList.add(activeTabClass)
-				pages[idx].classList.add(activePageClass)
-
-				setTimeout(() => {
-					pages[idx].classList.add(opacityPageClass)
-				}, 380)
-			})
-		})
-	}
-
-	const tabs = document.querySelectorAll('.tab__target')
-	const pages = document.querySelectorAll('.tab__info')
-
-	handleTabClick(
-		tabs,
-		pages,
-		'tab__target--active',
-		'tab__info--active',
-		'tab__info--opacity'
-	)
-
 	const accordion = document.querySelectorAll('.accordion')
 
 	accordion?.forEach(acc => {
@@ -115,128 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	})
-
-	// const accordion = document.querySelectorAll('.accordion')
-
-	// if (accordion) {
-	// 	accordion.forEach(acc => {
-	// 		acc.addEventListener('click', () => {
-	// 			const content = acc.querySelector('.accordion__content')
-
-	// 			if (acc.classList.contains('accordion--active')) {
-	// 				acc.classList.remove('accordion--active')
-	// 				content.style.maxHeight = '0'
-	// 			} else {
-	// 				acc.classList.add('accordion--active')
-	// 				content.style.maxHeight = `${content.scrollHeight}px`
-	// 			}
-	// 		})
-	// 	})
-
-	// 	document.addEventListener('click', e => {
-	// 		const isAccordionClicked = e.target.closest('.accordion')
-
-	// 		if (!isAccordionClicked) {
-	// 			accordion.forEach(acc => {
-	// 				const content = acc.querySelector('.accordion__content')
-	// 				acc.classList.remove('accordion--active')
-	// 				content.style.maxHeight = '0'
-	// 			})
-	// 		}
-	// 	})
-	// }
-
-	// accordion?.forEach(acc => {
-	// 	acc.addEventListener('click', function (e) {
-	// 		const content = this.querySelector('.accordion__content')
-	// 		if (!this.classList.contains('accordion--active')) {
-	// 			accordion.forEach(otherAcc => {
-	// 				if (otherAcc !== this) {
-	// 					const otherContent = otherAcc.querySelector('.accordion__content')
-	// 					otherAcc.classList.remove('accordion--active')
-	// 					otherContent.style.maxHeight = '0'
-	// 				}
-	// 			})
-	// 			this.classList.add('accordion--active')
-	// 			content.style.maxHeight = content.scrollHeight + 'px'
-	// 		} else {
-	// 			this.classList.remove('accordion--active')
-	// 			content.style.maxHeight = '0'
-	// 		}
-	// 	})
-	// })
-
-	// accordionAlt?.forEach(acc => {
-	// 	acc.addEventListener('click', function (e) {
-	// 		const content = this.querySelector('.accordionAlt__content')
-	// 		if (!e.target.closest('.accordionAlt__content')) {
-	// 			if (!this.classList.contains('accordionAlt--active')) {
-	// 				accordionAlt.forEach(otherAcc => {
-	// 					if (otherAcc !== this) {
-	// 						const otherContent = otherAcc.querySelector(
-	// 							'.accordionAlt__content'
-	// 						)
-	// 						otherAcc.classList.remove('accordionAlt--active')
-	// 						otherContent.style.maxHeight = '0'
-	// 					}
-	// 				})
-	// 				this.classList.add('accordionAlt--active')
-	// 				content.style.maxHeight = content.scrollHeight + 'px'
-	// 			} else {
-	// 				this.classList.remove('accordionAlt--active')
-	// 				content.style.maxHeight = '0'
-	// 			}
-	// 		}
-	// 	})
-	// })
-
-	// const accordions = document.querySelectorAll('.accordion')
-	// const contents = document.querySelectorAll('.accordion-content')
-
-	// accordions?.forEach((acc, index) => {
-	//   acc.addEventListener('click', (e) => {
-	//     e.preventDefault()
-
-	//     const content = contents[index]
-
-	//     if (acc.classList.contains('accordion--active')) {
-	//       acc.classList.remove('accordion--active')
-	//       content.style.maxHeight = '0'
-	//     } else {
-	//       acc.classList.add('accordion--active')
-	//       content.style.maxHeight = content.scrollHeight + 'px'
-	//     }
-	//   })
-	// })
-
-	const menuLinks = document.querySelectorAll('[class][data-goto]')
-
-	if (menuLinks.length > 0) {
-		menuLinks.forEach(link => {
-			link.addEventListener('click', onMenuLinkClick)
-		})
-
-		function onMenuLinkClick(e) {
-			const link = e.target
-			if (link.dataset.goto && document.querySelector(link.dataset.goto)) {
-				const gotoBlock = document.querySelector(link.dataset.goto)
-				const gotoBlockValue = gotoBlock.getBoundingClientRect().top
-				window.scrollBy({
-					top: gotoBlockValue,
-					behavior: 'smooth',
-				})
-				e.preventDefault()
-			}
-		}
-	}
-
-	if (document.querySelector('[name="phone"]')) {
-		const element = document.querySelector('[name="phone"]')
-		const maskOptions = {
-			mask: '+{7} 000 000 00 00',
-		}
-		const mask = IMask(element, maskOptions)
-	}
 
 	if (document.querySelector('.slider__swiper')) {
 		var sliderSwiper = new Swiper('.slider__swiper', {
@@ -364,6 +204,35 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	})
 	// }
 
+	if (document.querySelector('.licenses__swiper')) {
+		var licensesSwiper = new Swiper('.licenses__swiper', {
+			slidesPerView: 3,
+			spaceBetween: 80,
+			breakpoints: {
+				993: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+				577: {
+					slidesPerView: 2,
+					spaceBetween: 10,
+				},
+				361: {
+					slidesPerView: 1.2,
+					spaceBetween: 10,
+				},
+				320: {
+					slidesPerView: 1.2,
+					spaceBetween: 10,
+				},
+			},
+			navigation: {
+				nextEl: `.licenses__arrow-next`,
+				prevEl: `.licenses__arrow-prev`,
+			},
+		})
+	}
+
 	if (document.querySelector('#mapYandex')) {
 		const map = document.querySelector('.map')
 		const points = [
@@ -403,9 +272,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			points.forEach(point => {
 				const content = `
           <div class="map__ballon">
-            <div class="map__ballon-box">
-              <p class="map__ballon-title">Телефон</p>
-              <p class="map__ballon-text"><a href="tel:${point.text}">${point.text}</a></p>
+          <div class="map__ballon-box">
+          <p class="map__ballon-title">Телефон</p>
+          <p class="map__ballon-text"><a href="tel:${point.text}">${point.text}</a></p>
             </div>
             <div class="map__ballon-box">
               <p class="map__ballon-title">Адрес</p>
@@ -415,8 +284,8 @@ document.addEventListener('DOMContentLoaded', () => {
               <p class="map__ballon-title">График работы</p>
               <p class="map__ballon-text">${point.schedule}</p>
             </div>
-          </div>
-        `
+            </div>
+            `
 
 				const myPlacemark = new ymaps.Placemark(
 					point.coords,

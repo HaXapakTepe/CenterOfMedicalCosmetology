@@ -27,7 +27,8 @@
     &-img {
       position: relative;
       z-index: 1;
-      @include fluid(height, 370px, 565px);
+      @include fluid(max-height, 370px, 565px);
+      height: 95%;
       -o-object-fit: contain;
       object-fit: contain;
     }
