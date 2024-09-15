@@ -15,6 +15,7 @@
     z-index: 5;
     border-radius: 12px;
     cursor: pointer;
+    transition: background-color .23s ease-in-out;
 
     &__line {
       position: relative;
@@ -32,7 +33,7 @@
         left: 50%;
         width: 18px;
         height: 2px;
-        background: #000;
+        background: #fff;
         border-radius: 100px;
         transition: all .23s ease-in-out;
       }
@@ -47,7 +48,10 @@
     }
 
     &--active {
+      background-color: transparent;
+
       .burger {
+
         &__line {
           width: 0;
           background: transparent;

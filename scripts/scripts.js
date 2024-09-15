@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				if (headerInner.getBoundingClientRect().top < 0) {
 					header.classList.add('header--fixed')
-				} else if (bodyRect.top >= -44) {
+				} else if (bodyRect.top >= -51) {
 					header.classList.remove('header--fixed')
 				}
 			}
