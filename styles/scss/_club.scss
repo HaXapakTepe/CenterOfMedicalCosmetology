@@ -1,0 +1,119 @@
+.club {
+  @include fluid(margin-top, 30px, 75px);
+  @include fluid(margin-bottom, 30px, 75px);
+
+  &__text {
+    @include fluid(margin-bottom, 30px, 75px);
+    font-weight: 500;
+    @include fluid(font-size, 18px, 40px);
+
+    a {
+      color: #D9BA5B;
+      border-bottom: 3px solid #D9BA5B;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include fluid(padding-left, 20px, 50px);
+    @include fluid(padding-right, 20px, 50px);
+    @include fluid(gap, 20px, 40px);
+
+    &-line {
+      position: relative;
+      grid-column: 1/3;
+
+      &:first-child {
+        border-top: 1px solid #D9BA5B;
+
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          top: -3px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #D9BA5B;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 1px solid #D9BA5B;
+
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #D9BA5B;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-text {
+      @include fluid(font-size, 16px, 20px);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+    -o-object-position: top;
+    object-position: top;
+  }
+}
+
+@media(max-width: 992px) {
+  .club {
+    &__inner {
+      grid-template-columns: 1fr;
+
+      &-line {
+        grid-column: unset;
+      }
+    }
+
+    &__img {
+      height: 300px;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .club {
+    &__img {
+      height: 220px;
+    }
+  }
+}

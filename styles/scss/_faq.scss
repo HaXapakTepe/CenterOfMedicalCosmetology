@@ -1,0 +1,129 @@
+.faq {
+  @include fluid(margin-top, 20px, 36px);
+  @include fluid(margin-bottom, 30px, 75px);
+
+  &__fon {
+    position: relative;
+    @include fluid(padding-top, 30px, 65px);
+    @include fluid(padding-bottom, 50px, 100px);
+    @include fluid(padding-left, 30px, 55px);
+    @include fluid(padding-right, 30px, 55px);
+    border-radius: 10px;
+    background-color: #D9BA5B;
+    @include fluid(margin-bottom, 20px, 40px);
+
+    &-box {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-text {
+      @include fluid(font-size, 16px, 20px);
+    }
+
+    &-img {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      @include fluid(width, 290px, 400px);
+      @include fluid(height, 290px, 400px);
+      pointer-events: none;
+    }
+  }
+
+  &__inner {
+    @include fluid(padding-left, 20px, 53px);
+    @include fluid(padding-right, 20px, 53px);
+
+    &-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 20px, 35px);
+      padding-top: 20px;
+      border-top: 1px solid #D9BA5B;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #D9BA5B;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D9BA5B;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #D9BA5B;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    &-hidden {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    &-title {
+      @include fluid(font-size, 20px, 32px);
+      font-weight: 700;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-70%);
+        width: 48px;
+        height: 48px;
+        background-image: url('../../assets/images/icons/plus-circle.svg');
+        background-repeat: no-repeat;
+        background-size: contain
+      }
+    }
+
+    &-text {
+      max-width: 1000px;
+      @include fluid(font-size, 14px, 18px);
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .faq {
+    margin-top: 110px;
+  }
+}

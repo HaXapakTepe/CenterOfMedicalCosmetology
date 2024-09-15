@@ -122,3 +122,13 @@
     }
   }
 }
+
+@media(max-width: 576px) {
+  .popular {
+    &__inner {
+      +.btn {
+        width: 100%;
+      }
+    }
+  }
+}
