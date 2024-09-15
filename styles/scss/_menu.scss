@@ -55,7 +55,6 @@
   &__dropdown {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
 
     &-link {
       font-size: 14px;
@@ -72,10 +71,10 @@
     top: 91px;
     left: 0;
     width: 101vw;
-    height: 100dvh;
+    height: 90dvh;
     transform: translateX(-200%);
     flex-direction: column;
-    padding: 20px 20px 20px 20px;
+    padding: 10px 20px;
     background-color: #FFF4D5;
     opacity: 0;
     visibility: hidden;
@@ -89,6 +88,7 @@
       max-width: 702px;
       margin-left: auto;
       margin-right: auto;
+      overflow: auto;
     }
 
     &--active {
@@ -106,12 +106,54 @@
       width: 100%;
 
       &--hidden {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .search {
+          margin-left: auto;
+        }
+
+        .phone {
+          margin-left: unset;
+        }
+
+        .btn {
+          display: block;
+        }
+
+        .header__address {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          padding-left: 40px;
+          color: #2A275F;
+
+          &-city__icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+
+          &-work__text {
+            color: #2A275F;
+          }
+
+          &-text {
+            a {
+              color: #2A275F;
+            }
+          }
+        }
       }
     }
 
     &__link {
       display: block;
+      width: 100%;
       padding: 10px 20px;
       text-align: right;
       color: #2A275F;

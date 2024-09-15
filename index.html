@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./styles/css/normalize.css" />
   <link rel="stylesheet" href="./styles/css/style.min.css" />
-  <title>Center of Medical Cosmetology </title>
+  <title>Главная </title>
 </head>
 
 <body>
@@ -242,9 +242,73 @@
                       Контакты
                     </a>
                   </li>
+                  <li class="menu__item menu__item--hidden">
+                    <form class="search" action="">
+                      <label class="search__label">
+                        <input class="search__input" type="search" placeholder="Поиск" />
+                        <button class="search__icon">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="7" stroke="rgba(152, 152, 152, .62)" stroke-width="2" />
+                            <path d="M20 20L17 17" stroke="rgba(152, 152, 152, .62)" stroke-width="2"
+                              stroke-linecap="round" />
+                          </svg>
+                        </button>
+                      </label>
+                    </form>
+                  </li>
+                  <li class="menu__item menu__item--hidden">
+                    <div class="header__address">
+                      <div class="header__address-city">
+                        <img class="header__address-city__icon" src="./assets/images/icons/loca.svg" alt="">
+                        <p class="header__address-city__text">Санкт-Петербург</p>
+                      </div>
+                      <p class="header__address-text">
+                        <a href="#">Рылеева, 1</a>
+                        <br>
+                        <a href="#">Таврическая, 37</a>
+                        <br>
+                        <a href="#">Писарева, 18</a>
+                      </p>
+                      <div class="header__address-work">
+                        <p class="header__address-work__title">
+                          Режим работы
+                        </p>
+                        <p class="header__address-work__text">
+                          <strong>ПН — ПТ:</strong>
+                          с 10:00 до 20:00
+                        </p>
+                        <p class="header__address-work__text">
+                          <strong>СБ — ВС:</strong>
+                          с 11:00 до 19:00
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu__item menu__item--hidden">
+                    <div class="socials">
+                      <a class="socials__link" href="#">
+                        <i class="socials__link-icon">
+                          <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="18.6178" cy="18.7606" r="18.0236" fill="#D9BA5B" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.78271 14.1664C9.92618 20.7887 13.3697 24.7685 19.4069 24.7685H19.7491V20.9797C21.9675 21.192 23.645 22.7521 24.3183 24.7685H27.4529C26.592 21.7545 24.3293 20.0883 22.9166 19.4515C24.3293 18.6662 26.316 16.7559 26.7905 14.1664H23.9429C23.3249 16.2677 21.4929 18.178 19.7491 18.3584V14.1664H16.9015V21.5104C15.1356 21.0859 12.9062 19.027 12.8068 14.1664H9.78271Z"
+                              fill="#2A275F" />
+                          </svg>
+                        </i>
+                      </a>
+                      <a class="phone" href="tel:+78123171944">
+                        +7 (812) 317-19-44
+                      </a>
+                    </div>
+                  </li>
+                  <li class="menu__item menu__item--hidden">
+                    <a class="btn" href="">Записаться на прием</a>
+                  </li>
                 </ul>
               </nav>
-              <button class="btn">Записаться на прием</button>
+              <a class="btn" href="#">Записаться на прием</a>
               <a class="phone phone--white" href="tel:+78123171944">
                 +7 (812) 317-19-44
               </a>
@@ -599,7 +663,7 @@
                 <a class="btn btn--bigAlt btn--blue" href="#">
                   Записаться на консультацию
                 </a>
-                <p class="consultation__item-text">
+                <p class="consultation__item-textGray">
                   Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
                 </p>
               </div>
@@ -914,16 +978,16 @@
           <div class="container">
             <div class="consultation__inner">
               <div class="consultation__item">
-                <p class="consultation__item-title">
-                  Не знаете, какая процедура вам подойдет?
-                </p>
                 <p class="consultation__item-subtitle">
-                  Запишитесь на консультацию специалиста и составьте индивидуальный план
+                  Запишитесь на прием специалиста
+                </p>
+                <p class="consultation__item-text">
+                  Выберите дату, время и адрес первичной консультации либо оставьте контакты для записи на процедуру
                 </p>
                 <a class="btn btn--bigAlt btn--blue" href="#">
-                  Записаться на консультацию
+                  Записаться на прием
                 </a>
-                <p class="consultation__item-text">
+                <p class="consultation__item-textGray">
                   Нажимая на кнопку вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
                 </p>
               </div>

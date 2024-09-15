@@ -41,14 +41,25 @@
     }
 
     &-subtitle {
+      max-width: 520px;
       margin-bottom: 30px;
       @include fluid(font-size, 24px, 32px);
       font-weight: 700;
       color: #2A275F;
-      text-wrap: balance;
+
+      &:has(+.consultation__item-text) {
+        margin-bottom: 10px;
+      }
     }
 
     &-text {
+      max-width: 520px;
+      @include fluid(font-size, 16px, 20px);
+      margin-bottom: 30px;
+      text-wrap: balance
+    }
+
+    &-textGray {
       @include fluid(margin-top, 20px, 25px);
       font-size: 15px;
       color: #A1A1A1;
@@ -71,10 +82,10 @@
 
     &-fon {
       position: absolute;
-      bottom: -40px;
+      top: 0;
       @include fluid(right, -15px, -30px);
-      @include fluid(width, 450px, 566px);
-      @include fluid(height, 450px, 566px);
+      @include fluid(width, 350px, 566px);
+      @include fluid(height, 350px, 566px);
     }
 
     &-img {
@@ -108,14 +119,17 @@
 
         .consultation__box-fon {
           height: 290px;
-          bottom: -90;
+          bottom: -20px;
         }
       }
 
       &-fon {
+        top: unset;
         right: unset;
         left: 50%;
         transform: translateX(-50%);
+        height: 290px;
+        width: 290px;
       }
 
       &-img {
