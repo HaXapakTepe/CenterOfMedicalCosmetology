@@ -1,6 +1,6 @@
 .faq {
   @include fluid(margin-top, 20px, 36px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-bottom, 30px, 100px);
 
   &__fon {
     position: relative;
@@ -18,7 +18,7 @@
     }
 
     &-text {
-      @include fluid(font-size, 16px, 20px);
+      @include fluid(font-size, 16px, 22px);
     }
 
     &-img {
@@ -97,7 +97,7 @@
     }
 
     &-title {
-      @include fluid(font-size, 20px, 32px);
+      @include fluid(font-size, 20px, 36px);
       font-weight: 700;
       cursor: pointer;
 

@@ -1,5 +1,5 @@
 .phone {
-  font-size: 18px;
+  @include fluid(font-size, 18px, 22px);
   font-weight: 700;
   color: #2A275F;
   white-space: nowrap;

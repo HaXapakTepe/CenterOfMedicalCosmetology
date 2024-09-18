@@ -1,11 +1,11 @@
 .logo {
   &__img {
-    height: 47px;
+    @include fluid(height, 47px, 67px);
     -o-object-fit: contain;
     object-fit: contain;
 
     img {
-      height: 47px;
+      @include fluid(height, 47px, 67px);
       -o-object-fit: contain;
       object-fit: contain;
     }

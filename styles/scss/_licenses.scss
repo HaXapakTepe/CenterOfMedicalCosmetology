@@ -1,6 +1,6 @@
 .licenses {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
 
   &__title {
     @include fluid(margin-bottom, 30px, 40px);
@@ -57,7 +57,7 @@
 
     &-link {
       display: block;
-      @include fluid(font-size, 16px, 20px);
+      @include fluid(font-size, 16px, 22px);
       font-weight: 700;
       text-align: center;
       color: #2A275F;

@@ -1,6 +1,6 @@
 .problems {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
   margin-left: 15px;
   margin-right: 15px;
 
@@ -10,7 +10,7 @@
 
   &__wrapper {
     position: relative;
-    max-width: 1360px;
+    max-width: 1660px;
     @include fluid(padding-top, 55px, 75px);
     @include fluid(padding-left, 16px, 54px);
     @include fluid(padding-right, 16px, 54px);
@@ -46,7 +46,7 @@
     }
 
     &-text {
-      margin-bottom: 30px;
+      margin-bottom: 69px;
 
       &:has(+.problems__block-text) {
         margin-bottom: 20px;
@@ -72,7 +72,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      @include fluid(height, 173px, 262px);
+      @include fluid(height, 173px, 270px);
       border-radius: 10px;
       overflow: hidden;
     }
@@ -83,6 +83,11 @@
       height: 100%;
       -o-object-fit: cover;
       object-fit: cover;
+      transition: transform .23s ease-in-out;
+
+      &:has(+.btn:hover) {
+        transform: scale(1.05)
+      }
     }
 
     .btn {
@@ -101,10 +106,6 @@
       @include fluid(right, -20px, -50px);
     }
   }
-
-  &__dots {
-    display: none;
-  }
 }
 
 @media(max-width: 992px) {
@@ -115,10 +116,6 @@
 
     &__arrow {
       display: none;
-    }
-
-    &__dots {
-      display: block;
     }
   }
 }

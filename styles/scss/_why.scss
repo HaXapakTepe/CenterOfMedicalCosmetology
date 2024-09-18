@@ -1,8 +1,9 @@
 .why {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
 
   &__title {
+    @include fluid(font-size, 24px, 44px);
     @include fluid(margin-bottom, 30px, 35px);
   }
 
@@ -19,7 +20,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 
-    &:nth-child(odd) {
+    &:nth-child(even) {
       .why__item-box {
         order: -1;
       }
@@ -49,7 +50,7 @@
       padding-top: 20px;
       padding-bottom: 20px;
       @include fluid(padding-right, 0px, 20px);
-      padding-left: 63px;
+      @include fluid(padding-left, 63px, 80px);
       border-top: 1px solid #D9BA5B;
 
       &:last-child {
@@ -64,20 +65,20 @@
         content: counter(num, decimal-leading-zero);
         counter-increment: num;
         color: #D9BA5B6E;
-        font-size: 48px;
+        @include fluid(font-size, 48px, 60px);
         line-height: 1;
       }
     }
 
     &-title {
-      font-size: 20px;
+      @include fluid(font-size, 20px, 22px);
       font-weight: 700;
       line-height: 38px;
     }
 
     &-text {
       max-width: 569px;
-      font-size: 16px;
+      @include fluid(font-size, 16px, 18px);
       line-height: 21px;
     }
   }

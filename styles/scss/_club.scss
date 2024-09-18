@@ -1,11 +1,13 @@
 .club {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
 
   &__text {
-    @include fluid(margin-bottom, 30px, 75px);
+    @include fluid(margin-bottom, 30px, 100px);
     font-weight: 500;
-    @include fluid(font-size, 18px, 40px);
+    @include fluid(font-size, 18px, 44px);
+    text-wrap: balance;
+    text-align: center;
 
     a {
       color: #D9BA5B;
@@ -79,7 +81,7 @@
     gap: 16px;
 
     &-text {
-      @include fluid(font-size, 16px, 20px);
+      @include fluid(font-size, 16px, 22px);
     }
   }
 

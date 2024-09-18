@@ -1,11 +1,11 @@
 .popular {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
   margin-left: 15px;
   margin-right: 15px;
 
   &__wrapper {
-    max-width: 1360px;
+    max-width: 1660px;
     @include fluid(padding-top, 30px, 70px);
     @include fluid(padding-bottom, 60px, 43px);
     @include fluid(padding-left, 0px, 35px);
@@ -57,7 +57,7 @@
 
     &-img {
       width: 100%;
-      @include fluid(height, 155px, 200px);
+      @include fluid(height, 155px, 220px);
       -o-object-fit: cover;
       object-fit: cover;
       border-radius: 10px;
@@ -72,7 +72,7 @@
     }
 
     &-title {
-      @include fluid(font-size, 20px, 26px);
+      @include fluid(font-size, 20px, 28px);
       font-weight: 700;
       @include fluid(margin-bottom, 10px, 30px);
     }

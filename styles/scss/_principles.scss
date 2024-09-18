@@ -1,6 +1,6 @@
 .principles {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
 
   &__inner {
     display: grid;
@@ -33,13 +33,13 @@
     &-title {
       font-weight: 700;
       color: #D9BA5B;
-      @include fluid(font-size, 24px, 40px);
+      @include fluid(font-size, 24px, 44px);
       @include fluid(margin-bottom, 10px, 25px);
       letter-spacing: -.05em;
     }
 
     &-text {
-      @include fluid(font-size, 14px, 18px);
+      @include fluid(font-size, 14px, 22px);
       color: #fff;
     }
 

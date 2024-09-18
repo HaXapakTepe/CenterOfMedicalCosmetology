@@ -16,7 +16,7 @@
     padding-bottom: 2px;
     @include fluid(padding-left, 10px, 15px);
     @include fluid(padding-right, 10px, 15px);
-    font-size: 14px;
+    @include fluid(font-size, 14px, 18px);
     color: #fff;
     transition: color .23s ease-in-out, background-color .23s ease-in-out, border-radius .23s ease-in-out;
 
@@ -57,7 +57,7 @@
     flex-direction: column;
 
     &-link {
-      font-size: 14px;
+      @include fluid(font-size, 14px, 18px);
       line-height: 24px;
       text-align: right;
       color: #2A275F;

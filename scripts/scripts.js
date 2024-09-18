@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (window.innerWidth > 1366) {
 				if (headerInner.getBoundingClientRect().top < 0) {
 					header.classList.add('header--fixed')
-				} else if (bodyRect.top >= -84) {
+				} else if (bodyRect.top >= -97) {
 					header.classList.remove('header--fixed')
 				}
 			} else {
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	accordion?.forEach(acc => {
 		acc.addEventListener('click', e => {
 			e.preventDefault()
-			// const content = acc.querySelector('.accordion__content')
 			const content = acc.nextElementSibling
 			if (acc.classList.contains('accordion--active')) {
 				acc.classList.remove('accordion--active')
@@ -76,6 +75,39 @@ document.addEventListener('DOMContentLoaded', () => {
 				content.style.maxHeight = content.scrollHeight + 'px'
 			}
 		})
+	})
+
+	const accordionHover = document.querySelectorAll('.accordionHover')
+
+	accordionHover?.forEach(acc => {
+		if (innerWidth > 993) {
+			acc.addEventListener('mouseover', e => {
+				e.preventDefault()
+				const content = acc.querySelector('.accordionHover__content')
+				acc.classList.add('accordionHover--active')
+				content.style.maxHeight = content.scrollHeight + 'px'
+			})
+			acc.addEventListener('mouseleave', e => {
+				e.preventDefault()
+				const content = acc.querySelector('.accordionHover__content')
+				if (acc.classList.contains('accordionHover--active')) {
+					acc.classList.remove('accordionHover--active')
+					content.style.maxHeight = '0'
+				}
+			})
+		} else {
+      acc.addEventListener('click', e => {
+        e.preventDefault()
+        const content = acc.querySelector('.accordionHover__content')
+        if (acc.classList.contains('accordionHover--active')) {
+          acc.classList.remove('accordionHover--active')
+          content.style.maxHeight = '0'
+        } else {
+          acc.classList.add('accordionHover--active')
+          content.style.maxHeight = content.scrollHeight + 'px'
+        }
+      })
+    }
 	})
 
 	if (document.querySelector('.slider__swiper')) {
@@ -167,42 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		})
 	}
-
-	// const slidersSwipers = []
-	// const sliderSwiper = document.querySelectorAll('.slider__swiper')
-	// sliderSwiper?.forEach((swiper, index) => {
-	// 	slidersSwipers.push(setSlidersSwiper(index + 1))
-	// })
-	// function setSlidersSwiper(index) {
-	// 	return new Swiper(`.slider__swiper--${index}`, {
-	// 		navigation: {
-	// 			prevEl: `.slider__arrow-prev--${index}`,
-	// 			nextEl: `.slider__arrow-next--${index}`,
-	// 		},
-	// 		breakpoints: {
-	// 			992: {
-	// 				slidesPerView: 3,
-	// 				spaceBetween: 32,
-	// 			},
-	// 			768: {
-	// 				slidesPerView: 2.1,
-	// 				spaceBetween: 24,
-	// 			},
-	// 			576: {
-	// 				slidesPerView: 1.6,
-	// 				spaceBetween: 16,
-	// 			},
-	// 			414: {
-	// 				slidesPerView: 1.5,
-	// 				spaceBetween: 12,
-	// 			},
-	// 			320: {
-	// 				slidesPerView: 1.1,
-	// 				spaceBetween: 12,
-	// 			},
-	// 		},
-	// 	})
-	// }
 
 	if (document.querySelector('.licenses__swiper')) {
 		var licensesSwiper = new Swiper('.licenses__swiper', {
@@ -305,8 +301,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 })
-// $(document).ready(function () {})
-// $('.catalog__sorting').select2({
-//   dropdownParent: $('.catalog__sort-select'),
-//   // placeholder: 'Выберите из списка',
-// })

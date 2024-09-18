@@ -1,6 +1,6 @@
 .reviews {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
   margin-left: 15px;
   margin-right: 15px;
 
@@ -10,7 +10,7 @@
 
   &__wrapper {
     position: relative;
-    max-width: 1360px;
+    max-width: 1660px;
     @include fluid(padding-top, 41px, 63px);
     @include fluid(padding-left, 23px, 55px);
     @include fluid(padding-right, 23px, 45px);
@@ -36,7 +36,7 @@
     }
 
     .btn {
-      font-size: 16px;
+      @include fluid(font-size, 16px, 20px);
     }
   }
 
@@ -88,18 +88,19 @@
 
     &-name {
       font-weight: 700;
-      @include fluid(font-size, 20px, 24px);
+      @include fluid(font-size, 20px, 26px);
     }
 
     &-text {
       line-height: 22px;
-      font-size: 20px;
+      @include fluid(font-size, 20px, 22px);
     }
 
     &-date {
       display: block;
       color: #A4A4A4;
       font-size: 16px;
+      @include fluid(font-size, 16px, 18px);
     }
   }
 }

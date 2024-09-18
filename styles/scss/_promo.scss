@@ -20,7 +20,7 @@
         align-items: flex-start;
         @include fluid(padding-top, 20px, 50px);
         @include fluid(padding-bottom, 20px, 50px);
-        @include fluid(padding-left, 0px, 50px);
+        @include fluid(padding-left, 20px, 50px);
         background-color: transparent;
       }
     }
@@ -76,7 +76,7 @@
     }
 
     &-text {
-      @include fluid(font-size, 10px, 18px);
+      @include fluid(font-size, 14px, 20px);
       margin-bottom: 16px;
 
       &:has(+.promo__item-box) {

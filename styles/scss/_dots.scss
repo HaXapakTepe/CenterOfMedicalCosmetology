@@ -1,5 +1,6 @@
 .dots {
   margin-top: 30px;
+  display: none;
 
   .dots__pagination {
     position: relative;
@@ -14,5 +15,11 @@
         background-color: #2A275F;
       }
     }
+  }
+}
+
+@media(max-width:992px) {
+  .dots {
+    display: block;
   }
 }

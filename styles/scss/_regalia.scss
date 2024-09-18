@@ -1,0 +1,199 @@
+.regalia {
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
+  margin-left: 15px;
+  margin-right: 15px;
+
+  .container {
+    width: 100%;
+  }
+
+  .numbers {
+    @include fluid(margin-top, 20px, 40px);
+    margin-left: unset;
+    margin-right: unset;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1660px;
+    @include fluid(padding-top, 40px, 75px);
+    @include fluid(padding-left, 10px, 50px);
+    @include fluid(padding-right, 10px, 50px);
+    @include fluid(padding-bottom, 30px, 70px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #FFF4D5;
+    overflow: hidden;
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 20px, 32px);
+    @include fluid(margin-bottom, 30px, 100px);
+
+    &-title {
+      @include fluid(font-size, 24px, 44px);
+      font-weight: 700;
+    }
+
+    &-text {
+      max-width: 535px;
+    }
+
+    &-logo {
+      position: absolute;
+      @include fluid(width, 200px, 280px);
+      @include fluid(height, 200px, 280px);
+      @include fluid(top, -24px, -48px);
+      @include fluid(right, 15px, 30px);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    @include fluid(gap, 15px, 30px);
+    @include fluid(padding-top, 20px, 40px);
+    border-top: 1px solid #D9BA5B;
+    @include fluid(margin-bottom, 20px, 40px);
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #D9BA5B;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+
+    &:has(+.regalia__item) {
+      border-top: unset;
+      padding-top: unset;
+      @include fluid(padding-bottom, 20px, 40px);
+      border-bottom: 1px solid #D9BA5B;
+      @include fluid(margin-bottom, 40px, 75px);
+
+      &::after,
+      &::before {
+        top: unset;
+        bottom: -3px;
+      }
+
+      .regalia__item-img {
+        @include fluid(min-height, 280px, 352px);
+      }
+    }
+
+    +.regalia__item {
+      border-top: unset;
+      padding-top: unset;
+      @include fluid(padding-bottom, 20px, 40px);
+      border-bottom: 1px solid #D9BA5B;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after,
+      &::before {
+        top: unset;
+        bottom: -3px;
+      }
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      @include fluid(gap, 15px, 22px);
+    }
+
+    &-title {
+      font-weight: 700;
+      @include fluid(font-size, 20px, 36px);
+    }
+
+    &-text {
+      @include fluid(font-size, 16px, 22px);
+    }
+
+    &-img {
+      border-radius: 10px;
+      height: 100%;
+      @include fluid(min-height, 350px, 420px);
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include fluid(gap, 10px, 25px);
+
+      .regalia__item-text:last-child {
+        @include fluid(padding-left, 10px, 25px);
+        border-left: 1px solid #D9BA5B;
+      }
+
+      &:has(.regalia__item-block) {
+        display: flex;
+      }
+    }
+
+    &-block {
+      display: flex;
+      align-items: center;
+      @include fluid(gap, 10px, 25px);
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .regalia {
+    &__item {
+      grid-template-columns: 1fr;
+
+      &-img {
+        height: 350px;
+      }
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .regalia {
+    &__item {
+
+      &-grid {
+        grid-template-columns: 1fr;
+
+        &:has(.regalia__item-block) {
+          display: grid;
+        }
+
+        .regalia__item-text:last-child {
+          padding-left: unset;
+          border-left: unset;
+          padding-top: 10px;
+          border-top: 1px solid #D9BA5B;
+        }
+      }
+    }
+  }
+}

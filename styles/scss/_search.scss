@@ -54,7 +54,7 @@
     padding-bottom: 8px;
     padding-right: 20px;
     border-bottom: 1px solid rgba(152, 152, 152, .62);
-    font-size: 13px;
+    @include fluid(font-size, 14px, 16px);
     background-color: transparent;
     transition: border-color 0.23s ease-in-out, color .23s ease-in-out;
 
@@ -96,6 +96,8 @@
     cursor: pointer;
 
     svg {
+      @include fluid(width, 14px, 18px);
+      @include fluid(height, 14px, 18px);
 
       circle,
       path {
