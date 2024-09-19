@@ -107,6 +107,10 @@
 
 @media(max-width: 992px) {
   .popular {
+    &__wrapper {
+      max-width: 700px;
+    }
+
     &__inner {
       display: flex;
       flex-direction: column-reverse;

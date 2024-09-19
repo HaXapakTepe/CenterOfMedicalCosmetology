@@ -166,6 +166,10 @@
 
 @media(max-width: 992px) {
   .regalia {
+    &__wrapper {
+      max-width: 700px;
+    }
+
     &__item {
       grid-template-columns: 1fr;
 
