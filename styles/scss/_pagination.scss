@@ -1,6 +1,6 @@
 .pagination {
   margin-top: 20px;
-  
+
   &__list {
     position: relative;
     display: flex;
@@ -31,6 +31,14 @@
         background-color: #D9BA5B;
         color: #fff;
       }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .pagination {
+    &__wrapper {
+      max-width: 520px;
     }
   }
 }

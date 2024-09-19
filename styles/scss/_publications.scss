@@ -167,6 +167,10 @@
 
 @media(max-width: 768px) {
   .publications {
+    &__wrapper {
+      max-width: 520px;
+    }
+
     &__item {
       grid-template-columns: 260px 1fr;
 

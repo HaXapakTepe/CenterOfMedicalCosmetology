@@ -176,6 +176,14 @@
   }
 }
 
+@media(max-width: 768px) {
+  .regalia {
+    &__wrapper {
+      max-width: 520px;
+    }
+  }
+}
+
 @media(max-width: 576px) {
   .regalia {
     &__item {

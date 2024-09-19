@@ -99,10 +99,10 @@
   }
 }
 
-
 @media(max-width: 768px) {
   .consultation {
     &__wrapper {
+      max-width: 520px;
       padding-bottom: 0;
     }
 

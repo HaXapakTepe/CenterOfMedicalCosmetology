@@ -184,6 +184,14 @@
   }
 }
 
+@media(max-width: 768px) {
+  .reviews {
+    &__wrapper {
+      max-width: 520px;
+    }
+  }
+}
+
 @media(max-width: 576px) {
   .reviews {
     position: relative;

@@ -134,6 +134,9 @@
 
 @media(max-width: 992px) {
   .numbers {
+    &__wrapper {
+      max-width: 520px;
+    }
 
     &__img {
       &:first-child {
@@ -209,6 +212,14 @@
       &-num {
         min-height: unset;
       }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .numbers {
+    &__wrapper {
+      max-width: 520px;
     }
   }
 }

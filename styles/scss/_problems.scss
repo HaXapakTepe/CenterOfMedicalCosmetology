@@ -120,6 +120,14 @@
   }
 }
 
+@media(max-width: 768px) {
+  .problems {
+    &__wrapper {
+      max-width: 520px;
+    }
+  }
+}
+
 @media(max-width: 576px) {
   .problems {
     &__swiper {

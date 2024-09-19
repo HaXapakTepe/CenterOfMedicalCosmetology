@@ -134,6 +134,14 @@
   }
 }
 
+@media(max-width: 768px) {
+  .advantages {
+    &__wrapper {
+      max-width: 520px;
+    }
+  }
+}
+
 @media(max-width: 576px) {
   .advantages {
     &__item {
