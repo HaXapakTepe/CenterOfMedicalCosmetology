@@ -10,7 +10,7 @@
 
   &__wrapper {
     position: relative;
-    max-width: 1660px;
+    @include fluid(max-width, 942px, 1660px);
     @include fluid(padding-top, 30px, 70px);
     @include fluid(padding-left, 0px, 35px);
     @include fluid(padding-right, 0px, 35px);

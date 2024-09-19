@@ -5,7 +5,8 @@
   margin-right: 15px;
 
   &__wrapper {
-    max-width: 1660px;
+    @include fluid(max-width, 942px, 1660px);
+    @include fluid(max-width, 942px, 1660px);
     @include fluid(padding-top, 30px, 70px);
     @include fluid(padding-bottom, 60px, 43px);
     @include fluid(padding-left, 0px, 35px);
