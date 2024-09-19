@@ -83,7 +83,6 @@
     text-align: right;
     @include fluid(font-size, 12px, 14px);
     color: #808080;
-    text-decoration: underline;
     transition: color .23s ease-in-out;
 
     &:hover {
@@ -92,6 +91,8 @@
   }
 
   &__link {
+    text-decoration: underline;
+
     &:hover {
       color: #D9BA5B;
     }
