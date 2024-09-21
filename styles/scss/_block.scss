@@ -1,0 +1,61 @@
+.block {
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include fluid(gap, 20px, 25px);
+    @include fluid(padding-top, 20px, 40px);
+    @include fluid(padding-bottom, 20px, 40px);
+    border-top: 1px solid #D9BA5B;
+    border-bottom: 1px solid #D9BA5B;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #D9BA5B;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #D9BA5B;
+    }
+  }
+
+  &__title {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #D9BA5B;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #D9BA5B;
+    }
+  }
+}

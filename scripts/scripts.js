@@ -20,6 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
 	burger.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
+	const reviewsСard = document.querySelector('.reviews__cards')
+	if (reviewsСard) {
+		const reviewsСardItem = reviewsСard?.querySelectorAll('.reviews__card')
+		const showMoreButton = reviewsСard.nextElementSibling
+		console.log(showMoreButton)
+
+		let currentIndex = 0
+		const cardsToShow = 6
+
+		function showNextCards() {
+			for (let i = currentIndex; i < currentIndex + cardsToShow; i++) {
+				if (reviewsСardItem[i]) {
+					reviewsСardItem[i].style.display = 'flex'
+					reviewsСardItem[i]?.classList.add('visible')
+				}
+			}
+			currentIndex += cardsToShow
+			if (currentIndex >= reviewsСardItem.length) {
+				if (showMoreButton) {
+					showMoreButton.style.display = 'none'
+				}
+				reviewsСardItem.forEach(card => {
+					card.classList.remove('visible')
+				})
+			}
+		}
+		showNextCards()
+
+		showMoreButton?.addEventListener('click', function () {
+			showNextCards()
+		})
+	}
+
 	if (innerWidth > 993) {
 		window.addEventListener('scroll', function () {
 			const header = document.querySelector('.header')
@@ -96,18 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			})
 		} else {
-      acc.addEventListener('click', e => {
-        e.preventDefault()
-        const content = acc.querySelector('.accordionHover__content')
-        if (acc.classList.contains('accordionHover--active')) {
-          acc.classList.remove('accordionHover--active')
-          content.style.maxHeight = '0'
-        } else {
-          acc.classList.add('accordionHover--active')
-          content.style.maxHeight = content.scrollHeight + 'px'
-        }
-      })
-    }
+			acc.addEventListener('click', e => {
+				e.preventDefault()
+				const content = acc.querySelector('.accordionHover__content')
+				if (acc.classList.contains('accordionHover--active')) {
+					acc.classList.remove('accordionHover--active')
+					content.style.maxHeight = '0'
+				} else {
+					acc.classList.add('accordionHover--active')
+					content.style.maxHeight = content.scrollHeight + 'px'
+				}
+			})
+		}
 	})
 
 	if (document.querySelector('.slider__swiper')) {
@@ -299,5 +332,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			myMap.geoObjects.add(myCollection)
 		}
+	}
+
+	if (document.querySelector('[name="phone"]')) {
+		const element = document.querySelector('[name="phone"]')
+		const maskOptions = {
+			mask: '+{7} 000 000 00 00',
+		}
+		const mask = IMask(element, maskOptions)
+	}
+
+	if (document.querySelector('[name="sum"]')) {
+		const element = document.querySelector('[name="sum"]')
+		const maskOptions = {
+			mask: Number,
+			scale: 0, // digits after point, 0 for integers
+			signed: false, // disallow negative
+			thousandsSeparator: ' ', // any single char
+			padFractionalZeros: false,
+			normalizeZeros: true,
+			radix: ',', // fractional delimiter
+			mapToRadix: [','],
+		}
+		const mask = IMask(element, maskOptions)
 	}
 })

@@ -99,8 +99,63 @@
     &-date {
       display: block;
       color: #A4A4A4;
-      font-size: 16px;
       @include fluid(font-size, 16px, 18px);
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include fluid(column-gap, 12px, 32px);
+    @include fluid(row-gap, 12px, 20px);
+
+    &:has(+*) {
+      @include fluid(margin-bottom, 30px, 75px);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include fluid(padding, 12px, 20px);
+    border-radius: 10px;
+    border: 1px solid #D9BA5B;
+
+    &:nth-child(n+7) {
+      display: none;
+    }
+
+    &.visible {
+      display: flex;
+    }
+
+    &-name {
+      font-weight: 700;
+      @include fluid(font-size, 20px, 26px);
+    }
+
+    &-text {
+      line-height: 22px;
+      @include fluid(font-size, 20px, 22px);
+    }
+
+    &-date {
+      display: block;
+      color: #A4A4A4;
+      @include fluid(font-size, 16px, 18px);
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 12px;
+
+    &-icon {
+      width: 23px;
+      height: 23px;
+      -o-object-fit: contain;
+      object-fit: contain;
     }
   }
 }
@@ -184,6 +239,10 @@
       &-name {
         min-height: unset;
       }
+    }
+
+    &__cards {
+      grid-template-columns: 1fr;
     }
   }
 }

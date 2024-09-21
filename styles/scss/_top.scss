@@ -1,0 +1,37 @@
+.top {
+  @include fluid(margin-top, 20px, 36px);
+  @include fluid(margin-bottom, 30px, 100px);
+
+  &__fon {
+    position: relative;
+    @include fluid(padding-top, 30px, 65px);
+    @include fluid(padding-bottom, 50px, 100px);
+    @include fluid(padding-left, 30px, 55px);
+    @include fluid(padding-right, 30px, 55px);
+    border-radius: 10px;
+    background-color: #D9BA5B;
+    @include fluid(margin-bottom, 20px, 40px);
+
+    &-box {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-text {
+      @include fluid(font-size, 16px, 22px);
+    }
+
+    &-title {
+      @include fluid(max-width, 385px, 716px);
+    }
+
+    &-img {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      @include fluid(width, 290px, 400px);
+      @include fluid(height, 290px, 400px);
+      pointer-events: none;
+    }
+  }
+}
