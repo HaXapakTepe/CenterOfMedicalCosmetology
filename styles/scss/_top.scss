@@ -11,6 +11,8 @@
     border-radius: 10px;
     background-color: #D9BA5B;
     @include fluid(margin-bottom, 20px, 40px);
+    @include fluid(min-height, 200px, 300px);
+    overflow: hidden;
 
     &-box {
       position: relative;

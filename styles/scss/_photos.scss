@@ -1,0 +1,33 @@
+.photos {
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
+
+  &__title {
+    @include fluid(margin-bottom, 30px, 75px);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(405px, 1fr));
+    @include fluid(gap, 10px, 15px);
+  }
+
+  &__item {
+    @include fluid(height, 300px, 442px);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+@media(max-width: 992px) {
+  .photos {
+    &__inner {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+  }
+}

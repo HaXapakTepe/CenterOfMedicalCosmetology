@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	burger.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
-	const reviewsСard = document.querySelector('.reviews__cards')
-	if (reviewsСard) {
-		const reviewsСardItem = reviewsСard?.querySelectorAll('.reviews__card')
-		const showMoreButton = reviewsСard.nextElementSibling
+	const reviewsСards = document.querySelector('.reviews__cards')
+	if (reviewsСards) {
+		const reviewsСardsItem = reviewsСards?.querySelectorAll('.reviews__card')
+		const showMoreButton = reviewsСards.nextElementSibling
 		console.log(showMoreButton)
 
 		let currentIndex = 0
@@ -31,19 +31,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function showNextCards() {
 			for (let i = currentIndex; i < currentIndex + cardsToShow; i++) {
-				if (reviewsСardItem[i]) {
-					reviewsСardItem[i].style.display = 'flex'
-					reviewsСardItem[i]?.classList.add('visible')
+				if (reviewsСardsItem[i]) {
+					reviewsСardsItem[i].style.display = 'flex'
+					reviewsСardsItem[i]?.classList.add('visible')
 				}
 			}
 			currentIndex += cardsToShow
-			if (currentIndex >= reviewsСardItem.length) {
+			if (currentIndex >= reviewsСardsItem.length) {
 				if (showMoreButton) {
 					showMoreButton.style.display = 'none'
 				}
-				reviewsСardItem.forEach(card => {
+				reviewsСardsItem.forEach(card => {
 					card.classList.remove('visible')
 				})
+			}
+		}
+		showNextCards()
+
+		showMoreButton?.addEventListener('click', function () {
+			showNextCards()
+		})
+	}
+	const stockInner = document.querySelector('.stock__inner')
+	if (stockInner) {
+		const stockItem = stockInner?.querySelectorAll('.stock__item')
+		const showMoreButton = stockInner.nextElementSibling
+		console.log(showMoreButton)
+
+		let currentIndex = 0
+		const cardsToShow = 3
+
+		function showNextCards() {
+			for (let i = currentIndex; i < currentIndex + cardsToShow; i++) {
+				if (stockItem[i]) {
+					stockItem[i].style.display = 'flex'
+				}
+			}
+			currentIndex += cardsToShow
+			if (currentIndex >= stockItem.length) {
+				if (showMoreButton) {
+					showMoreButton.style.display = 'none'
+				}
 			}
 		}
 		showNextCards()
@@ -62,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (window.innerWidth > 1366) {
 				if (headerInner.getBoundingClientRect().top < 0) {
 					header.classList.add('header--fixed')
-				} else if (bodyRect.top >= -97) {
+				} else if (bodyRect.top >= -75) {
 					header.classList.remove('header--fixed')
 				}
 			} else {

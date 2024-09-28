@@ -1,6 +1,233 @@
 .faq {
-  @include fluid(margin-top, 30px, 75px);
-  @include fluid(margin-bottom, 30px, 75px);
+  @include fluid(margin-top, 30px, 100px);
+  @include fluid(margin-bottom, 30px, 100px);
+
+  &--gold {
+    .faq {
+      &__inner {
+        padding: 0;
+
+        &-box {
+          border-top: none;
+          padding-top: 0;
+          gap: 2px;
+
+          &::after,
+          &::before {
+            content: none;
+          }
+        }
+      }
+
+      &__item {
+        border-bottom: none;
+        padding: 0;
+
+        &::after,
+        &::before {
+          content: none;
+        }
+
+        &-title {
+          position: relative;
+          border-radius: 5px;
+          background-color: #D9BA5B;
+          @include fluid(padding-top, 15px, 25px);
+          @include fluid(padding-bottom, 15px, 25px);
+          @include fluid(padding-left, 10px, 20px);
+          @include fluid(padding-right, 40px, 60px);
+          color: #fff;
+          font-weight: 400;
+
+          &::after {
+            @include fluid(top, 15px, 25px);
+            right: 20px;
+            @include fluid(width, 32px, 48px);
+            @include fluid(height, 32px, 48px);
+            background-image: url('../../assets/images/icons/arrow-right-white.svg');
+            transform: rotate(90deg);
+            transition: transform .23s ease-in-out;
+          }
+
+          &.accordion--active {
+            &::after {
+              transform: rotate(0);
+            }
+          }
+        }
+      }
+
+      &__cards {
+        @include fluid(padding-top, 20px, 32px);
+        @include fluid(padding-bottom, 20px, 32px);
+        @include fluid(padding-left, 20px, 52px);
+        @include fluid(padding-right, 20px, 52px);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        background-color: #FFF4D5;
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          @include fluid(gap, 15px, 20px);
+          @include fluid(padding-bottom, 10px, 20px);
+          @include fluid(padding-left, 10px, 20px);
+          @include fluid(padding-right, 10px, 20px);
+          border-bottom: 1px solid #D9BA5B;
+          @include fluid(min-height, 200px, 232px);
+        }
+
+        &-title {
+          @include fluid(font-size, 18px, 24px);
+          font-weight: 700;
+        }
+
+        &-num {
+          @include fluid(font-size, 16px, 22px);
+          font-weight: 700;
+          color: #d9ba5b;
+        }
+      }
+    }
+  }
+
+  &--blue {
+    @include fluid(margin-top, 30px, 100px);
+    @include fluid(margin-bottom, 30px, 100px);
+    margin-left: 15px;
+    margin-right: 15px;
+
+    .container {
+      width: 100%;
+    }
+
+    .faq {
+      &__wrapper {
+        position: relative;
+        @include fluid(max-width, 942px, 1660px);
+        @include fluid(padding-top, 30px, 55px);
+        @include fluid(padding-bottom, 30px, 55px);
+        @include fluid(padding-left, 10px, 55px);
+        @include fluid(padding-right, 10px, 55px);
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        background-color: #FFF4D5;
+        overflow: hidden;
+      }
+
+      &__inner {
+        padding: 0;
+
+        &-box {
+          border-top: none;
+          padding-top: 0;
+          gap: 2px;
+
+          &::after,
+          &::before {
+            content: none;
+          }
+        }
+      }
+
+      &__item {
+        border-bottom: none;
+        padding: 0;
+
+        &::after,
+        &::before {
+          content: none;
+        }
+
+        &-title {
+          position: relative;
+          border-radius: 5px;
+          background-color: #2A275F;
+          @include fluid(padding-top, 15px, 25px);
+          @include fluid(padding-bottom, 15px, 25px);
+          @include fluid(padding-left, 10px, 20px);
+          @include fluid(padding-right, 40px, 60px);
+          color: #fff;
+          font-weight: 500;
+
+          &::after {
+            @include fluid(top, 15px, 25px);
+            right: 20px;
+            @include fluid(width, 32px, 48px);
+            @include fluid(height, 32px, 48px);
+            background-image: url('../../assets/images/icons/arrow-right-white.svg');
+            transform: rotate(90deg);
+            transition: transform .23s ease-in-out;
+          }
+
+          &.accordion--active {
+            &::after {
+              transform: rotate(0);
+            }
+          }
+        }
+      }
+
+      &__cards {
+        @include fluid(margin-top, 20px, 30px);
+        @include fluid(margin-bottom, 20px, 50px);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include fluid(column-gap, 12px, 20px);
+        @include fluid(row-gap, 15px, 30px);
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          @include fluid(gap, 15px, 20px);
+        }
+
+        &-box {
+          position: relative;
+          display: flex;
+          align-items: end;
+          background-color: #2A275F;
+          border-radius: 5px;
+          overflow: hidden;
+          @include fluid(height, 200px, 267px);
+        }
+
+        &-logo {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 50%;
+          height: 80%;
+        }
+
+        &-img {
+          position: relative;
+          z-index: 1;
+          width: -webkit-fit-content;
+          width: -moz-fit-content;
+          width: fit-content;
+          margin-top: auto;
+          margin-left: auto;
+        }
+
+        &-title {
+          @include fluid(font-size, 24px, 36px);
+          font-weight: 700;
+        }
+
+        &-text {
+          @include fluid(font-size, 14px, 18px);
+        }
+
+        .btn {
+          margin-top: auto;
+        }
+      }
+    }
+  }
 
   &--alt {
     .faq {
@@ -105,5 +332,61 @@
 @media(max-width: 992px) {
   .faq {
     margin-top: 110px;
+
+    &--gold {
+      .faq {
+        &__cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+
+    &--blue {
+      .faq {
+        &__wrapper {
+          max-width: 700px;
+        }
+
+        &__cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .faq {
+    &--gold {
+      .faq {
+        &__cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+
+    &--blue {
+      .faq {
+        &__wrapper {
+          max-width: 520px;
+        }
+
+        &__cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .faq {
+    &--gold {
+      .faq {
+        &__cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
   }
 }
