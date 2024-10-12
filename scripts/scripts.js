@@ -328,21 +328,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			points.forEach(point => {
 				const content = `
-          <div class="map__ballon">
-          <div class="map__ballon-box">
-          <p class="map__ballon-title">Телефон</p>
-          <p class="map__ballon-text"><a href="tel:${point.text}">${point.text}</a></p>
-            </div>
-            <div class="map__ballon-box">
-              <p class="map__ballon-title">Адрес</p>
-              <p class="map__ballon-text">${point.address}</p>
-            </div>
-            <div class="map__ballon-box">
-              <p class="map__ballon-title">График работы</p>
-              <p class="map__ballon-text">${point.schedule}</p>
-            </div>
-            </div>
-            `
+                    <div class="map__ballon">
+                        <div class="map__ballon-box">
+                            <p class="map__ballon-title">Телефон</p>
+                            <p class="map__ballon-text">
+                                <a href="tel:${point.text}">${point.text}</a>
+                            </p>
+                        </div>
+                        <div class="map__ballon-box">
+                            <p class="map__ballon-title">Адрес</p>
+                            <p class="map__ballon-text">${point.address}</p>
+                        </div>
+                        <div class="map__ballon-box">
+                            <p class="map__ballon-title">График работы</p>
+                            <p class="map__ballon-text">${point.schedule}</p>
+                        </div>
+                    </div>
+                    `
 
 				const myPlacemark = new ymaps.Placemark(
 					point.coords,
@@ -351,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					},
 					{
 						iconLayout: 'default#image',
-						iconImageHref: '../assets/images/icons/loca-gold.svg',
+						iconImageHref: '/CenterOfMedicalCosmetology/assets/images/icons/loca-gold.svg',
 						iconImageSize: [48, 48],
 					}
 				)
