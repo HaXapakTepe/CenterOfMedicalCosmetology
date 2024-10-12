@@ -4,19 +4,19 @@
 
   &__fon {
     position: relative;
-    @include fluid(padding-top, 30px, 65px);
-    @include fluid(padding-bottom, 50px, 100px);
-    @include fluid(padding-left, 30px, 55px);
-    @include fluid(padding-right, 30px, 55px);
+    display: flex;
+    @include fluid(padding, 30px, 55px);
     border-radius: 10px;
     background-color: #D9BA5B;
     @include fluid(margin-bottom, 20px, 40px);
-    @include fluid(min-height, 200px, 300px);
+    @include fluid(min-height, 200px, 350px);
     overflow: hidden;
 
     &-box {
       position: relative;
       z-index: 1;
+      display: flex;
+      align-items: center;
     }
 
     &-text {
@@ -24,7 +24,7 @@
     }
 
     &-title {
-      @include fluid(max-width, 385px, 716px);
+      @include fluid(max-width, 385px, 800px);
     }
 
     &-img {

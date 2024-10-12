@@ -1,392 +1,450 @@
 .faq {
-  @include fluid(margin-top, 30px, 100px);
-  @include fluid(margin-bottom, 30px, 100px);
+	@include fluid(margin-top, 30px, 100px);
+	@include fluid(margin-bottom, 30px, 100px);
 
-  &--gold {
-    .faq {
-      &__inner {
-        padding: 0;
+	&:has(.faq__wrapper) {
+		margin-left: 15px;
+		margin-right: 15px;
 
-        &-box {
-          border-top: none;
-          padding-top: 0;
-          gap: 2px;
+		.container {
+			width: 100%;
+		}
+	}
 
-          &::after,
-          &::before {
-            content: none;
-          }
-        }
-      }
+	&__wrapper {
+		position: relative;
+		@include fluid(max-width, 942px, 1660px);
+		@include fluid(padding-top, 20px, 55px);
+		@include fluid(padding-bottom, 20px, 55px);
+		@include fluid(padding-left, 10px, 40px);
+		@include fluid(padding-right, 10px, 40px);
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 10px;
+		background-color: #fff4d5;
+		overflow: hidden;
+	}
 
-      &__item {
-        border-bottom: none;
-        padding: 0;
+	&--gold {
+		.faq {
+			&__inner {
+				padding: 0;
 
-        &::after,
-        &::before {
-          content: none;
-        }
+				&-box {
+					border-top: none;
+					padding-top: 0;
+					gap: 2px;
 
-        &-title {
-          position: relative;
-          border-radius: 5px;
-          background-color: #D9BA5B;
-          @include fluid(padding-top, 15px, 25px);
-          @include fluid(padding-bottom, 15px, 25px);
-          @include fluid(padding-left, 10px, 20px);
-          @include fluid(padding-right, 40px, 60px);
-          color: #fff;
-          font-weight: 400;
+					&::after,
+					&::before {
+						content: none;
+					}
+				}
+			}
 
-          &::after {
-            @include fluid(top, 15px, 25px);
-            right: 20px;
-            @include fluid(width, 32px, 48px);
-            @include fluid(height, 32px, 48px);
-            background-image: url('../../assets/images/icons/arrow-right-white.svg');
-            transform: rotate(90deg);
-            transition: transform .23s ease-in-out;
-          }
+			&__item {
+				border-bottom: none;
+				padding: 0;
 
-          &.accordion--active {
-            &::after {
-              transform: rotate(0);
-            }
-          }
-        }
-      }
+				&::after,
+				&::before {
+					content: none;
+				}
 
-      &__cards {
-        @include fluid(padding-top, 20px, 32px);
-        @include fluid(padding-bottom, 20px, 32px);
-        @include fluid(padding-left, 20px, 52px);
-        @include fluid(padding-right, 20px, 52px);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        background-color: #FFF4D5;
+				&-title {
+					position: relative;
+					border-radius: 5px;
+					background-color: #d9ba5b;
+					@include fluid(padding-top, 15px, 25px);
+					@include fluid(padding-bottom, 15px, 25px);
+					@include fluid(padding-left, 10px, 20px);
+					@include fluid(padding-right, 40px, 60px);
+					color: #fff;
+					font-weight: 400;
 
-        &-item {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          @include fluid(gap, 15px, 20px);
-          @include fluid(padding-bottom, 10px, 20px);
-          @include fluid(padding-left, 10px, 20px);
-          @include fluid(padding-right, 10px, 20px);
-          border-bottom: 1px solid #D9BA5B;
-          @include fluid(min-height, 200px, 232px);
-        }
+					&::after {
+						@include fluid(top, 15px, 25px);
+						right: 20px;
+						@include fluid(width, 32px, 48px);
+						@include fluid(height, 32px, 48px);
+						background-image: url('../../assets/images/icons/arrow-right-white.svg');
+						transform: rotate(90deg);
+						transition: transform 0.23s ease-in-out;
+					}
 
-        &-title {
-          @include fluid(font-size, 18px, 24px);
-          font-weight: 700;
-        }
+					&.accordion--active {
+						&::after {
+							transform: rotate(0);
+						}
+					}
+				}
+			}
 
-        &-num {
-          @include fluid(font-size, 16px, 22px);
-          font-weight: 700;
-          color: #d9ba5b;
-        }
-      }
-    }
-  }
+			&__cards {
+				@include fluid(padding-top, 20px, 32px);
+				@include fluid(padding-bottom, 20px, 32px);
+				@include fluid(padding-left, 20px, 52px);
+				@include fluid(padding-right, 20px, 52px);
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 10px;
+				background-color: #fff4d5;
 
-  &--blue {
-    @include fluid(margin-top, 30px, 100px);
-    @include fluid(margin-bottom, 30px, 100px);
-    margin-left: 15px;
-    margin-right: 15px;
+				&-item {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					@include fluid(gap, 15px, 20px);
+					@include fluid(padding-bottom, 10px, 20px);
+					@include fluid(padding-left, 10px, 20px);
+					@include fluid(padding-right, 10px, 20px);
+					border-bottom: 1px solid #d9ba5b;
+					@include fluid(min-height, 200px, 232px);
+				}
 
-    .container {
-      width: 100%;
-    }
+				&-title {
+					@include fluid(font-size, 18px, 24px);
+					font-weight: 700;
+				}
 
-    .faq {
-      &__wrapper {
-        position: relative;
-        @include fluid(max-width, 942px, 1660px);
-        @include fluid(padding-top, 30px, 55px);
-        @include fluid(padding-bottom, 30px, 55px);
-        @include fluid(padding-left, 10px, 55px);
-        @include fluid(padding-right, 10px, 55px);
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 10px;
-        background-color: #FFF4D5;
-        overflow: hidden;
-      }
+				&-num {
+					@include fluid(font-size, 16px, 22px);
+					font-weight: 700;
+					color: #d9ba5b;
+				}
+			}
+		}
+	}
 
-      &__inner {
-        padding: 0;
+	&--blue {
+		@include fluid(margin-top, 30px, 100px);
+		@include fluid(margin-bottom, 30px, 100px);
+		margin-left: 15px;
+		margin-right: 15px;
 
-        &-box {
-          border-top: none;
-          padding-top: 0;
-          gap: 2px;
+		.container {
+			width: 100%;
+		}
 
-          &::after,
-          &::before {
-            content: none;
-          }
-        }
-      }
+		.faq {
+			&__wrapper {
+				position: relative;
+				@include fluid(max-width, 942px, 1660px);
+				@include fluid(padding-top, 30px, 55px);
+				@include fluid(padding-bottom, 30px, 55px);
+				@include fluid(padding-left, 10px, 55px);
+				@include fluid(padding-right, 10px, 55px);
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 10px;
+				background-color: #fff4d5;
+				overflow: hidden;
+			}
 
-      &__item {
-        border-bottom: none;
-        padding: 0;
+			&__inner {
+				padding: 0;
 
-        &::after,
-        &::before {
-          content: none;
-        }
+				&-box {
+					border-top: none;
+					padding-top: 0;
+					gap: 2px;
 
-        &-title {
-          position: relative;
-          border-radius: 5px;
-          background-color: #2A275F;
-          @include fluid(padding-top, 15px, 25px);
-          @include fluid(padding-bottom, 15px, 25px);
-          @include fluid(padding-left, 10px, 20px);
-          @include fluid(padding-right, 40px, 60px);
-          color: #fff;
-          font-weight: 500;
+					&::after,
+					&::before {
+						content: none;
+					}
+				}
+			}
 
-          &::after {
-            @include fluid(top, 15px, 25px);
-            right: 20px;
-            @include fluid(width, 32px, 48px);
-            @include fluid(height, 32px, 48px);
-            background-image: url('../../assets/images/icons/arrow-right-white.svg');
-            transform: rotate(90deg);
-            transition: transform .23s ease-in-out;
-          }
+			&__item {
+				border-bottom: none;
+				padding: 0;
 
-          &.accordion--active {
-            &::after {
-              transform: rotate(0);
-            }
-          }
-        }
-      }
+				&::after,
+				&::before {
+					content: none;
+				}
 
-      &__cards {
-        @include fluid(margin-top, 20px, 30px);
-        @include fluid(margin-bottom, 20px, 50px);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        @include fluid(column-gap, 12px, 20px);
-        @include fluid(row-gap, 15px, 30px);
+				&-title {
+					position: relative;
+					border-radius: 5px;
+					background-color: #2a275f;
+					@include fluid(padding-top, 15px, 25px);
+					@include fluid(padding-bottom, 15px, 25px);
+					@include fluid(padding-left, 10px, 20px);
+					@include fluid(padding-right, 40px, 60px);
+					color: #fff;
+					font-weight: 500;
 
-        &-item {
-          display: flex;
-          flex-direction: column;
-          @include fluid(gap, 15px, 20px);
-        }
+					&::after {
+						@include fluid(top, 15px, 25px);
+						right: 20px;
+						@include fluid(width, 32px, 48px);
+						@include fluid(height, 32px, 48px);
+						background-image: url('../../assets/images/icons/arrow-right-white.svg');
+						transform: rotate(90deg);
+						transition: transform 0.23s ease-in-out;
+					}
 
-        &-box {
-          position: relative;
-          display: flex;
-          align-items: end;
-          background-color: #2A275F;
-          border-radius: 5px;
-          overflow: hidden;
-          @include fluid(height, 200px, 267px);
-        }
+					&.accordion--active {
+						&::after {
+							transform: rotate(0);
+						}
+					}
+				}
+			}
 
-        &-logo {
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 50%;
-          height: 80%;
-        }
+			&__cards {
+				@include fluid(margin-top, 20px, 30px);
+				@include fluid(margin-bottom, 20px, 50px);
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				@include fluid(column-gap, 12px, 20px);
+				@include fluid(row-gap, 15px, 30px);
 
-        &-img {
-          position: relative;
-          z-index: 1;
-          width: -webkit-fit-content;
-          width: -moz-fit-content;
-          width: fit-content;
-          margin-top: auto;
-          margin-left: auto;
-        }
+				&-item {
+					display: flex;
+					flex-direction: column;
+					@include fluid(gap, 15px, 20px);
+				}
 
-        &-title {
-          @include fluid(font-size, 24px, 36px);
-          font-weight: 700;
-        }
+				&-box {
+					position: relative;
+					display: flex;
+					align-items: end;
+					background-color: #2a275f;
+					border-radius: 5px;
+					overflow: hidden;
+					@include fluid(height, 200px, 267px);
+				}
 
-        &-text {
-          @include fluid(font-size, 14px, 18px);
-        }
+				&-logo {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 50%;
+					height: 80%;
+				}
 
-        .btn {
-          margin-top: auto;
-        }
-      }
-    }
-  }
+				&-img {
+					position: relative;
+					z-index: 1;
+					width: -webkit-fit-content;
+					width: -moz-fit-content;
+					width: fit-content;
+					margin-top: auto;
+					margin-left: auto;
+				}
 
-  &--alt {
-    .faq {
-      &__inner {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
-  }
+				&-title {
+					@include fluid(font-size, 24px, 36px);
+					font-weight: 700;
+				}
 
-  &__inner {
-    @include fluid(padding-left, 20px, 53px);
-    @include fluid(padding-right, 20px, 53px);
+				&-text {
+					@include fluid(font-size, 14px, 18px);
+				}
 
-    &-box {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      @include fluid(gap, 20px, 35px);
-      padding-top: 20px;
-      border-top: 1px solid #D9BA5B;
+				.btn {
+					margin-top: auto;
+				}
+			}
+		}
+	}
 
-      &::after,
-      &::before {
-        content: '';
-        position: absolute;
-        top: -3px;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background-color: #D9BA5B;
-      }
+	&--alt {
+		.faq {
+			&__inner {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
 
-      &::before {
-        left: 0;
-      }
+	&__inner {
+		@include fluid(padding-left, 20px, 53px);
+		@include fluid(padding-right, 20px, 53px);
 
-      &::after {
-        right: 0;
-      }
-    }
-  }
+		&-box {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			@include fluid(gap, 20px, 35px);
+			padding-top: 20px;
+			border-top: 1px solid #d9ba5b;
 
-  &__item {
-    position: relative;
-    padding-right: 60px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #D9BA5B;
+			&::after,
+			&::before {
+				content: '';
+				position: absolute;
+				top: -3px;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background-color: #d9ba5b;
+			}
 
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: #D9BA5B;
-    }
+			&::before {
+				left: 0;
+			}
 
-    &::before {
-      left: 0;
-    }
+			&::after {
+				right: 0;
+			}
+		}
+	}
 
-    &::after {
-      right: 0;
-    }
+	&__item {
+		position: relative;
+		padding-right: 60px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #d9ba5b;
 
-    &-hidden {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 25px;
-    }
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: #d9ba5b;
+		}
 
-    &-title {
-      @include fluid(font-size, 20px, 36px);
-      font-weight: 700;
-      cursor: pointer;
+		&::before {
+			left: 0;
+		}
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-70%);
-        width: 48px;
-        height: 48px;
-        background-image: url('../../assets/images/icons/plus-circle.svg');
-        background-repeat: no-repeat;
-        background-size: contain
-      }
-    }
+		&::after {
+			right: 0;
+		}
 
-    &-text {
-      max-width: 1000px;
-      @include fluid(font-size, 14px, 18px);
-    }
-  }
+		&-hidden {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			margin-top: 25px;
+		}
+
+		&-title {
+			@include fluid(font-size, 20px, 36px);
+			font-weight: 700;
+			cursor: pointer;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				@include fluid(top, -2px, 0px);
+				right: 0;
+				@include fluid(width, 32px, 48px);
+				@include fluid(height, 32px, 48px);
+				background-repeat: no-repeat;
+				background-size: contain;
+				transition: opacity 0.23s ease-in-out;
+			}
+
+			&::after {
+				background-image: url('../../assets/images/icons/plus-circle.svg');
+			}
+
+			&::before {
+				background-image: url('../../assets/images/icons/minus-circle.svg');
+			}
+
+			&.accordion--active {
+				&::after {
+					opacity: 0;
+				}
+
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+
+		&-text {
+			max-width: 1000px;
+			@include fluid(font-size, 14px, 18px);
+		}
+	}
 }
 
-@media(max-width: 992px) {
-  .faq {
-    margin-top: 110px;
+@media (max-width: 992px) {
+	.faq {
+		margin-top: 110px;
 
-    &--gold {
-      .faq {
-        &__cards {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-    }
+		&:has(.faq__wrapper) {
+			margin-left: 15px;
+			margin-right: 15px;
 
-    &--blue {
-      .faq {
-        &__wrapper {
-          max-width: 700px;
-        }
+			.container {
+				width: 100%;
+			}
+		}
 
-        &__cards {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    }
-  }
+		&--gold {
+			.faq {
+				&__cards {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+		}
+
+		&--blue {
+			.faq {
+				&__wrapper {
+					max-width: 700px;
+				}
+
+				&__cards {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		}
+
+		&__wrapper {
+			max-width: 700px;
+		}
+	}
 }
 
-@media(max-width: 768px) {
-  .faq {
-    &--gold {
-      .faq {
-        &__cards {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    }
+@media (max-width: 768px) {
+	.faq {
+		&--gold {
+			.faq {
+				&__cards {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		}
 
-    &--blue {
-      .faq {
-        &__wrapper {
-          max-width: 520px;
-        }
+		&--blue {
+			.faq {
+				&__wrapper {
+					max-width: 520px;
+				}
 
-        &__cards {
-          grid-template-columns: 1fr;
-        }
-      }
-    }
-  }
+				&__cards {
+					grid-template-columns: 1fr;
+				}
+			}
+		}
+
+		&__wrapper {
+			max-width: 520px;
+		}
+	}
 }
 
-@media(max-width: 576px) {
-  .faq {
-    &--gold {
-      .faq {
-        &__cards {
-          grid-template-columns: 1fr;
-        }
-      }
-    }
-  }
+@media (max-width: 576px) {
+	.faq {
+		&--gold {
+			.faq {
+				&__cards {
+					grid-template-columns: 1fr;
+				}
+			}
+		}
+	}
 }

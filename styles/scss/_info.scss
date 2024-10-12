@@ -18,9 +18,8 @@
 
     &-fon {
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      @include fluid(bottom, 0px, -40px);
+      left: 0;
       height: 100%;
     }
 
