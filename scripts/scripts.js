@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	if (innerWidth > 993) {
+	if (innerWidth > 1201) {
 		window.addEventListener('scroll', function () {
 			const header = document.querySelector('.header')
 			const headerInner = header.querySelector('.header__inner')
@@ -101,8 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			}
 		})
+	}
 
-		const numbersItems = document.querySelectorAll('.numbers__item')
+    if(innerWidth > 992) {
+        const numbersItems = document.querySelectorAll('.numbers__item')
 
 		const observerCallback = entries => {
 			entries.forEach(entry => {
@@ -120,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		numbersItems.forEach(item => {
 			observer.observe(item)
 		})
-	}
+    }
 
 	const accordion = document.querySelectorAll('.accordion')
 
@@ -175,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		var sliderSwiper = new Swiper('.slider__swiper', {
 			slidesPerView: 2,
 			spaceBetween: 5,
+            loop: 'true',
 			breakpoints: {
 				993: {
 					slidesPerView: 2,

@@ -65,13 +65,13 @@
 	}
 }
 
-@media (max-width: 992px) {
+@media (max-width:1200px) {
 	.menu {
 		position: fixed;
 		top: 91px;
 		left: 0;
 		width: 100vw;
-		height: 93dvh;
+		height: calc(100vh - 91px);
 		transform: translateX(-200%);
 		flex-direction: column;
 		padding: 10px 20px;
@@ -166,11 +166,5 @@
 				color: #2a275f;
 			}
 		}
-	}
-}
-
-@media (max-width: 576px) {
-	.menu {
-		height: 90dvh;
 	}
 }

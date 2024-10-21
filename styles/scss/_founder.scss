@@ -188,6 +188,8 @@
 @media (max-width: 576px) {
 	.founder {
 		&__img {
+            -o-object-position: top;
+            object-position: top;
 			height: 300px;
 		}
 	}
