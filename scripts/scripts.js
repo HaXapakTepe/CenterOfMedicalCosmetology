@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-    if(innerWidth > 992) {
-        const numbersItems = document.querySelectorAll('.numbers__item')
+	if (innerWidth > 992) {
+		const numbersItems = document.querySelectorAll('.numbers__item')
 
 		const observerCallback = entries => {
 			entries.forEach(entry => {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		numbersItems.forEach(item => {
 			observer.observe(item)
 		})
-    }
+	}
 
 	const accordion = document.querySelectorAll('.accordion')
 
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		var sliderSwiper = new Swiper('.slider__swiper', {
 			slidesPerView: 2,
 			spaceBetween: 5,
-            loop: 'true',
+			loop: 'true',
 			breakpoints: {
 				993: {
 					slidesPerView: 2,
@@ -230,8 +230,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
+	function debounce(func, wait) {
+		let timeout
+		return function executedFunction(...args) {
+			const later = () => {
+				clearTimeout(timeout)
+				func(...args)
+			}
+			clearTimeout(timeout)
+			timeout = setTimeout(later, wait)
+		}
+	}
+
 	if (document.querySelector('.problems__swiper')) {
-		var sliderSwiper = new Swiper('.problems__swiper', {
+		var problemsSwiper = new Swiper('.problems__swiper', {
 			slidesPerView: 2,
 			spaceBetween: 15,
 			breakpoints: {
@@ -261,6 +273,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			pagination: {
 				el: '.problems__dots',
 			},
+		})
+
+		window.addEventListener('resize', function () {
+			problemsSwiper.update()
 		})
 	}
 
@@ -302,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				schedule:
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.92617, 30.286161],
+				name: 'Улица 1',
 			},
 			{
 				text: '+7 (812) 223-51-27',
@@ -309,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				schedule:
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.942412, 30.351055],
+				name: 'Улица 2',
 			},
 			{
 				text: '+7 (812) 223-51-27',
@@ -316,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				schedule:
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.947243, 30.378472],
+				name: 'Улица 3',
 			},
 		]
 
@@ -331,23 +350,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			points.forEach(point => {
 				const content = `
-                    <div class="map__ballon">
-                        <div class="map__ballon-box">
-                            <p class="map__ballon-title">Телефон</p>
-                            <p class="map__ballon-text">
-                                <a href="tel:${point.text}">${point.text}</a>
-                            </p>
-                        </div>
-                        <div class="map__ballon-box">
-                            <p class="map__ballon-title">Адрес</p>
-                            <p class="map__ballon-text">${point.address}</p>
-                        </div>
-                        <div class="map__ballon-box">
-                            <p class="map__ballon-title">График работы</p>
-                            <p class="map__ballon-text">${point.schedule}</p>
-                        </div>
-                    </div>
-                    `
+			        <div class="map__ballon">
+			            <div class="map__ballon-box">
+			                <p class="map__ballon-title">Телефон</p>
+			                <p class="map__ballon-text">
+			                    <a href="tel:${point.text}">${point.text}</a>
+			                </p>
+			            </div>
+			            <div class="map__ballon-box">
+			                <p class="map__ballon-title">Адрес</p>
+			                <p class="map__ballon-text">${point.address}</p>
+			            </div>
+			            <div class="map__ballon-box">
+			                <p class="map__ballon-title">График работы</p>
+			                <p class="map__ballon-text">${point.schedule}</p>
+			            </div>
+			        </div>
+			        `
 
 				const myPlacemark = new ymaps.Placemark(
 					point.coords,
@@ -356,7 +375,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					},
 					{
 						iconLayout: 'default#image',
-						iconImageHref: '/CenterOfMedicalCosmetology/assets/images/icons/loca-gold.svg',
+						iconImageHref: '../assets/images/icons/loca-gold.svg',
+						// iconImageHref: '/CenterOfMedicalCosmetology/assets/images/icons/loca-gold.svg',
 						iconImageSize: [48, 48],
 					}
 				)
@@ -379,12 +399,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		const element = document.querySelector('[name="sum"]')
 		const maskOptions = {
 			mask: Number,
-			scale: 0, // digits after point, 0 for integers
-			signed: false, // disallow negative
-			thousandsSeparator: ' ', // any single char
+			scale: 0,
+			signed: false,
+			thousandsSeparator: ' ',
 			padFractionalZeros: false,
 			normalizeZeros: true,
-			radix: ',', // fractional delimiter
+			radix: ',',
 			mapToRadix: [','],
 		}
 		const mask = IMask(element, maskOptions)
