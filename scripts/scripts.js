@@ -20,6 +20,42 @@ document.addEventListener('DOMContentLoaded', () => {
 	burger.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
+    function handleTabClick(
+		tabs,
+		pages,
+		activeTabClass,
+		activePageClass,
+		opacityPageClass
+	) {
+		tabs.forEach((tab, idx) => {
+			tab.addEventListener('click', () => {
+				tabs.forEach(tab => tab.classList.remove(activeTabClass))
+				pages.forEach(page => {
+					page.classList.remove(activePageClass)
+					page.classList.remove(opacityPageClass)
+				})
+
+				tab.classList.add(activeTabClass)
+				pages[idx].classList.add(activePageClass)
+
+				setTimeout(() => {
+					pages[idx].classList.add(opacityPageClass)
+				}, 380)
+			})
+		})
+	}
+
+	const tabs = document.querySelectorAll('.tab__target')
+	const pages = document.querySelectorAll('.tab__info')
+
+	handleTabClick(
+		tabs,
+		pages,
+		'tab__target--active',
+		'tab__info--active',
+		'tab__info--opacity'
+	)
+
 	const reviewsСards = document.querySelector('.reviews__cards')
 	if (reviewsСards) {
 		const reviewsСardsItem = reviewsСards?.querySelectorAll('.reviews__card')
@@ -230,18 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	function debounce(func, wait) {
-		let timeout
-		return function executedFunction(...args) {
-			const later = () => {
-				clearTimeout(timeout)
-				func(...args)
-			}
-			clearTimeout(timeout)
-			timeout = setTimeout(later, wait)
-		}
-	}
-
 	if (document.querySelector('.problems__swiper')) {
 		var problemsSwiper = new Swiper('.problems__swiper', {
 			slidesPerView: 2,
@@ -267,17 +291,32 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 			},
 			navigation: {
-				nextEl: `.problems__arrow-next`,
-				prevEl: `.problems__arrow-prev`,
+				nextEl: '.problems__arrow-next',
+				prevEl: '.problems__arrow-prev',
 			},
 			pagination: {
 				el: '.problems__dots',
 			},
 		})
 
-		window.addEventListener('resize', function () {
-			problemsSwiper.update()
-		})
+		// window.addEventListener('resize', function () {
+		// 	problemsSwiper.update()
+		// }, 100)
+
+		// window.addEventListener('load', function () {
+		// 	problemsSwiper.update()
+		// })
+
+        // const swiperContainer = document.querySelector('.problems__swiper');
+
+        // const resizeObserver = new ResizeObserver(entries => {
+        //     for (let entry of entries) {
+        //         problemsSwiper.update();
+        //     }
+        // });
+    
+        // resizeObserver.observe(swiperContainer);
+        
 	}
 
 	if (document.querySelector('.licenses__swiper')) {
@@ -305,6 +344,42 @@ document.addEventListener('DOMContentLoaded', () => {
 			navigation: {
 				nextEl: `.licenses__arrow-next`,
 				prevEl: `.licenses__arrow-prev`,
+			},
+		})
+	}
+
+    const afterBeforeSwipers = []
+	const afterBeforeSwiper = document.querySelectorAll('.afterBefore__swiper')
+	afterBeforeSwiper?.forEach((swiper, index) => {
+		afterBeforeSwipers.push(setSlidersSwiper(index + 1))
+	})
+	function setSlidersSwiper(index) {
+		return new Swiper(`.afterBefore__swiper--${index}`, {
+			navigation: {
+				prevEl: `.afterBefore__arrow-prev--${index}`,
+				nextEl: `.afterBefore__arrow-next--${index}`,
+			},
+			breakpoints: {
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 40,
+				},
+				768: {
+					slidesPerView: 2.1,
+					spaceBetween: 24,
+				},
+				576: {
+					slidesPerView: 1.6,
+					spaceBetween: 16,
+				},
+				414: {
+					slidesPerView: 1.5,
+					spaceBetween: 12,
+				},
+				320: {
+					slidesPerView: 1.1,
+					spaceBetween: 12,
+				},
 			},
 		})
 	}
@@ -409,4 +484,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		const mask = IMask(element, maskOptions)
 	}
+
+    Fancybox.bind('[data-fancybox]', {});
 })

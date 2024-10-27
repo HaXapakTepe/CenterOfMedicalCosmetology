@@ -1,0 +1,126 @@
+.specialist {
+	@include fluid(margin-top, 20px, 40px);
+	@include fluid(margin-bottom, 30px, 75px);
+
+	&__inner {
+		display: flex;
+		@include fluid(gap, 15px, 30px);
+
+		&:has(+ *) {
+			@include fluid(margin-bottom, 20px, 60px);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		@include fluid(gap, 10px, 15px);
+		@include fluid(max-width, 250px, 360px);
+		width: 100%;
+		flex-shrink: 0;
+
+		&-img {
+			border-radius: 8px;
+			@include fluid(height, 300px, 455px);
+			-o-object-fit: cover;
+			object-fit: cover;
+			-o-object-position: top;
+			object-position: top;
+		}
+	}
+
+	&__info {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		&-name {
+			@include fluid(font-size, 24px, 44px);
+			font-weight: 700;
+			line-height: 1;
+		}
+
+		&-experience {
+			font-weight: 700;
+			@include fluid(font-size, 16px, 24px);
+		}
+	}
+
+	&__education {
+		display: flex;
+		flex-direction: column;
+		@include fluid(gap, 15px, 30px);
+
+		&:has(+ *) {
+			@include fluid(margin-bottom, 20px, 45px);
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			@include fluid(gap, 12px, 16px);
+		}
+
+		&-item {
+			position: relative;
+			padding-left: 30px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 15px;
+				width: 6px;
+				height: 6px;
+				background-color: #2a275f;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__education {
+		display: flex;
+		flex-direction: column;
+		@include fluid(gap, 15px, 30px);
+
+		&:has(+ *) {
+			@include fluid(margin-bottom, 20px, 45px);
+		}
+	}
+
+	&__certificates {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include fluid(gap, 12px, 24px);
+
+		&-img {
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.specialist {
+		&__actions {
+			max-width: unset;
+
+			&-img {
+				height: auto;
+			}
+		}
+
+		&__inner {
+			flex-direction: column;
+		}
+
+		&__certificates {
+			grid-template-columns: 1fr;
+
+			&-img {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}

@@ -176,7 +176,11 @@
 					color: #fff;
 					font-weight: 500;
 
-					&::after {
+                    &::after {
+                        content: none;
+                    }
+
+					&::before {
 						@include fluid(top, 15px, 25px);
 						right: 20px;
 						@include fluid(width, 32px, 48px);
@@ -187,7 +191,7 @@
 					}
 
 					&.accordion--active {
-						&::after {
+						&::before {
 							transform: rotate(0);
 						}
 					}
@@ -368,6 +372,16 @@
 			@include fluid(font-size, 14px, 18px);
 		}
 	}
+
+    &__text {
+        &:has(+*) {
+            @include fluid(margin-bottom, 12px, 20px);
+        }
+
+        &:has(+.faq__inner-box) {
+            @include fluid(margin-bottom, 20px, 50px);
+        }
+    }
 }
 
 @media (max-width: 992px) {

@@ -6,6 +6,7 @@
     position: relative;
     display: flex;
     @include fluid(padding, 30px, 55px);
+    @include fluid(padding-top, 60px, 113px);
     border-radius: 10px;
     background-color: #D9BA5B;
     @include fluid(margin-bottom, 20px, 40px);
@@ -15,8 +16,6 @@
     &-box {
       position: relative;
       z-index: 1;
-      display: flex;
-      align-items: center;
     }
 
     &-text {

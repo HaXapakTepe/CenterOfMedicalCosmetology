@@ -1,183 +1,183 @@
 .problems {
-  @include fluid(margin-top, 30px, 100px);
-  @include fluid(margin-bottom, 30px, 100px);
-  margin-left: 15px;
-  margin-right: 15px;
+	@include fluid(margin-top, 30px, 100px);
+	@include fluid(margin-bottom, 30px, 100px);
+	margin-left: 15px;
+	margin-right: 15px;
 
-  .container {
-    width: 100%;
-  }
+	.container {
+		width: 100%;
+	}
 
-  &__wrapper {
-    position: relative;
-    @include fluid(max-width, 942px, 1660px);
-    @include fluid(padding-top, 55px, 75px);
-    @include fluid(padding-left, 16px, 54px);
-    @include fluid(padding-right, 16px, 54px);
-    @include fluid(padding-bottom, 23px, 92px);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    background-color: #FFF4D5;
-    overflow: hidden;
-  }
+	&__wrapper {
+		position: relative;
+		@include fluid(max-width, 942px, 1660px);
+		@include fluid(padding-top, 55px, 75px);
+		@include fluid(padding-left, 16px, 54px);
+		@include fluid(padding-right, 16px, 54px);
+		@include fluid(padding-bottom, 23px, 92px);
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 10px;
+		background-color: #fff4d5;
+		overflow: hidden;
+	}
 
-  &__inner {
-    display: grid;
-    grid-template-columns: 30% 66%;
-    justify-content: space-between;
-    gap: 30px;
+	&__inner {
+		display: grid;
+		grid-template-columns: 30% 66%;
+		justify-content: space-between;
+		gap: 30px;
 
-    &-box {
-      position: relative;
-      height: -webkit-fit-content;
-      height: -moz-fit-content;
-      height: fit-content;
-    }
-  }
+		&-box {
+			position: relative;
+			height: -webkit-fit-content;
+			height: -moz-fit-content;
+			height: fit-content;
+		}
+	}
 
-  &__block {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	&__block {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 
-    &-title {
-      margin-bottom: 20px;
-    }
+		&-title {
+			margin-bottom: 20px;
+		}
 
-    &-text {
-      margin-bottom: 69px;
+		&-text {
+			margin-bottom: 69px;
 
-      &:has(+.problems__block-text) {
-        margin-bottom: 20px;
-      }
-    }
+			&:has(+ .problems__block-text) {
+				margin-bottom: 20px;
+			}
+		}
 
-    .btn {
-      margin-top: auto;
-    }
-  }
+		.btn {
+			margin-top: auto;
+		}
+	}
 
-  &__swiper {
-    width: 100%;
-    border-radius: 10px;
-  }
+	&__swiper {
+		width: 100%;
+		border-radius: 10px;
+	}
 
-  &__slide {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
 
-    &-box {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      @include fluid(height, 173px, 270px);
-      border-radius: 10px;
-      overflow: hidden;
+		&-box {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			@include fluid(height, 173px, 270px);
+			border-radius: 10px;
+			overflow: hidden;
 
-      &:has(.btn:hover) {
-        .problems__slide-img {
-          transform: scale(1.05)
-        }
-      }
-    }
+			&:has(.btn:hover) {
+				.problems__slide-img {
+					transform: scale(1.05);
+				}
+			}
+		}
 
-    &-img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-      transition: transform .23s ease-in-out;
-    }
+		&-img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			transition: transform 0.23s ease-in-out;
+		}
 
-    &-bottom {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      @include fluid(gap, 8px, 12px);
-      padding: 12px 14px;
-      background-color: #D9BA5B;
-    }
+		&-bottom {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			display: flex;
+			flex-direction: column;
+			@include fluid(gap, 8px, 12px);
+			padding: 12px 14px;
+			background-color: #d9ba5b;
+		}
 
-    &-text {
-      color: #fff;
-      font-weight: 700;
-      @include fluid(font-size, 20px, 26px);
-    }
+		&-text {
+			color: #fff;
+			font-weight: 700;
+			@include fluid(font-size, 20px, 26px);
+		}
 
-    .btn {
-      position: relative;
-      z-index: 1;
-      margin-top: auto;
-    }
-  }
+		.btn {
+			position: relative;
+			z-index: 1;
+			margin-top: auto;
+		}
+	}
 
-  &__arrow {
-    &-prev {
-      @include fluid(left, -20px, -50px);
-    }
+	&__arrow {
+		&-prev {
+			@include fluid(left, -20px, -50px);
+		}
 
-    &-next {
-      @include fluid(right, -20px, -50px);
-    }
-  }
+		&-next {
+			@include fluid(right, -20px, -50px);
+		}
+	}
 
-  &__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    @include fluid(gap, 15px, 30px);
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include fluid(gap, 15px, 30px);
 
-    .problems__slide {
-      @include fluid(height, 300px, 387px);
+		.problems__slide {
+			@include fluid(height, 300px, 387px);
 
-      &-box {
-        height: 100%;
-      }
-    }
-  }
+			&-box {
+				height: 100%;
+			}
+		}
+	}
 }
 
-@media(max-width: 992px) {
-  .problems {
-    &__wrapper {
-      max-width: 700px;
-    }
+@media (max-width: 992px) {
+	.problems {
+		&__wrapper {
+			max-width: 700px;
+		}
 
-    &__inner {
-      grid-template-columns: 100%;
-    }
+		&__inner {
+			grid-template-columns: 100%;
+		}
 
-    &__arrow {
-      display: none;
-    }
+		&__arrow {
+			display: none;
+		}
 
-    &__cards {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+		&__cards {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 }
 
-@media(max-width: 768px) {
-  .problems {
-    &__wrapper {
-      max-width: 520px;
-    }
+@media (max-width: 768px) {
+	.problems {
+		&__wrapper {
+			max-width: 520px;
+		}
 
-    &__cards {
-      grid-template-columns: 1fr;
-    }
-  }
+		&__cards {
+			grid-template-columns: 1fr;
+		}
+	}
 }
 
-@media(max-width: 576px) {
-  .problems {
-    &__swiper {
-      height: 735px;
-    }
-  }
+@media (max-width: 576px) {
+	.problems {
+		&__swiper {
+			height: 735px;
+		}
+	}
 }
