@@ -14,7 +14,7 @@
 					right: 10px;
 					bottom: 10px;
 					@include fluid(width, 220px, 285px);
-                    pointer-events: none;
+					pointer-events: none;
 				}
 			}
 		}
@@ -96,6 +96,14 @@
 						height: 6px;
 						border-radius: 50%;
 						background-color: #d9ba5b;
+					}
+				}
+
+				&__item {
+					&-text {
+						&:has(+ *) {
+							@include fluid(margin-bottom, 15px, 30px);
+						}
 					}
 				}
 			}
@@ -188,8 +196,8 @@
 @media (max-width: 576px) {
 	.founder {
 		&__img {
-            -o-object-position: top;
-            object-position: top;
+			-o-object-position: top;
+			object-position: top;
 			height: 300px;
 		}
 	}

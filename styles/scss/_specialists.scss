@@ -75,6 +75,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			@include fluid(gap, 16px, 40px);
+            @include fluid(column-gap, 40px, 100px);
 		}
 	}
 
