@@ -13,6 +13,7 @@
     border-radius: 10px;
     background-color: #fff;
     border: 1px solid #2A275F;
+    transition: box-shadow 0.23s ease-in-out;
 
     &::-webkit-input-placeholder {
       color: #999;

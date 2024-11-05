@@ -2,6 +2,46 @@ document.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body')
 	const burger = document.querySelector('.burger')
 	const menu = document.querySelector('.menu')
+	const openModal = document.querySelectorAll('.open-modal')
+	const modal = document.querySelector('.modal')
+	const success = document.querySelector('.success')
+
+	if (modal) {
+		const close = document.querySelector('.modal__close')
+		const inner = document.querySelector('.modal__inner')
+		modal.addEventListener('click', e => {
+			if (!inner.contains(e.target)) {
+				modal.classList.remove('modal--active')
+				body.classList.remove('no-scroll')
+			}
+			if (e.target === close) {
+				modal.classList.remove('modal--active')
+				body.classList.remove('no-scroll')
+			}
+		})
+	}
+
+	if (success) {
+		const close = document.querySelector('.success__close')
+		const inner = document.querySelector('.success__inner')
+		success.addEventListener('click', e => {
+			if (!inner.contains(e.target)) {
+				success.classList.remove('success--active')
+				body.classList.remove('no-scroll')
+			}
+			if (e.target === close) {
+				success.classList.remove('success--active')
+				body.classList.remove('no-scroll')
+			}
+		})
+	}
+
+	openModal.forEach(item => {
+		item.addEventListener('click', () => {
+			modal.classList.add('modal--active')
+			body.classList.add('no-scroll')
+		})
+	})
 
 	const toggleMenu = () => {
 		menu.classList.toggle('menu--active')
@@ -9,8 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		body.classList.toggle('no-scroll')
 	}
 
-	const clickOutsideMenu = event => {
-		if (!menu.contains(event.target) && !burger.contains(event.target)) {
+	const clickOutsideMenu = e => {
+		if (
+			!menu.contains(e.target) &&
+			!burger.contains(e.target) &&
+			!openModal.forEach(item => {
+				item.contains(e.target)
+			})
+		) {
 			menu.classList.remove('menu--active')
 			burger.classList.remove('burger--active')
 			body.classList.remove('no-scroll')
@@ -20,13 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	burger.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
-    function handleTabClick(
-		tabs,
-		pages,
-		activeTabClass,
-		activePageClass,
-		opacityPageClass
-	) {
+	function handleTabClick(tabs, pages, activeTabClass, activePageClass, opacityPageClass) {
 		tabs.forEach((tab, idx) => {
 			tab.addEventListener('click', () => {
 				tabs.forEach(tab => tab.classList.remove(activeTabClass))
@@ -48,13 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const tabs = document.querySelectorAll('.tab__target')
 	const pages = document.querySelectorAll('.tab__info')
 
-	handleTabClick(
-		tabs,
-		pages,
-		'tab__target--active',
-		'tab__info--active',
-		'tab__info--opacity'
-	)
+	handleTabClick(tabs, pages, 'tab__target--active', 'tab__info--active', 'tab__info--opacity')
 
 	const reviewsСards = document.querySelector('.reviews__cards')
 	if (reviewsСards) {
@@ -307,16 +341,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 	problemsSwiper.update()
 		// })
 
-        // const swiperContainer = document.querySelector('.problems__swiper');
+		// const swiperContainer = document.querySelector('.problems__swiper');
 
-        // const resizeObserver = new ResizeObserver(entries => {
-        //     for (let entry of entries) {
-        //         problemsSwiper.update();
-        //     }
-        // });
-    
-        // resizeObserver.observe(swiperContainer);
-        
+		// const resizeObserver = new ResizeObserver(entries => {
+		//     for (let entry of entries) {
+		//         problemsSwiper.update();
+		//     }
+		// });
+
+		// resizeObserver.observe(swiperContainer);
 	}
 
 	if (document.querySelector('.licenses__swiper')) {
@@ -348,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-    const afterBeforeSwipers = []
+	const afterBeforeSwipers = []
 	const afterBeforeSwiper = document.querySelectorAll('.afterBefore__swiper')
 	afterBeforeSwiper?.forEach((swiper, index) => {
 		afterBeforeSwipers.push(setSlidersSwiper(index + 1))
@@ -485,5 +518,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		const mask = IMask(element, maskOptions)
 	}
 
-    Fancybox.bind('[data-fancybox]', {});
+	Fancybox.bind('[data-fancybox]', {})
 })

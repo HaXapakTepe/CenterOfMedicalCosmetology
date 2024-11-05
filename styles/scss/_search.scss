@@ -1,6 +1,22 @@
 .search {
-  width: 100%;
   width: 132px;
+
+  &--price {
+    width: 100%;
+
+    .search {
+        &__input {
+            padding: 14px 20px 10px;
+            border: 1px solid rgba(152, 152, 152, .62);
+            border-radius: 8px;
+        }
+
+        &__icon {
+            top: 60%;
+            right: 16px;
+        }
+    }
+  }
 
   &__label {
     position: relative;

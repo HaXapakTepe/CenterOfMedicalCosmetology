@@ -27,7 +27,7 @@
 		border: 1px solid #d9ba5b;
 		border-radius: 5px;
 		background-color: #fff4d5;
-        color: #2a275f;
+		color: #2a275f;
 
 		&-box {
 			display: flex;
@@ -72,6 +72,9 @@
 		}
 
 		.ymaps-2-1-79-balloon__close {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: 40px;
 
 			&-button {

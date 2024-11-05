@@ -1,28 +1,36 @@
 .video {
-  &--reviews {
-    .video {
-      &__box {
-        background-color: #D9BA5B;
-        height: 300px;
-        @include fluid(height, 300px, 400px);
-      }
-    }
-  }
+	&--gold {
+		.video {
+			&__box {
+				background-color: #d9ba5b;
+			}
+		}
+	}
 
-  &__wrapper {
-    @include fluid(margin-top, 212px, 250px);
-    border-bottom: 1px solid #525252;
-  }
+	&--reviews {
+		.video {
+			&__box {
+				background-color: #d9ba5b;
+				height: 300px;
+				@include fluid(height, 300px, 400px);
+			}
+		}
+	}
 
-  &__box {
-    border-radius: 10px;
-    background-color: #FFF4D5;
-    @include fluid(height, 300px, 750px);
+	&__wrapper {
+		@include fluid(margin-top, 212px, 250px);
+		border-bottom: 1px solid #525252;
+	}
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-    }
-  }
+	&__box {
+		border-radius: 10px;
+		background-color: #fff4d5;
+		@include fluid(height, 300px, 750px);
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+		}
+	}
 }
