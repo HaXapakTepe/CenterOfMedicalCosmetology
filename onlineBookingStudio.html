@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 		<link rel="stylesheet" href="./styles/css/normalize.css" />
 		<link rel="stylesheet" href="./styles/css/style.min.css" />
-		<title>Юридическая информация</title>
+		<title>Онлайн-запись на приём</title>
 	</head>
 
 	<body>
@@ -260,189 +260,281 @@
 								<a class="breadcrumbs__list-link" href="#"> Главная </a>
 							</li>
 							<li class="breadcrumbs__list-item">
-								<a class="breadcrumbs__list-link" href="#"> О центре </a>
-							</li>
-							<li class="breadcrumbs__list-item">
-								<a class="breadcrumbs__list-link" href="#"> Юридическая информация </a>
+								<a class="breadcrumbs__list-link" href="#"> Онлайн-запись на приём </a>
 							</li>
 						</ul>
 					</div>
 				</section>
 
-				<section class="top">
+				<div class="booking">
 					<div class="container">
-						<div class="top__fon">
-							<div class="top__fon-box">
-								<h1 class="top__fon-title title">Юридическая информация</h1>
+						<div class="booking__inner tabBooking">
+							<div class="booking__top">
+								<div class="tabBooking__target">
+									<p class="booking__top-text">Выберите тип услуги</p>
+								</div>
+								<div data-target="target1" class="tabBooking__target tabBooking__target--active">
+									<p class="booking__top-text">Укажите параметры поиска</p>
+								</div>
+								<div data-target="target2" class="tabBooking__target">
+									<p class="booking__top-text">Выберите врача и время</p>
+								</div>
+								<div data-target="target3" class="tabBooking__target">
+									<p class="booking__top-text">Подтвердите запись</p>
+								</div>
 							</div>
-							<img class="top__fon-img" src="./assets/images/top/logo.svg" alt="" />
-						</div>
-					</div>
-				</section>
-			</div>
-
-			<main class="main">
-				<section class="faq faq--alt">
-					<div class="faq__wrapper">
-						<div class="container">
-							<div class="faq__inner">
-								<div class="faq__inner-box">
-									<div class="faq__item">
-										<p class="faq__item-title accordion">Реквизиты ООО «Бьюти»</p>
-										<div class="accordion-content">
-											<div class="faq__item-hidden">
-												<p class="faq__item-text">
-													Общество с ограниченной ответственностью «Бьюти» (Центр медицинской косметологии Оксаны
-													Волковой)
-													<br />
-													<br />
-													ИНН 7839421309
-													<br />
-													КПП 783901001
-													<br />
-													ОГРН/ОГРНИП 1107847091098
-													<br />
-													ОКАТО 40262561000
-													<br />
-													ОКПО 65917956
-													<br />
-													р/с 40702810055000025252 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК
-													<br />
-													К/с 30101810500000000653, БИК 044030653
-													<br />
-													<br />
-													Юридический адрес ООО «Бьюти»: РФ,190121, Санкт-Петербург, ул. Писарева, дом 18, лит. Б, пом.
-													20Н
-													<br />
-													Фактический адрес ООО «Бьюти» (ЦМК Оксаны Волковой): РФ,190121, Санкт-Петербург, ул. Писарева,
-													дом 18, лит. Б, пом. 20Н
-													<br />
-													Телефоны: 8 (812) 572-57-28, 8 (812) 714-64-85
-													<br />
-													e-mail: volkova-beauty@mail.ru
-													<br />
-													Генеральный директор (на основании Устава) Баязитова Светлана Валерьевна
-												</p>
+							<div class="booking__box">
+								<div
+									data-info="target1"
+									class="booking__box tabBooking__info tabBooking__info--active tabBooking__info--opacity"
+								>
+									<div class="booking__services">
+										<div class="booking__specialists">
+											<p class="booking__specialists-title">Имидж-студия O.V.</p>
+											<p class="booking__specialists-text">
+												В нашем Центре работают опытные парикмахеры, колористы, мастера по маникюру и педикюру. Их
+												мастерство дополняет работу врачей-косметологов, помогая каждому клиенту создать гармоничный,
+												красивый образ.
+											</p>
+                                            <p class="booking__specialists-subtitle">
+                                                <img class="booking__specialists-loca" src="./assets/images/icons/location.svg" alt="">
+                                                Таврическая, 37
+                                            </p>
+											<p class="booking__specialists-subtitle">Выбрать услугу</p>
+											<div class="booking__specialists-form">
+												<form class="search search--alt accordion" action="">
+													<label class="search__label">
+														<input class="search__input" type="search" placeholder="Поиск" />
+														<button class="search__icon">
+															<svg
+																width="14"
+																height="14"
+																viewBox="0 0 24 24"
+																fill="none"
+																xmlns="http://www.w3.org/2000/svg"
+															>
+																<circle cx="11" cy="11" r="7" stroke="rgba(152, 152, 152, .62)" stroke-width="2" />
+																<path
+																	d="M20 20L17 17"
+																	stroke="rgba(152, 152, 152, .62)"
+																	stroke-width="2"
+																	stroke-linecap="round"
+																/>
+															</svg>
+														</button>
+													</label>
+												</form>
+												<div class="accordion-content">
+													<div class="booking__specialists-box">
+														<p class="booking__specialists-elem">Стрижка</p>
+														<p class="booking__specialists-elem">Окрашивание</p>
+														<p class="booking__specialists-elem">Маникюр без покрытия</p>
+														<p class="booking__specialists-elem">Маникюр+покрытие гель-лак</p>
+														<p class="booking__specialists-elem">Педикюр без покрытия</p>
+														<p class="booking__specialists-elem">Педикюр+покрытие гель-лак</p>
+													</div>
+												</div>
 											</div>
+											<p class="booking__specialists-subtitle">Выбрать мастера</p>
+											<div class="booking__specialists-form">
+												<form class="search search--alt accordion" action="">
+													<label class="search__label">
+														<input class="search__input" type="search" placeholder="Поиск" />
+														<button class="search__icon">
+															<svg
+																width="14"
+																height="14"
+																viewBox="0 0 24 24"
+																fill="none"
+																xmlns="http://www.w3.org/2000/svg"
+															>
+																<circle cx="11" cy="11" r="7" stroke="rgba(152, 152, 152, .62)" stroke-width="2" />
+																<path
+																	d="M20 20L17 17"
+																	stroke="rgba(152, 152, 152, .62)"
+																	stroke-width="2"
+																	stroke-linecap="round"
+																/>
+															</svg>
+														</button>
+													</label>
+												</form>
+												<div class="accordion-content">
+													<div class="booking__specialists-box">
+														<p class="booking__specialists-elem">
+															Иван Иванов
+															<span>Стилист</span>
+														</p>
+														<p class="booking__specialists-elem">
+															Мария Иванова
+															<span>Мастер маникюра</span>
+														</p>
+													</div>
+												</div>
+											</div>
+											<button data-target="target2" class="btn btn--bigAlt btn--blue btn--width">Далее</button>
 										</div>
 									</div>
-									<div class="faq__item">
-										<p class="faq__item-title accordion">Реквизиты ООО «ТАВРИЯ»</p>
-										<div class="accordion-content">
-											<div class="faq__item-hidden">
-												<p class="faq__item-text">
-													Общество с ограниченной ответственностью «Бьюти» (Центр медицинской косметологии Оксаны
-													Волковой)
-													<br />
-													<br />
-													ИНН 7839421309
-													<br />
-													КПП 783901001
-													<br />
-													ОГРН/ОГРНИП 1107847091098
-													<br />
-													ОКАТО 40262561000
-													<br />
-													ОКПО 65917956
-													<br />
-													р/с 40702810055000025252 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК
-													<br />
-													К/с 30101810500000000653, БИК 044030653
-													<br />
-													<br />
-													Юридический адрес ООО «Бьюти»: РФ,190121, Санкт-Петербург, ул. Писарева, дом 18, лит. Б, пом.
-													20Н
-													<br />
-													Фактический адрес ООО «Бьюти» (ЦМК Оксаны Волковой): РФ,190121, Санкт-Петербург, ул. Писарева,
-													дом 18, лит. Б, пом. 20Н
-													<br />
-													Телефоны: 8 (812) 572-57-28, 8 (812) 714-64-85
-													<br />
-													e-mail: volkova-beauty@mail.ru
-													<br />
-													Генеральный директор (на основании Устава) Баязитова Светлана Валерьевна
-												</p>
+								</div>
+								<div data-info="target2" class="booking__box tabBooking__info">
+									<div class="booking__services">
+										<div class="booking__doctor">
+											<div class="booking__date">
+												<div class="booking__date-inner">
+													<label class="booking__date-label">
+														<input class="booking__date-input" type="radio" name="day" checked />
+														ПН 07.10
+													</label>
+													<label class="booking__date-label booking__date-label--disabled">
+														<input class="booking__date-input" type="radio" name="day" />
+														ВТ 08.10
+													</label>
+													<label class="booking__date-label">
+														<input class="booking__date-input" type="radio" name="day" />
+														СР 09.10
+													</label>
+													<label class="booking__date-label booking__date-label--disabled">
+														<input class="booking__date-input" type="radio" name="day" />
+														ЧТ 10.10
+													</label>
+													<label class="booking__date-label">
+														<input class="booking__date-input" type="radio" name="day" />
+														ПТ 11.10
+													</label>
+													<label class="booking__date-label">
+														<input class="booking__date-input" type="radio" name="day" />
+														СБ 11.10
+													</label>
+													<label class="booking__date-label">
+														<input class="booking__date-input" type="radio" name="day" />
+														ВС 12.10
+													</label>
+												</div>
 											</div>
+											<p class="booking__doctor-textGray">Варианты для записи в понедельник, 7 октября</p>
+											<div class="booking__doctor-inner">
+												<div class="booking__doctor-item">
+													<img class="booking__doctor-ava" src="./assets/images/booking/2.png" alt="" />
+													<div class="booking__doctor-column">
+														<p class="booking__doctor-name">Лихачева Ирина 
+                                                            Валерьевна</p>
+														<p class="booking__doctor-who">
+															Парикмахер
+														</p>
+														<p class="booking__doctor-street">Рылеева, 1</p>
+													</div>
+													<div class="booking__doctor-box">
+														<div class="booking__time">
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" checked />
+																11:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																12:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																13:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																14:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																15:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																16:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																17:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																18:00
+															</label>
+															<label class="booking__time-label">
+																<input class="booking__time-input" type="radio" name="time1" />
+																19:00
+															</label>
+														</div>
+														<a class="booking__doctor-link" href="#"> Не нашли удобное время? </a>
+													</div>
+												</div>
+											</div>
+											<button data-target="target3" class="btn btn--bigAlt btn--blue btn--width">Далее</button>
 										</div>
 									</div>
-									<div class="faq__item">
-										<p class="faq__item-title accordion">Адреса и телефоны органов исполнительной власти</p>
-										<div class="accordion-content">
-											<div class="faq__item-hidden">
-												<p class="faq__item-text">
-													Общество с ограниченной ответственностью «Бьюти» (Центр медицинской косметологии Оксаны
-													Волковой)
-													<br />
-													<br />
-													ИНН 7839421309
-													<br />
-													КПП 783901001
-													<br />
-													ОГРН/ОГРНИП 1107847091098
-													<br />
-													ОКАТО 40262561000
-													<br />
-													ОКПО 65917956
-													<br />
-													р/с 40702810055000025252 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК
-													<br />
-													К/с 30101810500000000653, БИК 044030653
-													<br />
-													<br />
-													Юридический адрес ООО «Бьюти»: РФ,190121, Санкт-Петербург, ул. Писарева, дом 18, лит. Б, пом.
-													20Н
-													<br />
-													Фактический адрес ООО «Бьюти» (ЦМК Оксаны Волковой): РФ,190121, Санкт-Петербург, ул. Писарева,
-													дом 18, лит. Б, пом. 20Н
-													<br />
-													Телефоны: 8 (812) 572-57-28, 8 (812) 714-64-85
-													<br />
-													e-mail: volkova-beauty@mail.ru
-													<br />
-													Генеральный директор (на основании Устава) Баязитова Светлана Валерьевна
-												</p>
+								</div>
+								<div data-info="target3" class="booking__box tabBooking__info">
+									<div class="booking__services">
+										<div class="booking__services-item">
+											<div class="form">
+												<p class="form__text">Имя Фамилия<span>*</span></p>
+												<input class="form__input" name="name" type="text" placeholder="Светлана Иванова" required />
+												<p class="form__text">Телефон<span>*</span></p>
+												<input class="form__input" name="phone" type="text" placeholder="+7 (999) 99 99 99" required />
+												<p class="form__text">Электронная почта<span>*</span></p>
+												<input class="form__input" name="email" type="email" placeholder="email@mail.ru" required />
+												<p class="form__text">Что вас беспокоит?</p>
+												<textarea class="form__input" rows="5"></textarea>
+												<button class="btn btn--bigAlt btn--blue btn--width" type="submit">
+													Завершить регистрацию
+												</button>
+												<label class="label">
+													<input class="label__input check" type="checkbox" checked />
+													<span class="label__inputCustom"></span>
+													Принимаю условия Политики конфиденциальности и даю разрешение на обработку персональных данных
+													в соответствии с Согласием на обработку персональных данных.
+												</label>
 											</div>
 										</div>
-									</div>
-									<div class="faq__item">
-										<p class="faq__item-title accordion">
-											Федеральный закон от 21.11.2011 N 323-ФЗ "Об основах охраны здоровья граждан в Российской
-											Федерации" ИЗВЛЕЧЕНИЯ
-										</p>
-										<div class="accordion-content">
-											<div class="faq__item-hidden">
-												<p class="faq__item-text">
-													Общество с ограниченной ответственностью «Бьюти» (Центр медицинской косметологии Оксаны
-													Волковой)
-													<br />
-													<br />
-													ИНН 7839421309
-													<br />
-													КПП 783901001
-													<br />
-													ОГРН/ОГРНИП 1107847091098
-													<br />
-													ОКАТО 40262561000
-													<br />
-													ОКПО 65917956
-													<br />
-													р/с 40702810055000025252 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК
-													<br />
-													К/с 30101810500000000653, БИК 044030653
-													<br />
-													<br />
-													Юридический адрес ООО «Бьюти»: РФ,190121, Санкт-Петербург, ул. Писарева, дом 18, лит. Б, пом.
-													20Н
-													<br />
-													Фактический адрес ООО «Бьюти» (ЦМК Оксаны Волковой): РФ,190121, Санкт-Петербург, ул. Писарева,
-													дом 18, лит. Б, пом. 20Н
-													<br />
-													Телефоны: 8 (812) 572-57-28, 8 (812) 714-64-85
-													<br />
-													e-mail: volkova-beauty@mail.ru
-													<br />
-													Генеральный директор (на основании Устава) Баязитова Светлана Валерьевна
-												</p>
+										<div class="booking__services-item">
+											<div class="booking__info">
+												<div class="booking__info-item">
+													<div class="booking__info-date">
+														<div class="booking__info-date__box">
+															<p class="booking__info-date__text">Дата</p>
+															<p class="booking__info-date__item">7 октября, ПН</p>
+														</div>
+														<div class="booking__info-date__box">
+															<p class="booking__info-date__text">Время</p>
+															<p class="booking__info-date__item">12:00</p>
+														</div>
+													</div>
+												</div>
+												<div class="booking__info-item">
+													<div class="booking__info-box">
+														<p class="booking__info-box__text">Первичный прием</p>
+														<p class="booking__info-box__text">60 минут</p>
+													</div>
+												</div>
+												<div class="booking__info-item">
+													<div class="booking__info-doctor">
+														<img class="booking__info-doctor__ava" src="./assets/images/booking/1.png" alt="" />
+														<div class="booking__info-doctor__column">
+															<p class="booking__info-doctor__name">Парикмахер</p>
+															<p class="booking__info-doctor__who">Лихачева Ирина Валерьевна</p>
+														</div>
+													</div>
+												</div>
+												<div class="booking__info-item">
+													<div class="booking__info-box">
+														<p class="booking__info-box__text">Центр</p>
+														<p class="booking__info-box__text">Рылеева, 1</p>
+													</div>
+												</div>
+												<div class="booking__info-item">
+													<p class="booking__info-item__text">
+														Lorem ipsum dolor sit amet consectetur. Mauris non faucibus quis nec suspendisse fermentum
+														ultrices. Duis et metus lobortis nisi. Consequat mauris mi augue ultrices. Dignissim lacus
+														lectus turpis orci et egestas.
+													</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -450,8 +542,10 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
+			</div>
 
+			<main class="main">
 				<section class="map">
 					<div class="container">
 						<div class="map__inner">
@@ -567,7 +661,7 @@
 			</footer>
 		</div>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 		<script src="https://unpkg.com/imask"></script>

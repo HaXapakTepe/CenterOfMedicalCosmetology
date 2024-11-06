@@ -5,6 +5,33 @@ document.addEventListener('DOMContentLoaded', () => {
 	const openModal = document.querySelectorAll('.open-modal')
 	const modal = document.querySelector('.modal')
 	const success = document.querySelector('.success')
+	const bookingSpecialistsForm = document.querySelectorAll('.booking__specialists-form')
+	const hidden = document.querySelector('.booking__specialists-hidden')
+
+	bookingSpecialistsForm.forEach(item => {
+		const text = item.querySelectorAll('.booking__specialists-elem')
+
+		text.forEach(elem => {
+			item.addEventListener('click', e => {
+				const value = item.querySelector('.search__input')
+				value.value = e.target.textContent.trim()
+			})
+			bookingSpecialistsForm[0].addEventListener('click', e => {
+				const value = bookingSpecialistsForm[0].querySelector('.search__input')
+				if (value.value != '') {
+					hidden.classList.add('booking__specialists-hidden--active')
+					setTimeout(() => {
+						hidden.classList.add('booking__specialists-hidden--opacity')
+					}, 230)
+				} else {
+					setTimeout(() => {
+						hidden.classList.remove('booking__specialists-hidden--active')
+					}, 230)
+					hidden.classList.remove('booking__specialists-hidden--opacity')
+				}
+			})
+		})
+	})
 
 	if (modal) {
 		const close = document.querySelector('.modal__close')
@@ -85,16 +112,70 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	const tabs = document.querySelectorAll('.tab__target')
-	const pages = document.querySelectorAll('.tab__info')
+	const tabs = document.querySelectorAll('.tabBooking__target')
+	const pages = document.querySelectorAll('.tabBooking__info')
 
-	handleTabClick(tabs, pages, 'tab__target--active', 'tab__info--active', 'tab__info--opacity')
+	handleTabClick(tabs, pages, 'tabBooking__target--active', 'tabBooking__info--active', 'tabBooking__info--opacity')
+
+	const bookingServices = document.querySelectorAll('.booking__services')
+	bookingServices?.forEach(elem => {
+		const bookingServicesBtn = elem.querySelectorAll('.btn')
+		bookingServicesBtn.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const targetActive = document.querySelectorAll('.tabBooking__target')
+
+				targetActive.forEach(item => {
+					if (item.classList.contains('tabBooking__target--active')) {
+						item.classList.add('tabBooking__target--img')
+					}
+				})
+			})
+		})
+	})
+
+	var targetMap = document.querySelectorAll('[data-target]')
+	var map = document.querySelectorAll('.tabBooking__info')
+
+	targetMap?.forEach(elem => {
+		elem.addEventListener('click', function (e) {
+			e.preventDefault()
+			var target = this.getAttribute('data-target')
+
+			map.forEach(elem => {
+				elem.classList.remove('tabBooking__info--opacity', 'tabBooking__info--active')
+			})
+
+			targetMap.forEach(elem => {
+				elem.classList.remove('tabBooking__target--active')
+			})
+
+			var cat = document.querySelector('[data-info="' + target + '"]')
+			cat.classList.add('tabBooking__info--active')
+
+			setTimeout(() => {
+				cat.classList.add('tabBooking__info--opacity')
+			}, 230)
+
+			updateActiveState()
+		})
+	})
+
+	function updateActiveState() {
+		targetMap.forEach((targetElem, index) => {
+			const infoElem = map[index]
+
+			if (infoElem?.classList.contains('tabBooking__info--active')) {
+				targetElem.classList.add('tabBooking__target--active')
+			} else {
+				targetElem.classList.remove('tabBooking__target--active')
+			}
+		})
+	}
 
 	const reviewsСards = document.querySelector('.reviews__cards')
 	if (reviewsСards) {
 		const reviewsСardsItem = reviewsСards?.querySelectorAll('.reviews__card')
 		const showMoreButton = reviewsСards.nextElementSibling
-		console.log(showMoreButton)
 
 		let currentIndex = 0
 		const cardsToShow = 6
@@ -126,7 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (stockInner) {
 		const stockItem = stockInner?.querySelectorAll('.stock__item')
 		const showMoreButton = stockInner.nextElementSibling
-		console.log(showMoreButton)
 
 		let currentIndex = 0
 		const cardsToShow = 3
@@ -206,6 +286,39 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				acc.classList.add('accordion--active')
 				content.style.maxHeight = content.scrollHeight + 'px'
+			}
+		})
+	})
+	// const accordionAlt = document.querySelectorAll('.accordionAlt')
+
+	// accordionAlt.forEach(acc => {
+	// 	acc.addEventListener('click', function (e) {
+	// 		const content = this.querySelector('.accordionAlt__content')
+	// 		if (!e.target.closest('.accordionAlt__content')) {
+	// 			if (!this.classList.contains('accordionAlt--active')) {
+	// 				accordionAlt.forEach(otherAcc => {
+	// 					if (otherAcc !== this) {
+	// 						const otherContent = otherAcc.querySelector('.accordionAlt__content')
+	// 						otherAcc.classList.remove('accordionAlt--active')
+	// 						otherContent.style.maxHeight = '0'
+	// 					}
+	// 				})
+	// 				this.classList.add('accordionAlt--active')
+	// 				content.style.maxHeight = content.scrollHeight + 'px'
+	// 			} else {
+	// 				this.classList.remove('accordionAlt--active')
+	// 				content.style.maxHeight = '0'
+	// 			}
+	// 		}
+	// 	})
+	// })
+
+	document.addEventListener('click', function (e) {
+		accordion?.forEach(acc => {
+			const content = acc.nextElementSibling
+			if (!acc.contains(e.target)) {
+				acc.classList.remove('accordion--active')
+				content.style.maxHeight = '0'
 			}
 		})
 	})
@@ -427,6 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.92617, 30.286161],
 				name: 'Улица 1',
+				iconImageHref: '../assets/images/map/1.svg',
 			},
 			{
 				text: '+7 (812) 223-51-27',
@@ -435,6 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.942412, 30.351055],
 				name: 'Улица 2',
+				iconImageHref: '../assets/images/map/2.svg',
 			},
 			{
 				text: '+7 (812) 223-51-27',
@@ -443,6 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.947243, 30.378472],
 				name: 'Улица 3',
+				iconImageHref: '../assets/images/map/3.svg',
 			},
 		]
 
@@ -458,23 +574,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			points.forEach(point => {
 				const content = `
-			        <div class="map__ballon">
-			            <div class="map__ballon-box">
-			                <p class="map__ballon-title">Телефон</p>
-			                <p class="map__ballon-text">
-			                    <a href="tel:${point.text}">${point.text}</a>
-			                </p>
-			            </div>
-			            <div class="map__ballon-box">
-			                <p class="map__ballon-title">Адрес</p>
-			                <p class="map__ballon-text">${point.address}</p>
-			            </div>
-			            <div class="map__ballon-box">
-			                <p class="map__ballon-title">График работы</p>
-			                <p class="map__ballon-text">${point.schedule}</p>
-			            </div>
-			        </div>
-			        `
+                      <div class="map__ballon">
+                          <div class="map__ballon-box">
+                              <p class="map__ballon-title">Телефон</p>
+                              <p class="map__ballon-text">
+                                  <a href="tel:${point.text}">${point.text}</a>
+                              </p>
+                          </div>
+                          <div class="map__ballon-box">
+                              <p class="map__ballon-title">Адрес</p>
+                              <p class="map__ballon-text">${point.address}</p>
+                          </div>
+                          <div class="map__ballon-box">
+                              <p class="map__ballon-title">График работы</p>
+                              <p class="map__ballon-text">${point.schedule}</p>
+                          </div>
+                      </div>
+                      `
 
 				const myPlacemark = new ymaps.Placemark(
 					point.coords,
@@ -483,9 +599,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					},
 					{
 						iconLayout: 'default#image',
-						iconImageHref: '../assets/images/icons/loca-gold.svg',
-						// iconImageHref: '/CenterOfMedicalCosmetology/assets/images/icons/loca-gold.svg',
-						iconImageSize: [48, 48],
+						iconImageHref: point.iconImageHref,
+						iconImageSize: [247, 30],
 					}
 				)
 				myCollection.add(myPlacemark)

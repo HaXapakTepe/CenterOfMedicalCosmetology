@@ -35,4 +35,14 @@
       color: #999;
     }
   }
+
+  &__text {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+
+    span {
+        color: #f20000;
+    }
+  }
 }

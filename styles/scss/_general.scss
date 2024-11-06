@@ -68,11 +68,15 @@ img {
 // &:focus-within {
 //   border-color: #d9291d;
 // }
-
+textarea,
 input,
 button {
 	outline: none;
 	background-color: transparent;
+}
+
+textarea {
+	resize: none;
 }
 
 fieldset {
