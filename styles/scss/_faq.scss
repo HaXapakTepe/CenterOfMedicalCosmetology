@@ -37,7 +37,7 @@
 						@include fluid(padding-top, 10px, 15px);
 						@include fluid(padding-bottom, 10px, 15px);
 						@include fluid(padding-left, 15px, 20px);
-						@include fluid(padding-right, 15px, 20px);
+                        padding-right: 50px;
 
 						&::after {
 							@include fluid(top, 8px, 18px);
