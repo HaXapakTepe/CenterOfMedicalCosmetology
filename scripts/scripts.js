@@ -540,7 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.92617, 30.286161],
 				name: 'Улица 1',
-				iconImageHref: '../assets/images/map/1.svg',
+				// iconImageHref: '../assets/images/map/1.svg',
+				iconImageHref: '/CenterOfMedicalCosmetology/assets/images/map/1.svg',
 			},
 			{
 				text: '+7 (812) 223-51-27',
@@ -549,7 +550,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.942412, 30.351055],
 				name: 'Улица 2',
-				iconImageHref: '../assets/images/map/2.svg',
+				// iconImageHref: '../assets/images/map/2.svg',
+				iconImageHref: '/CenterOfMedicalCosmetology/assets/images/map/2.svg',
 			},
 			{
 				text: '+7 (812) 223-51-27',
@@ -558,7 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
 					'Понедельник-пятница с 10:00 до 20:00, <br> Суббота с 11:00 до 19:00, <br> Воскресенье с 11:00 до 19:00',
 				coords: [59.947243, 30.378472],
 				name: 'Улица 3',
-				iconImageHref: '../assets/images/map/3.svg',
+				// iconImageHref: '../assets/images/map/3.svg',
+				iconImageHref: '/CenterOfMedicalCosmetology/assets/images/map/3.svg',
 			},
 		]
 
