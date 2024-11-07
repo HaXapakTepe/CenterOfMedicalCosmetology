@@ -18,7 +18,7 @@
 
     &-fon {
       position: absolute;
-      @include fluid(bottom, 0px, -40px);
+      top: 0;
       left: 0;
       height: 100%;
     }
