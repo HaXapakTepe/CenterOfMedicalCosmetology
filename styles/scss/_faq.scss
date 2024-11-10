@@ -411,6 +411,10 @@
 		padding-bottom: 20px;
 		border-bottom: 1px solid #d9ba5b;
 
+		&:has(.faq__block) {
+			background-color: #fff4d5;
+		}
+
 		&::after,
 		&::before {
 			content: '';
@@ -580,6 +584,10 @@
 		@include fluid(padding-left, 20px, 52px);
 		@include fluid(padding-right, 20px, 52px);
 
+		&:has(+ .faq__cards) {
+			@include fluid(padding-bottom, 0px, 10px);
+		}
+
 		&-img {
 			border-radius: 10px;
 			width: -webkit-fit-content;
@@ -592,9 +600,23 @@
 			@include fluid(margin-bottom, 12px, 25px);
 		}
 
+		*:has(+ *) {
+			@include fluid(margin-bottom, 20px, 40px);
+		}
+
 		&-text {
-			&:has(+ *) {
+			&--accent {
+				font-weight: 700;
+				color: #d9ba5b;
+				@include fluid(font-size, 18px, 32px);
+			}
+
+			&:has(+ .faq__block-text) {
 				@include fluid(margin-bottom, 12px, 20px);
+			}
+
+			strong {
+				display: block;
 			}
 		}
 
@@ -687,13 +709,13 @@
 			}
 		}
 
-        &__block {
-            &-img {
-               width: 100%;
-               height: auto;
-               float: unset;
-            }
-        }
+		&__block {
+			&-img {
+				width: 100%;
+				height: auto;
+				float: unset;
+			}
+		}
 	}
 }
 

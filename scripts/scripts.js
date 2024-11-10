@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	const tabs = document.querySelectorAll('.tabBooking__target')
-	const pages = document.querySelectorAll('.tabBooking__info')
+	const tabs = document.querySelectorAll('.tab__target')
+	const pages = document.querySelectorAll('.tab__info')
 
-	handleTabClick(tabs, pages, 'tabBooking__target--active', 'tabBooking__info--active', 'tabBooking__info--opacity')
+	handleTabClick(tabs, pages, 'tab__target--active', 'tab__info--active', 'tab__info--opacity')
 
 	const bookingServices = document.querySelectorAll('.booking__services')
 	bookingServices?.forEach(elem => {

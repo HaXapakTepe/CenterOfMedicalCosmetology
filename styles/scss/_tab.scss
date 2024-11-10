@@ -12,12 +12,20 @@
 			opacity: 1;
 		}
 	}
+
+	.specialists {
+		margin-bottom: 40px;
+	}
+
+	.faq {
+		margin-top: 40px;
+	}
 }
 
 .tabBooking {
 	&__target {
 		transition: background-color 0.23s ease-in-out;
-        cursor: pointer;
+		cursor: pointer;
 	}
 
 	&__info {
