@@ -101,7 +101,7 @@
 
 			a {
 				color: #2a275f;
-                text-decoration: underline;
+				text-decoration: underline;
 			}
 		}
 
@@ -151,6 +151,14 @@
 			height: 100%;
 			-o-object-fit: cover;
 			object-fit: cover;
+		}
+	}
+
+	&__list {
+		list-style: inside;
+
+		&:has(+ *) {
+			@include fluid(margin-bottom, 12px, 20px);
 		}
 	}
 }

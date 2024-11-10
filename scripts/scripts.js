@@ -289,39 +289,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	})
-	// const accordionAlt = document.querySelectorAll('.accordionAlt')
 
-	// accordionAlt.forEach(acc => {
-	// 	acc.addEventListener('click', function (e) {
-	// 		const content = this.querySelector('.accordionAlt__content')
-	// 		if (!e.target.closest('.accordionAlt__content')) {
-	// 			if (!this.classList.contains('accordionAlt--active')) {
-	// 				accordionAlt.forEach(otherAcc => {
-	// 					if (otherAcc !== this) {
-	// 						const otherContent = otherAcc.querySelector('.accordionAlt__content')
-	// 						otherAcc.classList.remove('accordionAlt--active')
-	// 						otherContent.style.maxHeight = '0'
-	// 					}
-	// 				})
-	// 				this.classList.add('accordionAlt--active')
-	// 				content.style.maxHeight = content.scrollHeight + 'px'
-	// 			} else {
-	// 				this.classList.remove('accordionAlt--active')
-	// 				content.style.maxHeight = '0'
-	// 			}
+	// document.addEventListener('click', function (e) {
+	// 	accordion?.forEach(acc => {
+	// 		const content = acc.nextElementSibling
+	// 		if (!acc.contains(e.target)) {
+	// 			acc.classList.remove('accordion--active')
+	// 			content.style.maxHeight = '0'
 	// 		}
 	// 	})
 	// })
-
-	document.addEventListener('click', function (e) {
-		accordion?.forEach(acc => {
-			const content = acc.nextElementSibling
-			if (!acc.contains(e.target)) {
-				acc.classList.remove('accordion--active')
-				content.style.maxHeight = '0'
-			}
-		})
-	})
 
 	const accordionHover = document.querySelectorAll('.accordionHover')
 
@@ -520,6 +497,42 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 				414: {
 					slidesPerView: 1.5,
+					spaceBetween: 12,
+				},
+				320: {
+					slidesPerView: 1.1,
+					spaceBetween: 12,
+				},
+			},
+		})
+	}
+
+	const faqSwipers = []
+	const faqSwiper = document.querySelectorAll('.faq__swiper')
+	faqSwiper?.forEach((swiper, index) => {
+		faqSwipers.push(setSlidersSwiper(index + 1))
+	})
+	function setSlidersSwiper(index) {
+		return new Swiper(`.faq__swiper--${index}`, {
+			navigation: {
+				prevEl: `.faq__arrow-prev--${index}`,
+				nextEl: `.faq__arrow-next--${index}`,
+			},
+			breakpoints: {
+				992: {
+					slidesPerView: 4,
+					spaceBetween: 40,
+				},
+				768: {
+					slidesPerView: 3.2,
+					spaceBetween: 24,
+				},
+				576: {
+					slidesPerView: 2.2,
+					spaceBetween: 16,
+				},
+				414: {
+					slidesPerView: 2.2,
 					spaceBetween: 12,
 				},
 				320: {

@@ -24,6 +24,10 @@
 
 		&-title {
 			@include fluid(max-width, 385px, 870px);
+
+            &:has(+ *) {
+				@include fluid(margin-bottom, 20px, 32px);
+			}
 		}
 
 		&-img {
