@@ -361,6 +361,11 @@
 				}
 			}
 		}
+
+		.video {
+			@include fluid(margin-top, 16px, 30px);
+			@include fluid(margin-bottom, 16px, 30px);
+		}
 	}
 
 	&--alt {
