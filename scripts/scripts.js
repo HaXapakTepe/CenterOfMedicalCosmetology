@@ -474,9 +474,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const afterBeforeSwipers = []
 	const afterBeforeSwiper = document.querySelectorAll('.afterBefore__swiper')
 	afterBeforeSwiper?.forEach((swiper, index) => {
-		afterBeforeSwipers.push(setSlidersSwiper(index + 1))
+		afterBeforeSwipers.push(setAfterBeforeSwipers(index + 1))
 	})
-	function setSlidersSwiper(index) {
+	function setAfterBeforeSwipers(index) {
 		return new Swiper(`.afterBefore__swiper--${index}`, {
 			navigation: {
 				prevEl: `.afterBefore__arrow-prev--${index}`,
@@ -510,9 +510,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const faqSwipers = []
 	const faqSwiper = document.querySelectorAll('.faq__swiper')
 	faqSwiper?.forEach((swiper, index) => {
-		faqSwipers.push(setSlidersSwiper(index + 1))
+		faqSwipers.push(setFaqSwipers(index + 1))
 	})
-	function setSlidersSwiper(index) {
+	function setFaqSwipers(index) {
 		return new Swiper(`.faq__swiper--${index}`, {
 			navigation: {
 				prevEl: `.faq__arrow-prev--${index}`,
