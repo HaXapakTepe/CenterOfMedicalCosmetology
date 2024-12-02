@@ -1,252 +1,262 @@
 .stock {
-  @include fluid(margin-top, 30px, 100px);
-  @include fluid(margin-bottom, 30px, 100px);
-  margin-left: 15px;
-  margin-right: 15px;
+	@include fluid(margin-top, 30px, 100px);
+	@include fluid(margin-bottom, 30px, 100px);
+	margin-left: 15px;
+	margin-right: 15px;
 
-  .container {
-    width: 100%;
-  }
+	.container {
+		width: 100%;
+	}
 
-  .btn {
-    @include fluid(font-size, 16px, 22px);
-  }
+	.btn {
+		@include fluid(font-size, 16px, 22px);
+	}
 
-  &__wrapper {
-    position: relative;
-    @include fluid(max-width, 942px, 1660px);
-    @include fluid(padding-top, 30px, 55px);
-    @include fluid(padding-bottom, 30px, 55px);
-    @include fluid(padding-left, 10px, 55px);
-    @include fluid(padding-right, 10px, 55px);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    background-color: #FFF4D5;
-    overflow: hidden;
-  }
+	&__wrapper {
+		position: relative;
+		@include fluid(max-width, 942px, 1660px);
+		@include fluid(padding-top, 30px, 55px);
+		@include fluid(padding-bottom, 30px, 55px);
+		@include fluid(padding-left, 10px, 55px);
+		@include fluid(padding-right, 10px, 55px);
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 10px;
+		background-color: #fff4d5;
+		overflow: hidden;
+	}
 
-  &__title {
-    @include fluid(margin-bottom, 30px, 55px);
-  }
+	&__title {
+		@include fluid(margin-bottom, 30px, 55px);
+	}
 
-  &__inner {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #D9BA5B;
+	&__inner {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #d9ba5b;
 
-    &:has(+*) {
-      @include fluid(margin-bottom, 30px, 50px);
-    }
+		&:has(+ *) {
+			@include fluid(margin-bottom, 30px, 50px);
+		}
 
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: #D9BA5B;
-    }
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: #d9ba5b;
+		}
 
-    &::before {
-      left: 0;
-    }
+		&::before {
+			left: 0;
+		}
 
-    &::after {
-      right: 0;
-    }
+		&::after {
+			right: 0;
+		}
 
-    +.btn {
-      max-width: 270px;
-    }
-  }
+		+ .btn {
+			max-width: 270px;
+		}
+	}
 
-  &__item {
-    position: relative;
-    display: none;
-    @include fluid(gap, 20px, 40px);
-    padding-top: 30px;
-    border-top: 1px solid #D9BA5B;
+	&__item {
+		position: relative;
+		display: none;
+		@include fluid(gap, 20px, 40px);
+		padding-top: 30px;
+		border-top: 1px solid #d9ba5b;
+        grid-template-columns: 27% 70%;
 
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: #D9BA5B;
-    }
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			top: -3px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: #d9ba5b;
+		}
 
-    &::before {
-      left: 0;
-    }
+		&::before {
+			left: 0;
+		}
 
-    &::after {
-      right: 0;
-    }
+		&::after {
+			right: 0;
+		}
 
-    * {
-      grid-column: 2;
-    }
+		* {
+			grid-column: 2;
+		}
 
-    &-box {
-      position: relative;
-      @include fluid(height, 250px, 380px);
-      border-radius: 10px;
-      overflow: hidden;
-      width: 27%;
+		&-box {
+			position: relative;
+			@include fluid(height, 250px, 380px);
+			border-radius: 10px;
+			overflow: hidden;
+			width: 27%;
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color: #000000, $alpha: .5);
-      }
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($color: #000000, $alpha: 0.5);
+			}
 
-      &__content {
-        position: absolute;
-        z-index: 1;
-        width: 70%;
-        height: 90%;
-        @include fluid(top, 20px, 60px);
-        @include fluid(left, 20px, 37px);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
+			&__content {
+				position: absolute;
+				z-index: 1;
+				width: 70%;
+				height: 90%;
+				@include fluid(top, 20px, 60px);
+				@include fluid(left, 20px, 37px);
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+			}
 
-      &__title {
-        @include fluid(font-size, 24px, 44px);
-        font-weight: 700;
-        color: #fff;
-      }
+			&__title {
+				@include fluid(font-size, 24px, 44px);
+				font-weight: 700;
+				color: #fff;
+			}
 
-      &__text {
-        @include fluid(font-size, 18px, 34px);
-        color: #fff;
-      }
-    }
+			&__text {
+				@include fluid(font-size, 18px, 34px);
+				color: #fff;
+			}
+		}
 
-    &-img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+		&-img {
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			border-radius: 10px;
+		}
 
-    &-num {
-      position: absolute;
-      z-index: 1;
-      top: 25px;
-      right: 22px;
-      @include fluid(font-size, 24px, 44px);
-      font-weight: 500;
-      color: #fff4d5;
-      @include fluid(padding-left, 8px, 12px);
-      @include fluid(padding-right, 8px, 12px);
-      border-radius: 7px;
-      background-color: #D9BA5B;
-      transform: rotate(-7deg)
-    }
+		&-num {
+			position: absolute;
+			z-index: 1;
+			top: 25px;
+			right: 22px;
+			@include fluid(font-size, 24px, 44px);
+			font-weight: 500;
+			color: #fff4d5;
+			@include fluid(padding-left, 8px, 12px);
+			@include fluid(padding-right, 8px, 12px);
+			border-radius: 7px;
+			background-color: #d9ba5b;
+			transform: rotate(-7deg);
+		}
 
-    &-content {
-      width: 70%;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      @include fluid(gap, 12px, 20px);
-    }
+		&-content {
+			width: 70%;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			@include fluid(gap, 12px, 20px);
+		}
 
-    &-title {
-      @include fluid(font-size, 24px, 44px);
-      font-weight: 700;
-    }
+		&-title {
+			@include fluid(font-size, 24px, 44px);
+			font-weight: 700;
+		}
+        
+		a.stock__item-title {
+			color: #2a275f;
+			transition: color 0.23s ease-in-out;
 
-    &-text {
-      @include fluid(font-size, 14px, 18px);
-      color: #2A275F;
-    }
+			&:hover {
+				color: #d9ba5b;
+			}
+		}
 
-    &-info {
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
-      width: fit-content;
-      @include fluid(font-size, 20px, 26px);
-      font-weight: 500;
-      color: #FFF4D5;
-      border-radius: 5px;
-      background-color: #D9BA5B;
-      @include fluid(padding-left, 10px, 15px);
-      @include fluid(padding-right, 10px, 15px);
-      @include fluid(padding-top, 5px, 10px);
-      @include fluid(padding-bottom, 5px, 10px);
-    }
+		&-text {
+			@include fluid(font-size, 14px, 18px);
+			color: #2a275f;
+		}
 
-    &-textBold {
-      @include fluid(font-size, 20px, 26px);
-      font-weight: 700;
-      color: #2A275F;
-    }
+		&-info {
+			width: -webkit-fit-content;
+			width: -moz-fit-content;
+			width: fit-content;
+			@include fluid(font-size, 20px, 26px);
+			font-weight: 500;
+			color: #fff4d5;
+			border-radius: 5px;
+			background-color: #d9ba5b;
+			@include fluid(padding-left, 10px, 15px);
+			@include fluid(padding-right, 10px, 15px);
+			@include fluid(padding-top, 5px, 10px);
+			@include fluid(padding-bottom, 5px, 10px);
+		}
 
-    &-link {
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
-      width: fit-content;
-      @include fluid(font-size, 20px, 26px);
-      font-weight: 700;
-      color: #2A275F;
-      text-decoration: underline;
-      transition: color 0.23s ease-in-out;
+		&-textBold {
+			@include fluid(font-size, 20px, 26px);
+			font-weight: 700;
+			color: #2a275f;
+		}
 
-      &:hover {
-        color: #D9BA5B;
-      }
-    }
-  }
+		&-link {
+			width: -webkit-fit-content;
+			width: -moz-fit-content;
+			width: fit-content;
+			@include fluid(font-size, 20px, 26px);
+			font-weight: 700;
+			color: #2a275f;
+			text-decoration: underline;
+			transition: color 0.23s ease-in-out;
+
+			&:hover {
+				color: #d9ba5b;
+			}
+		}
+	}
 }
 
-@media(max-width: 992px) {
-  .stock {
-    &__wrapper {
-      max-width: 700px;
-    }
+@media (max-width: 992px) {
+	.stock {
+		&__wrapper {
+			max-width: 700px;
+		}
 
-    &__item {
-      &-box {
-        width: 39%;
-      }
+		&__item {
+			&-box {
+				width: 39%;
+			}
 
-      &-content {
-        width: 60%;
-      }
-    }
-  }
+			&-content {
+				width: 60%;
+			}
+		}
+	}
 }
 
-@media(max-width: 768px) {
-  .stock {
-    &__wrapper {
-      max-width: 520px;
-    }
+@media (max-width: 768px) {
+	.stock {
+		&__wrapper {
+			max-width: 520px;
+		}
 
-    &__item {
-      flex-direction: column;
+		&__item {
+			flex-direction: column;
 
-      &-box,
-      &-content {
-        width: 100%;
-      }
-    }
-  }
+			&-box,
+			&-content {
+				width: 100%;
+			}
+		}
+	}
 }

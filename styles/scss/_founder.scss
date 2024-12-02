@@ -122,11 +122,20 @@
 			@include fluid(margin-bottom, 20px, 50px);
 		}
 
-        &-text {
-            &:has(+ *) {
-                @include fluid(margin-bottom, 15px, 30px);
-            }
-        }
+		&-text {
+			&:has(+ *) {
+				@include fluid(margin-bottom, 15px, 30px);
+			}
+
+			a {
+				color: #2a275f;
+				transition: color 0.23s ease-in-out;
+
+				&:hover {
+					color: #d9ba5b;
+				}
+			}
+		}
 	}
 
 	&__list {

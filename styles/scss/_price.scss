@@ -19,17 +19,23 @@
 		margin-right: auto;
 		border-radius: 10px;
 		background-color: #fff4d5;
-		overflow: hidden;
+		// overflow: hidden;
 	}
 
 	&__inner {
-        position: relative;
+		position: relative;
 		display: grid;
 		grid-template-columns: 370px 1fr;
 		@include fluid(gap, 12px, 20px);
 	}
 
 	&__aside {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 100px;
+		height: -webkit-fit-content;
+		height: -moz-fit-content;
+		height: fit-content;
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
@@ -70,6 +76,7 @@
 			transition: background-color 0.23s ease-in-out;
 
 			&:hover {
+				color: #fff;
 				background-color: rgba(255, 244, 213, 0.48);
 			}
 		}
@@ -90,6 +97,10 @@
 
 		&__inner {
 			grid-template-columns: 100%;
+		}
+
+		&__aside {
+			position: static;
 		}
 	}
 }

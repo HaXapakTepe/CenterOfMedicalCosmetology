@@ -227,7 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		showNextCards()
 
 		showMoreButton?.addEventListener('click', function () {
+			stockInner.style.height = `${stockInner.clientHeight}px`
 			showNextCards()
+			setTimeout(() => {
+				stockInner.removeAttribute('style');
+			}, 1)
 		})
 	}
 
