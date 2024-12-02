@@ -9,33 +9,33 @@
 	align-items: center;
 	justify-content: center;
 	z-index: 50;
-    opacity: 0;
-    z-index: -1;
-    visibility: hidden;
-    transition: opacity 0.23s ease-in-out, visibility 0.23s ease-in-out, z-index 0.23s ease-in-out;
+	opacity: 0;
+	z-index: -1;
+	visibility: hidden;
+	transition: opacity 0.23s ease-in-out, visibility 0.23s ease-in-out, z-index 0.23s ease-in-out;
 
-    &--active {
-        z-index: 50;
-        opacity: 1;
-        visibility: visible;
-    }
+	&--active {
+		z-index: 50;
+		opacity: 1;
+		visibility: visible;
+	}
 
 	&__inner {
-        position: relative;
-        width: 100%;
-        @include fluid(max-width, 400px, 662px);
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: column;
-        @include fluid(gap, 16px, 22px);
+		position: relative;
+		width: 100%;
+		@include fluid(max-width, 400px, 662px);
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		@include fluid(gap, 16px, 22px);
 		border-radius: 8px;
 		background-color: #fff4d5;
-        @include fluid(padding-left, 16px, 24px);
-        @include fluid(padding-right, 16px, 24px);
-        @include fluid(padding-top, 16px, 20px);
-        @include fluid(padding-bottom, 40px, 94px);
-        overflow: hidden;
+		@include fluid(padding-left, 16px, 24px);
+		@include fluid(padding-right, 16px, 24px);
+		@include fluid(padding-top, 16px, 20px);
+		@include fluid(padding-bottom, 40px, 94px);
+		overflow: hidden;
 	}
 
 	&__close {
@@ -68,16 +68,21 @@
 		}
 	}
 
-    &__title {
-        font-weight: 700;
-        @include fluid(font-size, 24px, 44px);
-        text-align: center;
-        line-height: 1;
-    }
+	&__title {
+		font-weight: 700;
+		@include fluid(font-size, 24px, 44px);
+		text-align: center;
+		line-height: 1;
+	}
 
-    &__text {
-        text-align: center;
-    }
+	&__text {
+		text-align: center;
+	}
+
+	&__textBold {
+		text-align: center;
+		font-weight: 600;
+	}
 
 	&__box {
 		&-fon {
@@ -90,18 +95,80 @@
 
 		&-img {
 			position: absolute;
-            @include fluid(bottom, -20px, -60px);
-            left: 50%;
-            transform: translateX(-50%);
+			@include fluid(bottom, -20px, -60px);
+			left: 50%;
+			transform: translateX(-50%);
 			@include fluid(height, 360px, 560px);
 			z-index: 1;
 			margin-left: auto;
 			margin-top: auto;
 		}
 
-        .form {
-            margin-left: auto;
-            margin-right: auto;
-        }
+		.form {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__accordion {
+		padding: 20px 32px;
+		@include fluid(font-size, 14px, 20px);
+		border-radius: 10px;
+		background-color: #fff;
+		border: 1px solid #2a275f;
+		transition: box-shadow 0.23s ease-in-out;
+
+		&.accordionAlt--active {
+			.modal__accordion-title::after {
+				opacity: 0;
+			}
+		}
+
+		&-title {
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 14px;
+				height: 14px;
+				background-image: url('../../assets/images/icons/arrow-acc.svg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				transition: opacity 0.23s ease-in-out;
+			}
+		}
+
+		&-hidden {
+			display: flex;
+			flex-direction: column;
+			gap: 6px;
+			padding-top: 10px;
+			border-top: 1px solid #d9ba5b;
+			margin-top: 10px;
+		}
+
+		&-option {
+			position: relative;
+			color: #989898;
+			transition: color 0.23s ease-in-out;
+
+			&:has(.modal__accordion-check:checked) {
+				font-weight: 600;
+				color: #d9ba5b;
+			}
+		}
+
+		&-check {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+		}
 	}
 }

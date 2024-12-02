@@ -7,6 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	const success = document.querySelector('.success')
 	const bookingSpecialistsForm = document.querySelectorAll('.booking__specialists-form')
 	const hidden = document.querySelector('.booking__specialists-hidden')
+	const modalAccordion = document.querySelector('.modal__accordion')
+
+	modalAccordion?.addEventListener('click', e => {
+        const title = document.querySelector('.modal__accordion-title')
+		const target = e.target
+		if (target.classList.contains('modal__accordion-check')) {
+            const targetText = target.parentNode.textContent
+            title.textContent = targetText
+		}
+	})
 
 	bookingSpecialistsForm.forEach(item => {
 		const text = item.querySelectorAll('.booking__specialists-elem')
@@ -230,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			stockInner.style.height = `${stockInner.clientHeight}px`
 			showNextCards()
 			setTimeout(() => {
-				stockInner.removeAttribute('style');
+				stockInner.removeAttribute('style')
 			}, 1)
 		})
 	}
@@ -279,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	const accordion = document.querySelectorAll('.accordion')
+	const accordionAlt = document.querySelectorAll('.accordionAlt')
 
 	accordion?.forEach(acc => {
 		acc.addEventListener('click', e => {
@@ -290,6 +301,26 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				acc.classList.add('accordion--active')
 				content.style.maxHeight = content.scrollHeight + 'px'
+			}
+		})
+	})
+
+	accordionAlt?.forEach(acc => {
+		acc.addEventListener('click', function (e) {
+			const content = this.querySelector('.accordionAlt__content')
+			if (!this.classList.contains('accordionAlt--active')) {
+				accordionAlt.forEach(otherAcc => {
+					if (otherAcc !== this) {
+						const otherContent = otherAcc.querySelector('.accordionAlt__content')
+						otherAcc.classList.remove('accordionAlt--active')
+						otherContent.style.maxHeight = '0'
+					}
+				})
+				this.classList.add('accordionAlt--active')
+				content.style.maxHeight = content.scrollHeight + 'px'
+			} else {
+				this.classList.remove('accordionAlt--active')
+				content.style.maxHeight = '0'
 			}
 		})
 	})

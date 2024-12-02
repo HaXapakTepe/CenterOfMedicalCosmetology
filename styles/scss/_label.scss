@@ -12,8 +12,9 @@
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
-	display: flex;
-	gap: 8px;
+    display: grid;
+    grid-template-columns: 27px 1fr;
+	gap: 16px;
 	font-weight: 500;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -48,10 +49,20 @@
 			height: 100%;
 			width: 27px;
 			height: 27px;
-			background-image: url('../../assets/images/icons/checkAlt.svg');
+			background-image: url('../../assets/images/icons/check.svg');
 			background-repeat: no-repeat;
 			background-size: contain;
 			transition: transform 0.23s ease-in-out;
 		}
 	}
+
+    &__text {
+        @include fluid(font-size, 14px, 16px);
+        
+        a {
+            color: #2a275f;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    }
 }

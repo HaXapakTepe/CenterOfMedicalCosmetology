@@ -5,9 +5,23 @@
 	margin-right: 15px;
 
 	.container {
+		position: relative;
 		width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+            @include fluid(top, 20px, 38px);
+			right: 0;
+			@include fluid(width, 32px, 48px);
+			@include fluid(height, 32px, 48px);
+			background-image: url('../../assets/images/icons/plus-circle.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
 	}
 
 	&__wrapper {
@@ -25,8 +39,8 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-        @include fluid(padding-top, 20px, 35px);
-        @include fluid(padding-bottom, 20px, 35px);
+		@include fluid(padding-top, 20px, 35px);
+		@include fluid(padding-bottom, 20px, 35px);
 		border-top: 1px solid #d9ba5b;
 		border-bottom: 1px solid #d9ba5b;
 
@@ -51,12 +65,13 @@
 	}
 
 	&__title {
+        padding-right: 48px;
 		@include fluid(margin-bottom, 16px, 25px);
-        @include fluid(font-size, 24px, 36px);
-        font-weight: 700;
-        word-break: break-word;
+		@include fluid(font-size, 24px, 36px);
+		font-weight: 700;
+		word-break: break-word;
 
-        &::before,
+		&::before,
 		&::after {
 			content: '';
 			position: absolute;
@@ -86,7 +101,7 @@
 	}
 
 	ol {
-        @include fluid(padding-left, 14px, 24px);
+		@include fluid(padding-left, 14px, 24px);
 	}
 
 	ul {
