@@ -72,7 +72,7 @@
 		@include fluid(gap, 20px, 40px);
 		padding-top: 30px;
 		border-top: 1px solid #d9ba5b;
-        grid-template-columns: 27% 70%;
+		grid-template-columns: 27% 70%;
 
 		&::after,
 		&::before {
@@ -132,6 +132,15 @@
 				color: #fff;
 			}
 
+			a.stock__item-title {
+				color: #2a275f;
+				transition: color 23s ease-in-out;
+
+				&:hover {
+					color: #d9ba5b;
+				}
+			}
+
 			&__text {
 				@include fluid(font-size, 18px, 34px);
 				color: #fff;
@@ -173,7 +182,7 @@
 			@include fluid(font-size, 24px, 44px);
 			font-weight: 700;
 		}
-        
+
 		a.stock__item-title {
 			color: #2a275f;
 			transition: color 0.23s ease-in-out;
