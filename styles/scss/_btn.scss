@@ -1,81 +1,84 @@
 .btn {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: block;
-  padding: 10px 22px;
-  font-weight: 500;
-  @include fluid(font-size, 14px, 20px);
-  background-color: #D9BA5B;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  border-radius: 10px;
-  transition: background-color 0.23s ease-in-out,
-    color 0.23s ease-in-out;
-  cursor: pointer;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	display: block;
+	padding: 10px 22px;
+	font-weight: 500;
+	@include fluid(font-size, 14px, 20px);
+	background-color: #d9ba5b;
+	border: 1px solid #d9ba5b;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: 10px;
+	transition: background-color 0.23s ease-in-out, color 0.23s ease-in-out, border-color 0.23s ease-in-out;
+	cursor: pointer;
 
-  &:hover {
-    background-color: #C89909;
-  }
+	&:hover {
+		border-color: #c89909;
+		background-color: #c89909;
+	}
 
-  &:has(.btn__icon) {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 13px 28px 13px 40px;
-  }
+	&:has(.btn__icon) {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		padding: 13px 28px 13px 40px;
+	}
 
-  &--blue {
-    background-color: #2A275F;
+	&--blue {
+		border-color: #2a275f;
+		background-color: #2a275f;
 
-    &:hover {
-      background-color: #241E8E;
-    }
-  }
+		&:hover {
+			border-color: #241e8e;
+			background-color: #241e8e;
+		}
+	}
 
-  &--blueAlt {
-    background-color: transparent;
-    border: 1px solid #2A275F;
-    color: #2A275F;
+	&--blueAlt {
+		background-color: transparent;
+		border: 1px solid #2a275f;
+		color: #2a275f;
 
-    &:hover {
-      background-color: #241E8E;
-      border-color: #241E8E;
-      color: #fff;
-    }
-  }
+		&:hover {
+			background-color: #241e8e;
+			border-color: #241e8e;
+			color: #fff;
+		}
+	}
 
-  &--width {
-    width: 100%;
-  }
+	&--width {
+		width: 100%;
+	}
 
-  &--big {
-    @include fluid(font-size, 16px, 24px);
-    padding-top: 13px;
-    padding-bottom: 13px;
-  }
+	&--big {
+		@include fluid(font-size, 16px, 24px);
+		padding-top: 13px;
+		padding-bottom: 13px;
+	}
 
-  &--bigAlt {
-    @include fluid(font-size, 16px, 24px);
-    @include fluid(padding-top, 16px, 20px);
-    @include fluid(padding-bottom, 16px, 20px);
-    @include fluid(padding-left, 40px, 60px);
-    @include fluid(padding-right, 40px, 60px);
-  }
+	&--bigAlt {
+		@include fluid(font-size, 16px, 24px);
+		@include fluid(padding-top, 16px, 20px);
+		@include fluid(padding-bottom, 16px, 20px);
+		@include fluid(padding-left, 40px, 60px);
+		@include fluid(padding-right, 40px, 60px);
+	}
 
-  &--center {
-    margin-left: auto;
-    margin-right: auto;
-  }
+	&--center {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-  &-- &__icon {
-    @include fluid(width, 23px, 30px);
-    @include fluid(height, 23px, 30px);
-    -o-object-fit: contain;
-    object-fit: contain;
-  }
+	&__icon {
+		@include fluid(width, 23px, 30px);
+		@include fluid(height, 23px, 30px);
+		-o-object-fit: contain;
+		object-fit: contain;
+	}
 }

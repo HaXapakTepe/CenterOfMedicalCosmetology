@@ -1,5 +1,3 @@
-// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 *,
 *::after,
 *::before {
@@ -10,20 +8,6 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-// &::-webkit-scrollbar {
-// 	width: 5px;
-// 	background-color: transparent;
-// }
-
-// &::-webkit-scrollbar-thumb {
-// 	background-color: #6C6C6C;
-// 	border-radius: 25px;
-// }
-
-// &::-webkit-scrollbar-track {
-// 	margin: 5px;
-// }
-
 ul {
 	list-style: none;
 }
@@ -33,41 +17,6 @@ img {
 	display: block;
 }
 
-// кастомная нумерация блоков
-// ol {
-//   counter-reset: num;
-//   list-style: decimal-leading-zero;
-
-//   li {
-//     &:before {
-//       content: counter(num, decimal-leading-zero);
-//       counter-increment: num;
-//       color: #FF7707;
-//       font-size: 40px;
-//       font-weight: 500;
-//       line-height: 120%;
-//       letter-spacing: -0.2px;
-//     }
-//   }
-// }
-
-// кол-во строк в блоке
-// * {
-//   display: -webkit-box;
-//   line-clamp: 4;
-//   -webkit-line-clamp: 4;
-//   -webkit-box-orient: vertical;
-//   overflow: hidden;
-// }
-// обратиться к label в котором input
-// &:focus-within {
-//   border-color: #D9291D;
-// }
-
-// фокус лейблу родителю
-// &:focus-within {
-//   border-color: #d9291d;
-// }
 textarea,
 input,
 button {
@@ -89,6 +38,7 @@ cite {
 
 a {
 	text-decoration: none;
+    color: inherit;
 }
 
 html {
@@ -115,12 +65,10 @@ body {
 }
 
 .wrapper {
-	// min-height: 100dvh;
 	min-width: 320px;
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	// overflow: hidden;
 }
 
 .main {
@@ -128,7 +76,6 @@ body {
 }
 
 .container {
-	// контейнер + padding с двух сторон
 	@include fluid(width, 962px, 1680px);
 	@include container;
 }
@@ -156,10 +103,4 @@ body {
 	.wrapper {
 		border-radius: 10px 10px 0 0;
 	}
-}
-
-@media (max-width: 768px) {
-}
-
-@media (max-width: 576px) {
 }

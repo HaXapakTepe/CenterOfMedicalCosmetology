@@ -8,6 +8,73 @@ document.addEventListener('DOMContentLoaded', () => {
 	const bookingSpecialistsForm = document.querySelectorAll('.booking__specialists-form')
 	const hidden = document.querySelector('.booking__specialists-hidden')
 	const modalAccordion = document.querySelector('.modal__accordion')
+    const ratings = document.querySelectorAll('.rating')
+    
+    if (ratings) {
+		initRatings()
+	}
+
+	function initRatings() {
+		let ratingActive, ratingValue
+
+		for (let index = 0; index < ratings.length; index++) {
+			const rating = ratings[index]
+			initRating(rating)
+		}
+
+		function initRating(rating) {
+			initRatingVars(rating)
+
+			setRatingActiveWidth()
+
+			if (rating.classList.contains('rating')) {
+				setRating(rating)
+			}
+		}
+
+		function initRatingVars(rating) {
+			ratingActive = rating.querySelector('.rating__active')
+			ratingValue = rating.querySelector('.rating__value')
+		}
+
+		function setRatingActiveWidth(index = ratingValue.innerHTML) {
+			const ratingActiveWidth = index / 0.05
+			ratingActive.style.width = `${ratingActiveWidth + 2}%`
+		}
+
+		function setRating(rating) {
+			const ratingItems = rating.querySelectorAll('.rating__item')
+
+			for (let index = 0; index < ratingItems.length; index++) {
+				const ratingItem = ratingItems[index]
+
+				ratingItem.addEventListener('mouseenter', function (e) {
+					initRatingVars(rating)
+					setRatingActiveWidth(ratingItem.value)
+				})
+
+				ratingItem.addEventListener('mouseleave', function (e) {
+					setRatingActiveWidth()
+				})
+
+				ratingItem.addEventListener('click', function (e) {
+					initRatingVars(rating)
+
+					ratingValue.innerHTML = index + 1 + '.0'
+					if (
+						ratingItem.parentNode.parentNode.parentNode.classList.contains(
+							'rating--notEvent'
+						)
+					) {
+						ratingValue.innerHTML = index + 1 + '.0'
+					} else {
+						ratingValue.innerHTML = index + 1
+					}
+					setRatingActiveWidth()
+				})
+			}
+		}
+	}
 
 	modalAccordion?.addEventListener('click', e => {
         const title = document.querySelector('.modal__accordion-title')
@@ -213,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			showNextCards()
 		})
 	}
+
 	const stockInner = document.querySelector('.stock__inner')
 	if (stockInner) {
 		const stockItem = stockInner?.querySelectorAll('.stock__item')
@@ -324,16 +392,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	})
-
-	// document.addEventListener('click', function (e) {
-	// 	accordion?.forEach(acc => {
-	// 		const content = acc.nextElementSibling
-	// 		if (!acc.contains(e.target)) {
-	// 			acc.classList.remove('accordion--active')
-	// 			content.style.maxHeight = '0'
-	// 		}
-	// 	})
-	// })
 
 	const accordionHover = document.querySelectorAll('.accordionHover')
 

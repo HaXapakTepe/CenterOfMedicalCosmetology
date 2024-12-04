@@ -1,0 +1,68 @@
+.rating {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+    justify-content: center;
+    @include fluid(margin-bottom, 10px, 32px);
+
+	&__body {
+		position: relative;
+
+		&::before {
+			content: '';
+			width: 284px;
+			height: 40px;
+			display: block;
+			background-image: url('../../assets/images/icons/rating-star.svg');
+			background-repeat: no-repeat;
+			background-position: left;
+			background-size: contain;
+		}
+	}
+
+	&__active {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 284px;
+			height: 40px;
+			top: 0;
+			left: 0;
+			background-image: url('../../assets/images/icons/rating-star-yellow.svg');
+			background-repeat: no-repeat;
+			background-position: left;
+			background-size: contain;
+		}
+	}
+
+	&__items {
+		display: flex;
+        justify-content: space-between;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__item {
+        display: block;
+		// width: 40px;
+        width: 20%;
+		height: 40px;
+		margin: 0;
+		opacity: 0;
+		cursor: pointer;
+	}
+    
+	&__value {
+        display: none;
+    }
+}
