@@ -6,7 +6,6 @@
 		position: relative;
 		display: flex;
 		@include fluid(padding, 30px, 55px);
-		@include fluid(padding-top, 60px, 113px);
 		border-radius: 10px;
 		background-color: #d9ba5b;
 		@include fluid(margin-bottom, 20px, 40px);
@@ -16,6 +15,9 @@
 		&-box {
 			position: relative;
 			z-index: 1;
+			display: flex;
+            flex-direction: column;
+            justify-content: center;
 		}
 
 		&-text {
@@ -24,9 +26,9 @@
 
 		&-title {
 			@include fluid(max-width, 388px, 870px);
-            word-break: break-word;
+			word-break: break-word;
 
-            &:has(+ *) {
+			&:has(+ *) {
 				@include fluid(margin-bottom, 20px, 32px);
 			}
 		}

@@ -70,7 +70,6 @@
 
 			a {
 				color: #a1a1a1;
-				text-decoration: underline;
 				transition: color 0.23s ease-in-out;
 
 				&:hover {
@@ -108,6 +107,15 @@
 
 		&-item {
 			@include fluid(font-size, 18px, 26px);
+
+			a {
+				text-decoration: none;
+				transition: color 0.23s ease-in-out;
+
+				&:hover {
+					color: #d9ba5b;
+				}
+			}
 		}
 	}
 }
@@ -115,16 +123,16 @@
 @media (max-width: 992px) {
 	.consultation {
 		&__box {
-            justify-content: center;
+			justify-content: center;
 			padding-bottom: 0;
 		}
 	}
 }
 
 @media (max-width: 768px) {
-    .consultation {
-        &__wrapper {
-            max-width: 700px;
+	.consultation {
+		&__wrapper {
+			max-width: 700px;
 			padding-bottom: 0;
 		}
 
@@ -149,8 +157,8 @@
 				margin-right: auto;
 				-o-object-fit: cover;
 				object-fit: cover;
-                -o-object-position: center;
-                   object-position: center;
+				-o-object-position: center;
+				object-position: center;
 			}
 		}
 	}
@@ -162,7 +170,7 @@
 			&-img {
 				width: 106%;
 				max-width: unset;
-                margin: unset;
+				margin: unset;
 			}
 		}
 	}

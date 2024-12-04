@@ -38,7 +38,11 @@ cite {
 
 a {
 	text-decoration: none;
-    color: inherit;
+	color: inherit;
+
+	&:not([class]) {
+		text-decoration: underline;
+	}
 }
 
 html {
