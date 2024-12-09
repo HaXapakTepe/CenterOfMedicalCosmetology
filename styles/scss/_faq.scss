@@ -92,7 +92,7 @@
 					@include fluid(padding-left, 10px, 20px);
 					@include fluid(padding-right, 40px, 60px);
 					color: #fff;
-					font-weight: 400;
+					font-weight: 500;
 
 					&::before {
 						content: none;
@@ -122,6 +122,7 @@
 						&-title {
 							text-align: center;
 							border-radius: 8px;
+                            cursor: default;
 
 							&::after {
 								content: none;
