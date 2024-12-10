@@ -39,10 +39,15 @@ cite {
 a {
 	text-decoration: none;
 	color: inherit;
+    transition: color .23s ease-in-out;
 
 	&:not([class]) {
 		text-decoration: underline;
 	}
+
+    &:hover {
+        color: #d9ba5b;
+    }
 }
 
 html {

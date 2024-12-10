@@ -450,7 +450,7 @@
 								</div>
 							</div>
 							<div class="footer__item">
-								<a class="btn" href="#">ЗАКАЗАТЬ ЗВОНОК</a>
+								<a class="btn openPhone-modal" href="#">ЗАКАЗАТЬ ЗВОНОК</a>
 								<a class="phone phone--yellow" href="tel:+78123171944"> +7 (812) 317-19-44 </a>
 								<a class="phone phone--yellow" href="mailto:ADMIN@VOLKOVABEAUTY.RU"> ADMIN@VOLKOVABEAUTY.RU </a>
 							</div>
@@ -466,6 +466,76 @@
 					</div>
 				</div>
 			</footer>
+
+			<div class="modal modal--phone">
+				<div class="container">
+					<div class="modal__inner">
+						<div class="modal__close"></div>
+						<p class="modal__title">Заказать звонок</p>
+						<p class="modal__textBold">
+							Оставьте контакты, и в ближайшее время с вами свяжется администратор для уточнения деталей.
+						</p>
+						<div class="modal__box">
+							<form class="form" id="formCosmetics" action="" method="post">
+								<input class="form__input" name="name" type="text" placeholder="ФИО " required />
+								<input class="form__input" name="phone" type="text" placeholder="+7 (999) 99 99 99" required />
+								<input class="form__input" name="email" type="email" placeholder="E-mail" required />
+								<div class="modal__accordion accordionAlt">
+									<p class="modal__accordion-title">Центр</p>
+									<div class="accordionAlt__content">
+										<div class="modal__accordion-hidden">
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" checked />
+												Центр
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												Любой центр
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												Рылеева, 1
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												Таврическая, 37
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												ул. Писарева, 18
+											</label>
+										</div>
+									</div>
+								</div>
+								<textarea class="form__input" rows="5" placeholder="Комментарий"></textarea>
+								<label class="label">
+									<input class="label__input check" type="checkbox" checked />
+									<span class="label__inputCustom"></span>
+									<span class="label__text">
+										Я ознакомлен и согласен с правилами предоставления услуг, даю согласие на
+										<a href="#">обработку персональных данных</a>.
+									</span>
+								</label>
+
+								<button class="btn btn--bigAlt btn--blue btn--width" type="submit">Отправить</button>
+							</form>
+							<img class="modal__box-fon" src="./assets/images/consultation/logo.svg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="success">
+				<div class="container">
+					<div class="success__inner">
+						<div class="success__close"></div>
+						<p class="success__title">Спасибо за вашу заявку!</p>
+						<p class="success__text">
+							В ближайшее время с вами свяжется администратор Центра и расскажет о дальнейших шагах.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

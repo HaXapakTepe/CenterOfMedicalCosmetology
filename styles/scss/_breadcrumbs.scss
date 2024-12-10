@@ -16,7 +16,8 @@
 				&::after {
 					content: '';
 					position: absolute;
-					@include fluid(top, 7px, 13px);
+					top: 60%;
+					transform: translateY(-50%);
 					left: 0;
 					width: 5px;
 					height: 5px;

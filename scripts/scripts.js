@@ -2,15 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body')
 	const burger = document.querySelector('.burger')
 	const menu = document.querySelector('.menu')
-	const openModal = document.querySelectorAll('.open-modal')
-	const modal = document.querySelector('.modal')
+	const openModalReviews = document.querySelectorAll('.open-modalReviews')
+	const modalReviews = document.querySelector('.modal--reviews')
+	const openModalPhone = document.querySelectorAll('.openPhone-modal')
+	const modalPhone = document.querySelector('.modal--phone')
 	const success = document.querySelector('.success')
 	const bookingSpecialistsForm = document.querySelectorAll('.booking__specialists-form')
 	const hidden = document.querySelector('.booking__specialists-hidden')
 	const modalAccordion = document.querySelector('.modal__accordion')
-    const ratings = document.querySelectorAll('.rating')
-    
-    if (ratings) {
+	const ratings = document.querySelectorAll('.rating')
+	const videos = document.querySelectorAll('.video__video')
+
+	videos?.forEach(item => {
+		item.addEventListener('click', () => {
+			const videoHidden = item.querySelector('.video__hidden')?.firstElementChild
+			videoHidden.click()
+		})
+	})
+
+	if (ratings) {
 		initRatings()
 	}
 
@@ -61,11 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					initRatingVars(rating)
 
 					ratingValue.innerHTML = index + 1 + '.0'
-					if (
-						ratingItem.parentNode.parentNode.parentNode.classList.contains(
-							'rating--notEvent'
-						)
-					) {
+					if (ratingItem.parentNode.parentNode.parentNode.classList.contains('rating--notEvent')) {
 						ratingValue.innerHTML = index + 1 + '.0'
 					} else {
 						ratingValue.innerHTML = index + 1
@@ -77,15 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	modalAccordion?.addEventListener('click', e => {
-        const title = document.querySelector('.modal__accordion-title')
+		const title = document.querySelector('.modal__accordion-title')
 		const target = e.target
 		if (target.classList.contains('modal__accordion-check')) {
-            const targetText = target.parentNode.textContent
-            title.textContent = targetText
+			const targetText = target.parentNode.textContent
+			title.textContent = targetText
 		}
 	})
 
-	bookingSpecialistsForm.forEach(item => {
+	bookingSpecialistsForm?.forEach(item => {
 		const text = item.querySelectorAll('.booking__specialists-elem')
 
 		text.forEach(elem => {
@@ -110,16 +116,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
-	if (modal) {
-		const close = document.querySelector('.modal__close')
-		const inner = document.querySelector('.modal__inner')
-		modal.addEventListener('click', e => {
+	if (modalReviews) {
+		const close = modalReviews.querySelector('.modal__close')
+		const inner = modalReviews.querySelector('.modal__inner')
+		modalReviews.addEventListener('click', e => {
 			if (!inner.contains(e.target)) {
-				modal.classList.remove('modal--active')
+				modalReviews.classList.remove('modal--active')
 				body.classList.remove('no-scroll')
 			}
 			if (e.target === close) {
-				modal.classList.remove('modal--active')
+				modalReviews.classList.remove('modal--active')
+				body.classList.remove('no-scroll')
+			}
+		})
+	}
+
+	if (modalPhone) {
+		const close = modalPhone.querySelector('.modal__close')
+		const inner = modalPhone.querySelector('.modal__inner')
+		modalPhone.addEventListener('click', e => {
+			if (!inner.contains(e.target)) {
+				modalPhone.classList.remove('modal--active')
+				body.classList.remove('no-scroll')
+			}
+			if (e.target === close) {
+				modalPhone.classList.remove('modal--active')
 				body.classList.remove('no-scroll')
 			}
 		})
@@ -140,9 +161,22 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	openModal.forEach(item => {
-		item.addEventListener('click', () => {
-			modal.classList.add('modal--active')
+	openModalPhone?.forEach(item => {
+		item.addEventListener('click', e => {
+			if (modalPhone) {
+				e.preventDefault()
+			}
+			modalPhone.classList.add('modal--active')
+			body.classList.add('no-scroll')
+		})
+	})
+
+	openModalReviews?.forEach(item => {
+		item.addEventListener('click', e => {
+			if (openModalReviews) {
+				e.preventDefault()
+			}
+			modalReviews.classList.add('modal--active')
 			body.classList.add('no-scroll')
 		})
 	})
@@ -157,7 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (
 			!menu.contains(e.target) &&
 			!burger.contains(e.target) &&
-			!openModal.forEach(item => {
+			!openModalReviews.forEach(item => {
+				item.contains(e.target)
+			}) &&
+			!openModalPhone.forEach(item => {
 				item.contains(e.target)
 			})
 		) {

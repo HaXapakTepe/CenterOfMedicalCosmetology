@@ -51,6 +51,13 @@
 
 		&-box {
 			position: relative;
+
+			&.accordionHover--active {
+				.header__links-link {
+					background-color: #2a275f;
+					color: #fff;
+				}
+			}
 		}
 
 		.accordionHover__content {

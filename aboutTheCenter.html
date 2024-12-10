@@ -364,12 +364,22 @@
 					<div class="container">
 						<div class="video__video">
 							<div class="video__box">
-								<iframe
-									src="https://www.youtube.com/embed/nd4B0ZOzREI"
-									srcdoc="<style>*{margin:0;padding:0;box-sizing:border-box;font-size:0}img{position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:90%;object-fit:contain}a:hover:after{opacity:.8}a:after,a:before{position:absolute;content:'';inset:0}a:after{background:url(../../assets/images/icons/play.svg) no-repeat center / 140px;transition: .23s ease-in-out}</style><a href='https://www.youtube-nocookie.com/embed/nd4B0ZOzREI?autoplay=1'><img src='./assets/images/logo-big.svg' loading='lazy' decoding='async' alt='Видео с YouTube'></a>"
-									style="border: 0; aspect-ratio: 16/9; width: 100%; height: 100%"
-									loading="lazy"
-								></iframe>
+								<div class="video__box-background">
+									<img class="video__box-img" src="./assets/images/logo-big.svg" alt="" />
+								</div>
+								<div class="video__hidden">
+									<iframe
+										data-fancybox
+										width="560"
+										height="315"
+										src="https://www.youtube.com/embed/9SJvnWvr9gc?si=1zj5EQTck3eWJhjC"
+										title="YouTube video player"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										referrerpolicy="strict-origin-when-cross-origin"
+										allowfullscreen
+									></iframe>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -657,7 +667,7 @@
 					<div class="history__wrapper">
 						<div class="container">
 							<div class="history__inner">
-                                <img class="history__img" src="./assets/images/history/1.png" alt="" />
+								<img class="history__img" src="./assets/images/history/1.png" alt="" />
 								<p class="history__title">История Центра</p>
 								<p class="history__text">
 									Медицинский Центр Оксаны Волковой открылся 25 лет назад, но история бренда началась задолго до этого
@@ -710,13 +720,16 @@
 									музыкантов и оперных артистов.
 								</p>
 							</div>
-                            <div class="history__bot">
-                                <img class="history__bot-fon" src="./assets/images/history/tl.svg" alt="">
-                                <img class="history__bot-fon history__bot-fon--right" src="./assets/images/history/br.svg" alt="">
-                                <p class="history__bot-text">
-                                    История бренда пишется и сегодня. Причем пишут ее не только специалисты, но и клиенты, давно ставшие друзьями Центра. Предлагают идеи творческих вечеров, выступают не только зрителями, но и участниками концертов и выставок, которые проходят в Центре. Частью этой яркой и красивой истории можете стать и вы – мы всегда рады новым друзьям и партнерам. 
-                                </p>
-                            </div>
+							<div class="history__bot">
+								<img class="history__bot-fon" src="./assets/images/history/tl.svg" alt="" />
+								<img class="history__bot-fon history__bot-fon--right" src="./assets/images/history/br.svg" alt="" />
+								<p class="history__bot-text">
+									История бренда пишется и сегодня. Причем пишут ее не только специалисты, но и клиенты, давно ставшие
+									друзьями Центра. Предлагают идеи творческих вечеров, выступают не только зрителями, но и участниками
+									концертов и выставок, которые проходят в Центре. Частью этой яркой и красивой истории можете стать и
+									вы – мы всегда рады новым друзьям и партнерам. 
+								</p>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -738,7 +751,7 @@
 												/>
 												<a class="licenses__slide-btn" href="#"> Смотреть лицензию </a>
 											</div>
-											<p class="licenses__slide-text"> Лицензия №78-01-011179 от 14 октября 2020 года </p>
+											<p class="licenses__slide-text">Лицензия №78-01-011179 от 14 октября 2020 года</p>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -752,7 +765,7 @@
 												/>
 												<a class="licenses__slide-btn" href="#"> Смотреть лицензию </a>
 											</div>
-											<p class="licenses__slide-text"> Лицензия №78-01-008435 от 18 декабря 2017 года </p>
+											<p class="licenses__slide-text">Лицензия №78-01-008435 от 18 декабря 2017 года</p>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -766,7 +779,7 @@
 												/>
 												<a class="licenses__slide-btn" href="#"> Смотреть лицензию </a>
 											</div>
-											<p class="licenses__slide-text"> Лицензия №78-01-007340 от 14 ноября 2016 года </p>
+											<p class="licenses__slide-text">Лицензия №78-01-007340 от 14 ноября 2016 года</p>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -780,7 +793,7 @@
 												/>
 												<a class="licenses__slide-btn" href="#"> Смотреть лицензию </a>
 											</div>
-											<p class="licenses__slide-text"> Лицензия №78-01-011179 от 14 октября 2020 года </p>
+											<p class="licenses__slide-text">Лицензия №78-01-011179 от 14 октября 2020 года</p>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -794,7 +807,7 @@
 												/>
 												<a class="licenses__slide-btn" href="#"> Смотреть лицензию </a>
 											</div>
-											<p class="licenses__slide-text"> Лицензия №78-01-008435 от 18 декабря 2017 года </p>
+											<p class="licenses__slide-text">Лицензия №78-01-008435 от 18 декабря 2017 года</p>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -808,7 +821,7 @@
 												/>
 												<a class="licenses__slide-btn" href="#"> Смотреть лицензию </a>
 											</div>
-											<p class="licenses__slide-text"> Лицензия №78-01-007340 от 14 ноября 2016 года </p>
+											<p class="licenses__slide-text">Лицензия №78-01-007340 от 14 ноября 2016 года</p>
 										</div>
 									</div>
 								</div>
@@ -956,6 +969,76 @@
 					</div>
 				</div>
 			</footer>
+
+			<div class="modal modal--phone">
+				<div class="container">
+					<div class="modal__inner">
+						<div class="modal__close"></div>
+						<p class="modal__title">Заказать звонок</p>
+						<p class="modal__textBold">
+							Оставьте контакты, и в ближайшее время с вами свяжется администратор для уточнения деталей.
+						</p>
+						<div class="modal__box">
+							<form class="form" id="formCosmetics" action="" method="post">
+								<input class="form__input" name="name" type="text" placeholder="ФИО " required />
+								<input class="form__input" name="phone" type="text" placeholder="+7 (999) 99 99 99" required />
+								<input class="form__input" name="email" type="email" placeholder="E-mail" required />
+								<div class="modal__accordion accordionAlt">
+									<p class="modal__accordion-title">Центр</p>
+									<div class="accordionAlt__content">
+										<div class="modal__accordion-hidden">
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" checked />
+												Центр
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												Любой центр
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												Рылеева, 1
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												Таврическая, 37
+											</label>
+											<label class="modal__accordion-option">
+												<input class="modal__accordion-check" type="radio" name="option" />
+												ул. Писарева, 18
+											</label>
+										</div>
+									</div>
+								</div>
+								<textarea class="form__input" rows="5" placeholder="Комментарий"></textarea>
+								<label class="label">
+									<input class="label__input check" type="checkbox" checked />
+									<span class="label__inputCustom"></span>
+									<span class="label__text">
+										Я ознакомлен и согласен с правилами предоставления услуг, даю согласие на
+										<a href="#">обработку персональных данных</a>.
+									</span>
+								</label>
+
+								<button class="btn btn--bigAlt btn--blue btn--width" type="submit">Отправить</button>
+							</form>
+							<img class="modal__box-fon" src="./assets/images/consultation/logo.svg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="success">
+				<div class="container">
+					<div class="success__inner">
+						<div class="success__close"></div>
+						<p class="success__title">Спасибо за вашу заявку!</p>
+						<p class="success__text">
+							В ближайшее время с вами свяжется администратор Центра и расскажет о дальнейших шагах.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

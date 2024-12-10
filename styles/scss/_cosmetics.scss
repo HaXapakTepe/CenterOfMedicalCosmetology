@@ -31,7 +31,7 @@
 	&__item {
 		&-img {
 			width: 100%;
-			@include fluid(height, 300px, 614px);
+            height: auto;
 			border-radius: 8px;
 			-o-object-fit: cover;
 			object-fit: cover;

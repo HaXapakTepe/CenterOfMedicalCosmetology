@@ -122,7 +122,7 @@
 						&-title {
 							text-align: center;
 							border-radius: 8px;
-                            cursor: default;
+							cursor: default;
 
 							&::after {
 								content: none;
@@ -152,6 +152,14 @@
 					@include fluid(padding-right, 10px, 20px);
 					border-bottom: 1px solid #d9ba5b;
 					@include fluid(min-height, 200px, 232px);
+
+					&:has(.faq__cards-box) {
+						justify-content: unset;
+						min-height: unset;
+						height: -webkit-fit-content;
+						height: -moz-fit-content;
+						height: fit-content;
+					}
 				}
 
 				&-title {
@@ -171,6 +179,43 @@
 					@include fluid(font-size, 16px, 22px);
 					font-weight: 700;
 					color: #d9ba5b;
+				}
+
+				&-text {
+					&:has(+ .faq__cards-box) {
+						@include fluid(font-size, 14px, 18px);
+					}
+				}
+
+				&-box {
+					display: flex;
+					flex-direction: column;
+					gap: 17px;
+
+					&__content {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						gap: 12px;
+
+						&:has(+ .faq__cards-box__content) {
+							padding-bottom: 17px;
+							border-bottom: 1px solid #d9ba5b;
+						}
+
+						&--column {
+							grid-template-columns: 1fr;
+						}
+					}
+
+					&__title {
+						color: #d9ba5b;
+						font-weight: 700;
+					}
+
+					&__num {
+						font-weight: 500;
+						@include fluid(font-size, 14px, 18px);
+					}
 				}
 			}
 
@@ -670,7 +715,7 @@
 		&--gold {
 			.faq {
 				&__cards {
-					grid-template-columns: repeat(3, 1fr);
+					grid-template-columns: repeat(2, 1fr);
 				}
 			}
 		}
@@ -702,7 +747,7 @@
 		&--gold {
 			.faq {
 				&__cards {
-					grid-template-columns: repeat(2, 1fr);
+					grid-template-columns: 1fr;
 				}
 			}
 		}

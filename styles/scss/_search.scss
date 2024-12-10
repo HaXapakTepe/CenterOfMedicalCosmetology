@@ -1,124 +1,144 @@
 .search {
-  width: 132px;
+	width: 132px;
 
-  &--alt {
-    width: 100%;
+	&--alt {
+		width: 100%;
 
-    .search {
-        &__input {
-            padding: 14px 20px 10px;
-            border: 1px solid rgba(152, 152, 152, .62);
-            border-radius: 8px;
-        }
+		.search {
+			&__input {
+				padding: 14px 20px 10px;
+				border: 1px solid rgba(152, 152, 152, 0.62);
+				border-radius: 8px;
+			}
 
-        &__icon {
-            top: 60%;
-            right: 16px;
-        }
-    }
-  }
+			&__icon {
+				top: 60%;
+				right: 16px;
+			}
+		}
+	}
 
-  &__label {
-    position: relative;
-    cursor: pointer;
+	&--blue {
+		width: 100%;
 
-    &:hover,
-    &:focus-within {
+		.search {
+			&__input {
+				padding: 14px 20px 10px;
+				border: 1px solid #2a275f;
+				border-radius: 8px;
+			}
 
-      .search {
-        &__input {
-          border-color: #2A275F;
-          color: #2A275F;
+			&__icon {
+				top: 50%;
+				right: 16px;
 
-          &::-webkit-input-placeholder {
-            color: #2A275F;
-          }
+				svg {
+					@include fluid(width, 20px, 27px);
+					@include fluid(height, 20px, 27px);
+				}
+			}
+		}
+	}
 
-          &::-moz-placeholder {
-            color: #2A275F;
-          }
+	&__label {
+		position: relative;
+		cursor: pointer;
 
-          &:-ms-input-placeholder {
-            color: #2A275F;
-          }
+		&:hover,
+		&:focus-within {
+			.search {
+				&__input {
+					border-color: #2a275f;
+					color: #2a275f;
 
-          &::-ms-input-placeholder {
-            color: #2A275F;
-          }
+					&::-webkit-input-placeholder {
+						color: #2a275f;
+					}
 
-          &::placeholder {
-            color: #2A275F;
-          }
-        }
+					&::-moz-placeholder {
+						color: #2a275f;
+					}
 
-        &__icon {
-          svg {
+					&:-ms-input-placeholder {
+						color: #2a275f;
+					}
 
-            circle,
-            path {
-              stroke: #2A275F;
-            }
-          }
-        }
-      }
-    }
-  }
+					&::-ms-input-placeholder {
+						color: #2a275f;
+					}
 
-  &__input {
-    width: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-right: 20px;
-    border-bottom: 1px solid rgba(152, 152, 152, .62);
-    @include fluid(font-size, 14px, 16px);
-    background-color: transparent;
-    transition: border-color 0.23s ease-in-out, color .23s ease-in-out;
+					&::placeholder {
+						color: #2a275f;
+					}
+				}
 
-    &::-webkit-input-placeholder {
-      color: rgba(152, 152, 152, .62);
-      -webkit-transition: color .23s ease-in-out;
-      transition: color .23s ease-in-out;
-    }
+				&__icon {
+					svg {
+						circle,
+						path {
+							stroke: #2a275f;
+						}
+					}
+				}
+			}
+		}
+	}
 
-    &::-moz-placeholder {
-      color: rgba(152, 152, 152, .62);
-      -moz-transition: color .23s ease-in-out;
-      transition: color .23s ease-in-out;
-    }
+	&__input {
+		width: 100%;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-right: 20px;
+		border-bottom: 1px solid rgba(152, 152, 152, 0.62);
+		@include fluid(font-size, 14px, 16px);
+		background-color: transparent;
+		transition: border-color 0.23s ease-in-out, color 0.23s ease-in-out;
 
-    &:-ms-input-placeholder {
-      color: rgba(152, 152, 152, .62);
-      -ms-transition: color .23s ease-in-out;
-      transition: color .23s ease-in-out;
-    }
+		&::-webkit-input-placeholder {
+			color: rgba(152, 152, 152, 0.62);
+			-webkit-transition: color 0.23s ease-in-out;
+			transition: color 0.23s ease-in-out;
+		}
 
-    &::-ms-input-placeholder {
-      color: rgba(152, 152, 152, .62);
-      -ms-transition: color .23s ease-in-out;
-      transition: color .23s ease-in-out;
-    }
+		&::-moz-placeholder {
+			color: rgba(152, 152, 152, 0.62);
+			-moz-transition: color 0.23s ease-in-out;
+			transition: color 0.23s ease-in-out;
+		}
 
-    &::placeholder {
-      color: rgba(152, 152, 152, .62);
-      transition: color .23s ease-in-out;
-    }
-  }
+		&:-ms-input-placeholder {
+			color: rgba(152, 152, 152, 0.62);
+			-ms-transition: color 0.23s ease-in-out;
+			transition: color 0.23s ease-in-out;
+		}
 
-  &__icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    cursor: pointer;
+		&::-ms-input-placeholder {
+			color: rgba(152, 152, 152, 0.62);
+			-ms-transition: color 0.23s ease-in-out;
+			transition: color 0.23s ease-in-out;
+		}
 
-    svg {
-      @include fluid(width, 14px, 18px);
-      @include fluid(height, 14px, 18px);
+		&::placeholder {
+			color: rgba(152, 152, 152, 0.62);
+			transition: color 0.23s ease-in-out;
+		}
+	}
 
-      circle,
-      path {
-        transition: stroke 0.23s ease-in-out;
-      }
-    }
-  }
+	&__icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		cursor: pointer;
+
+		svg {
+			@include fluid(width, 14px, 18px);
+			@include fluid(height, 14px, 18px);
+
+			circle,
+			path {
+				transition: stroke 0.23s ease-in-out;
+			}
+		}
+	}
 }
