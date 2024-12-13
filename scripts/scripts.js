@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const ratings = document.querySelectorAll('.rating')
 	const videos = document.querySelectorAll('.video__video')
 
+
 	videos?.forEach(item => {
 		item.addEventListener('click', () => {
 			const videoHidden = item.querySelector('.video__hidden')?.firstElementChild

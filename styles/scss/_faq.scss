@@ -476,6 +476,36 @@
 				right: 0;
 			}
 		}
+
+        &.equipment {
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            ul,
+            ol,
+            table,
+            div,
+            a,
+            img,
+            p {
+                &:has(+ *) {
+                    @include fluid(margin-bottom, 12px, 20px);
+                }
+        
+                &:has(+ .faq__inner-box) {
+                    @include fluid(margin-bottom, 20px, 50px);
+                }
+            }
+
+            ol,
+            ul {
+                display: flex;
+                flex-direction: column;
+                @include fluid(gap, 12px, 20px);
+            }
+        }
 	}
 
 	&__item {
