@@ -98,7 +98,7 @@
 			}
 		}
 
-		&-text {
+		p {
 			@include fluid(font-size, 14px, 20px);
 			color: #fff;
 			font-weight: 500;
