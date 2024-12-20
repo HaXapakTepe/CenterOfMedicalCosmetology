@@ -4,7 +4,7 @@
 
 	&__target {
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
 		border-radius: 5px;
 		overflow: hidden;
 		border: 1px solid #2a275f;
@@ -83,7 +83,7 @@
 		display: flex;
 		@include fluid(gap, 12px, 20px);
 
-		&-img {
+		img {
 			-o-object-fit: cover;
 			object-fit: cover;
 			border-radius: 50%;
@@ -99,14 +99,11 @@
 			flex-grow: 1;
 		}
 
-		&-name {
+		a:not([class]) {
 			@include fluid(font-size, 18px, 26px);
 			color: #2a275f;
 			font-weight: 700;
-		}
-
-		a.specialists__item-name {
-			color: #2a275f;
+			text-decoration: none;
 			transition: color 0.23s ease-in-out;
 
 			&:hover {
@@ -114,40 +111,43 @@
 			}
 		}
 
-		&-who {
-			position: relative;
-			@include fluid(padding-bottom, 12px, 16px);
-			border-bottom: 1px solid #d9ba5b;
+		p {
+            @include fluid(padding-bottom, 12px, 16px);
+            
+			&:has(+p) {
+                position: relative;
+                border-bottom: 1px solid #d9ba5b;
+                
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: -3px;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background-color: #d9ba5b;
+				}
 
-			&::before {
-				content: '';
-				position: absolute;
-				left: 0;
-				bottom: -3px;
-				width: 6px;
-				height: 6px;
-				border-radius: 50%;
-				background-color: #d9ba5b;
+				&::after {
+					content: '';
+					position: absolute;
+					right: 0;
+					bottom: -3px;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background-color: #d9ba5b;
+				}
 			}
 
-			&::after {
-				content: '';
-				position: absolute;
-				right: 0;
-				bottom: -3px;
-				width: 6px;
-				height: 6px;
-				border-radius: 50%;
-				background-color: #d9ba5b;
+			+ p {
+				margin-top: auto;
+				@include fluid(font-size, 16px, 24px);
+				color: #2a275f;
+				font-weight: 700;
+				@include fluid(margin-bottom, 2px, 4px);
 			}
-		}
-
-		&-experience {
-			margin-top: auto;
-			@include fluid(font-size, 16px, 24px);
-			color: #2a275f;
-			font-weight: 700;
-			@include fluid(margin-bottom, 2px, 4px);
 		}
 	}
 }

@@ -26,7 +26,6 @@
 
 		&-title {
 			@include fluid(max-width, 388px, 870px);
-			word-break: break-word;
 
 			&:has(+ *) {
 				@include fluid(margin-bottom, 20px, 32px);

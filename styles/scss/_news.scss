@@ -70,7 +70,7 @@
 		}
 
 		&-img {
-			@include fluid(height, 280px, 350px);
+			// @include fluid(height, 280px, 350px);
 			-o-object-fit: cover;
 			object-fit: cover;
 			border-radius: 8px;
@@ -123,12 +123,12 @@
 
 		&-img {
 			border-radius: 10px;
-			width: -webkit-fit-content;
-			width: -moz-fit-content;
-			width: fit-content;
-			height: auto;
+			// width: -webkit-fit-content;
+			// width: -moz-fit-content;
+			// width: fit-content;
+			// height: auto;
 			float: right;
-			@include fluid(height, 380px, 416px);
+			// @include fluid(height, 380px, 416px);
 			@include fluid(margin-left, 12px, 28px);
 			@include fluid(margin-bottom, 20px, 30px);
 
@@ -262,12 +262,10 @@
 
 		&__box {
 			&-img {
-				width: 100%;
 				float: unset;
 				margin-left: unset;
 
 				&--alt {
-					width: 100%;
 					float: unset;
 					margin-right: unset;
 				}
@@ -284,10 +282,6 @@
 
 		&__item {
 			flex-direction: column;
-
-			&-img {
-				height: auto;
-			}
 		}
 	}
 }

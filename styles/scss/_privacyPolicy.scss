@@ -5,23 +5,9 @@
 	margin-right: 15px;
 
 	.container {
-		position: relative;
 		width: 100%;
 		padding-left: 0;
 		padding-right: 0;
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-            @include fluid(top, 20px, 38px);
-			right: 0;
-			@include fluid(width, 32px, 48px);
-			@include fluid(height, 32px, 48px);
-			background-image: url('../../assets/images/icons/plus-circle.svg');
-			background-repeat: no-repeat;
-			background-size: contain;
-		}
 	}
 
 	&__wrapper {
