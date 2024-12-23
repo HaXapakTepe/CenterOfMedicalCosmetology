@@ -1,15 +1,15 @@
 .clinic {
-  @include fluid(margin-top, 30px, 100px);
-  @include fluid(margin-bottom, 30px, 100px);
+	@include fluid(margin-top, 30px, 100px);
+	@include fluid(margin-bottom, 30px, 100px);
 
-  &__title {
-    @include fluid(margin-bottom, 30px, 75px);
-  }
+	h2 {
+		@include fluid(margin-bottom, 30px, 75px);
+	}
 
-  &__inner {
-    border-radius: 10px;
-    background-color: #FFF4D5;
-    @include fluid(min-height, 400px, 720px);
-    @include fluid(padding, 20px, 40px);
-  }
+	&__inner {
+		border-radius: 10px;
+		background-color: #fff4d5;
+		@include fluid(min-height, 400px, 720px);
+		@include fluid(padding, 20px, 40px);
+	}
 }

@@ -198,22 +198,12 @@
 						grid-template-columns: repeat(2, 1fr);
 						gap: 12px;
 
-						&:has(+ .faq__cards-box__content) {
-							padding-bottom: 17px;
-							border-bottom: 1px solid #d9ba5b;
-						}
-
 						&--column {
 							grid-template-columns: 1fr;
 						}
 					}
 
-					&__title {
-						color: #d9ba5b;
-						font-weight: 700;
-					}
-
-					&__num {
+					span {
 						font-weight: 500;
 						@include fluid(font-size, 14px, 18px);
 					}
@@ -629,7 +619,7 @@
 			@include fluid(padding-bottom, 12px, 20px);
 		}
 
-		&-text {
+		p {
 			@include fluid(font-size, 16px, 18px);
 		}
 

@@ -33,13 +33,13 @@
 		flex-direction: column;
 		gap: 10px;
 
-		&-img {
+		img {
 			@include fluid(height, 420px, 475px);
 			-o-object-fit: cover;
 			object-fit: cover;
 		}
 
-		&-text {
+		p {
 			font-weight: 700;
 			color: #2a275f;
 			@include fluid(font-size, 20px, 32px);

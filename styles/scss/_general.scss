@@ -39,15 +39,25 @@ cite {
 a {
 	text-decoration: none;
 	color: inherit;
-    transition: color .23s ease-in-out;
+	transition: color 0.23s ease-in-out;
 
 	&:not([class]) {
 		text-decoration: underline;
 	}
 
-    &:hover {
-        color: #d9ba5b;
-    }
+	&:hover {
+		color: #d9ba5b;
+	}
+}
+
+h1 {
+	@include fluid(font-size, 32px, 72px);
+	text-transform: uppercase;
+}
+
+h2 {
+	@include fluid(font-size, 24px, 44px);
+	line-height: 1;
 }
 
 html {

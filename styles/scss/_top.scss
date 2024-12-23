@@ -24,7 +24,7 @@
 			@include fluid(font-size, 16px, 22px);
 		}
 
-		&-title {
+		h1 {
 			@include fluid(max-width, 388px, 870px);
 
 			&:has(+ *) {
@@ -32,7 +32,7 @@
 			}
 		}
 
-		&-img {
+		img {
 			position: absolute;
 			top: 10px;
 			right: 20px;
@@ -60,7 +60,7 @@
 		border-top: 1px solid #d9ba5b;
 		border-bottom: 1px solid #d9ba5b;
 
-		&-title {
+		h3 {
 			@include fluid(font-size, 24px, 34px);
 			font-weight: 700;
 		}

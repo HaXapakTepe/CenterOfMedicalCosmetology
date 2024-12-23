@@ -43,6 +43,12 @@
 		@include fluid(padding-left, 16px, 55px);
 		@include fluid(padding-right, 16px, 28px);
 
+		&--titleGold {
+			h1 {
+				color: #d9ba5b;
+			}
+		}
+
 		&-img {
 			position: absolute;
 			@include fluid(width, 132px, 285px);
@@ -69,28 +75,36 @@
 			z-index: 1;
 			display: flex;
 			flex-direction: column;
-		}
 
-		&-title {
-			@include fluid(margin-bottom, 5px, 25px);
+			h3 {
+				@include fluid(font-size, 24px, 44px);
+				@include fluid(margin-bottom, 16px, 24px);
+			}
+
+			p {
+				@include fluid(font-size, 14px, 20px);
+				margin-bottom: 16px;
+
+				&:has(+ .promo__item-box) {
+					@include fluid(margin-bottom, 8px, 79px);
+				}
+
+				&:has(+ .btn) {
+					@include fluid(margin-bottom, 16px, 30px);
+				}
+
+				&:has(+ .promo__item-text--center) {
+					@include fluid(margin-bottom, 16px, 56px);
+				}
+
+				a {
+					color: #2a275f;
+					text-decoration: underline;
+				}
+			}
 		}
 
 		&-text {
-			@include fluid(font-size, 14px, 20px);
-			margin-bottom: 16px;
-
-			&:has(+ .promo__item-box) {
-				@include fluid(margin-bottom, 8px, 79px);
-			}
-
-			&:has(+ .promo__item-text--center) {
-				@include fluid(margin-bottom, 16px, 56px);
-			}
-
-			&:has(+ .btn) {
-				@include fluid(margin-bottom, 16px, 30px);
-			}
-
 			&--center {
 				text-align: center;
 
@@ -98,11 +112,10 @@
 					margin-top: auto;
 				}
 			}
+		}
 
-			a {
-				color: #2a275f;
-				text-decoration: underline;
-			}
+		h1 {
+			@include fluid(margin-bottom, 5px, 25px);
 		}
 
 		&-box {
@@ -111,6 +124,14 @@
 			flex-wrap: wrap;
 			@include fluid(gap, 11px, 39px);
 		}
+
+		ul {
+			list-style: inside;
+
+			&:has(+ *) {
+				@include fluid(margin-bottom, 12px, 20px);
+			}
+		}
 	}
 
 	&__block {
@@ -118,14 +139,8 @@
 		align-items: center;
 		@include fluid(gap, 15px, 28px);
 
-		&-img {
+		> img {
 			@include fluid(height, 24px, 47px);
-			-o-object-fit: contain;
-			object-fit: contain;
-		}
-
-		&-star {
-			@include fluid(height, 29px, 56px);
 			-o-object-fit: contain;
 			object-fit: contain;
 		}
@@ -146,19 +161,11 @@
 			background-color: rgba(0, 0, 0, 0.13);
 		}
 
-		&-img {
+		> img {
 			width: 100%;
 			height: 100%;
 			-o-object-fit: cover;
 			object-fit: cover;
-		}
-	}
-
-	&__list {
-		list-style: inside;
-
-		&:has(+ *) {
-			@include fluid(margin-bottom, 12px, 20px);
 		}
 	}
 }
@@ -170,7 +177,7 @@
 		}
 
 		&__box {
-			&-img {
+			> img {
 				height: 184px;
 			}
 		}

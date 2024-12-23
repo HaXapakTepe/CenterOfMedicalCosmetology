@@ -35,11 +35,11 @@
     flex-direction: column;
     @include fluid(gap, 12px, 20px);
 
-    &-title {
+    h3 {
       @include fluid(font-size, 16px, 22px);
     }
 
-    &-text {
+    p {
       @include fluid(font-size, 18px, 26px);
     }
 

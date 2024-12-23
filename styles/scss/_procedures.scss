@@ -22,11 +22,12 @@
 		overflow: hidden;
 	}
 
-	&__title {
+	h2 {
 		@include fluid(margin-bottom, 20px, 40px);
+		color: #d9ba5b;
 	}
 
-	&__text {
+	p {
 		&:has(+ *) {
 			@include fluid(margin-bottom, 12px, 20px);
 		}
@@ -39,11 +40,11 @@
 	}
 
 	&__item {
-		&-img {
-            width: 100%;
+		img {
+			width: 100%;
 			@include fluid(height, 350px, 510px);
 			-o-object-fit: cover;
-			   object-fit: cover;
+			object-fit: cover;
 			border-radius: 8px;
 		}
 	}
