@@ -82,7 +82,7 @@
 			}
 
 			p {
-				@include fluid(font-size, 14px, 20px);
+				@include fluid(font-size, 14px, 22px);
 				margin-bottom: 16px;
 
 				&:has(+ .promo__item-box) {
