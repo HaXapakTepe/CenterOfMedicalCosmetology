@@ -197,9 +197,9 @@
 			@include fluid(gap, 12px, 17px);
 			list-style: inside;
 
-			&:has(+ *) {
-				@include fluid(margin-bottom, 20px, 30px);
-			}
+			// &:has(+ *) {
+			// 	@include fluid(margin-bottom, 20px, 30px);
+			// }
 
 			&--alt {
 				list-style: none;
