@@ -48,7 +48,7 @@
 			@include fluid(margin-bottom, 20px, 35px);
 		}
 
-		&:has(+ .news__text) {
+		&:has(+ p) {
 			@include fluid(margin-bottom, 16px, 20px);
 		}
 	}
@@ -77,21 +77,20 @@
 	}
 
 	&__box {
-		display: flex;
-		flex-direction: column;
-		@include fluid(gap, 20px, 30px);
+		display: block;
+
+		h4,
+		h3,
+		ul,
+		img,
+		h2,
+		p {
+			&:has(+ *) {
+				@include fluid(margin-bottom, 20px, 30px);
+			}
+		}
 
 		&--alt {
-			display: block;
-
-			h4,
-			h3,
-			h2,
-			p {
-				&:has(+ *) {
-					@include fluid(margin-bottom, 20px, 30px);
-				}
-			}
 		}
 
 		h2 {
@@ -104,11 +103,11 @@
 			@include fluid(font-size, 24px, 36px);
 			font-weight: 500;
 
-            a {
-                &:hover {
-                    color: #2a275f;
-                }
-            }
+			a {
+				&:hover {
+					color: #2a275f;
+				}
+			}
 		}
 
 		h4 {
@@ -230,6 +229,11 @@
 		padding: 15px 20px;
 		border-radius: 10px;
 		border: 1px solid #2a275f;
+
+		p,
+		img {
+			margin-bottom: 0;
+		}
 
 		&-icon {
 			@include fluid(width, 36px, 48px);
